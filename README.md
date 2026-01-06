@@ -1,17 +1,28 @@
 # MEEM
 
-This repository offers data and analyses related to the study titled "Measure of Emotional Episodes with Music (MEEM): development and psychometric evaluation of a modular instrument, (submitted). This is scale development for an instrument to measure a emotional episodes related to music ([Eerola, Kirts & Saarikallio, 2025](https://doi.org/10.1177/03057356241279763)) that has been already developed through the content validity steps ([Kirts et al., in press]).
+This repository offers data and analyses related to the study titled "Measure of Emotional Episodes with Music (MEEM): development and psychometric evaluation of a modular instrument, (submitted). This is scale development for an instrument to measure a emotional episodes related to music ([Eerola, Kirts & Saarikallio, 2025](https://doi.org/10.1177/03057356241279763)) that has been already developed through the content validity steps [Kirts et al., in press](https://tuomaseerola.github.io/MIMEE/).
 
-The public-facing version of the repository is available at
+The public-facing version of this repository is available at
 [https://tuomaseerola.github.io/MEEM/](https://tuomaseerola.github.io/MEEM/). 
 
-Three main analytical operations are documented in the repo.
+These are the main analytical operations carried out in the study in Experiments 1 and 2.
 
-## 1
+## Experiment 1
+
+1. [preprocessing](exp1/preprocessing.qmd) gets all the data, reports reliability, and visualises the item ratings.
+
+2. [CFA_direct](exp1/CFA_direct.qmd) contains full items analysis and 4 and 3 best item analyses.
+
+3. [measurement_invariance](exp1/measurement_invariance.qmd) reports configural, metric, and scalar invariance for the CFA participant-clustered robust SE models.
 
 
-## 2
+## Experiment 2
 
+1. [describe_data](exp2/describe_data.qmd) summarises participant-level data (removal of low consistency participants, display demographics, visualise mean item ratings across vignettes). &check;
 
-## 3
+2. [CFA](exp2/CFA.qmd) reports CFA model fits, measurement invariance, and discriminant fit indices for each construct. Also displays the model summaries (loadings) together with means and standard deviations of the items. &check;
+
+3. [higher_order_structure](exp2/higher_order_structure.qmd) tests higher order structures. Also reports construct reliability measures and discriminant validity tests for the models. &check;
+
+4. [vignette_to_emotions](exp2/vignette_to_emotions.qmd) contains summary and construct validity with GEMIAC and HAAS scales. &check;
 

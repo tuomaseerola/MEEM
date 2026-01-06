@@ -29,22 +29,11 @@ These are the main analytical operations carried out in the study in Experiments
 
 ## Experiment 1
 
-- [preprocessing](exp1/preprocessing.qmd) gets all the data, reports reliability, and visualises the item ratings.
+1. [preprocessing](exp1/preprocessing.qmd) gets all the data, reports reliability, and visualises the item ratings.
 
-<!-- - [EFA_first](EFA_first.qmd) carries out exploratory factor analyses (NOT NEEDED). -->
+2. [CFA_direct](exp1/CFA_direct.qmd) contains full items analysis and 4 and 3 best item analyses.
 
-<!-- - [CFA_after_EFA](CFA_after_EFA.qmd) contains full items analysis and 4 and 3 best item analyses (just for EDR now). (NOT NEEDED) -->
-
-- [CFA_direct](exp1/CFA_direct.qmd) contains full items analysis and 4 and 3 best item analyses.
-
-<!-- - [Multilevel CFA](multilevel_CFA.qmd) reports 3 different ways of assessing the factor structures (CFA with Robust SE for participant repetitions, CFA de-meaned across vignettes, and multi-level CFA). -->
-
-<!-- - [Multilevel CFA optimised](multilevel_CFA_alt.qmd) which contains one analysis with two weak items deleted and one with dummy coded vignettes. -->
-
-- [measurement_invariance](exp1/measurement_invariance.qmd) reports configural, metric, and scalar invariance for the CFA participant-clustered robust SE models.
-
-<!-- - [Bayesian multi-level CFA](bayesian_multi-level_CFA.qmd) (NOT NEEDED) -->
-
+3. [measurement_invariance](exp1/measurement_invariance.qmd) reports configural, metric, and scalar invariance for the CFA participant-clustered robust SE models.
 
 
 ## Experiment 2
@@ -56,6 +45,4 @@ These are the main analytical operations carried out in the study in Experiments
 3. [higher_order_structure](exp2/higher_order_structure.qmd) tests higher order structures. Also reports construct reliability measures and discriminant validity tests for the models. &check;
 
 4. [vignette_to_emotions](exp2/vignette_to_emotions.qmd) contains summary and construct validity with GEMIAC and HAAS scales. &check;
-
-
 
