@@ -1,0 +1,492 @@
+---
+title: "Exp. 2 - Higher Order Structures"
+toc: false
+knitr:
+  opts_chunk:
+    fig.path: "figures/"
+---
+
+```{r}
+#| echo: false
+#| warning: false
+#| messages: false
+#| eval: true
+#| id: exp2-setup
+library(tidyr)
+library(dplyr)
+library(stringr)
+library(here)
+library(psych)
+library(ggplot2)
+library(lavaan)
+library(semTools)
+```
+
+## Load data
+
+```{r}
+#| echo: true
+#| id: exp2-load-data-rds
+df_f <- readRDS("data/items35_N1200.rds")
+source('scr/rename_specific_items.R') # We decided to relabel some constructs for clarity
+df_f <- rename_specific_items(df_f)
+```
+
+```{r}
+#| echo: false
+#| output: asis
+#| id: vignette-labels
+
+df_f$itemCategory<-NA
+df_f$itemCategory[str_detect(df_f$item_label,"E|D|R")]<-"EDR"
+df_f$itemCategory[str_detect(df_f$item_label,"M|F")]<-"FM"
+df_f$itemCategory[str_detect(df_f$item_label,"G|L")]<-"CB"     # Labels updated
+df_f$itemCategory[str_detect(df_f$item_label,"C|X")]<-"PEP"    # Labels updated
+df_f$itemCategory[str_detect(df_f$item_label,"B|I|A")]<-"AIA"  # Labels updated
+
+```
+
+```{r}
+#| echo: true
+#| id: load-scripts
+source('scr/CFA_items.R')
+```
+
+## Higher order structures
+
+### First-Order Model (sub-constructs)
+
+Let's explore how the episodes operate via 12 sub-constructs.
+
+```{r}
+#| echo: true
+#| eval: true
+#| id: exp2-cfa-1st-order
+set.seed(3110)
+
+first_order <- "
+# sub-factors: EDR
+E =~ E1 + E6 + E7
+D =~ D1 + D6 + D7
+R =~ R1 + R3 + R7
+
+# sub-factors: FM
+M =~ M1 + M3 + F1
+F =~ F3 + F6 + F10
+
+# sub-factors: CB
+G =~ G5 + G2 + G9
+L =~ L5 + L6 + L7
+
+# sub-factors: PEP
+C =~ C2 + C3 + C6
+X =~ X4 + X8 + X9
+
+# sub-factors: AIA
+B =~ B3 + B4 + B5
+I =~ I1 + I2
+A =~ A1 + A3 + A5
+"
+
+items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","F1","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
+tmp <- CFA_items(df_f,vignette = 1:12, items=items,vignette_name="ALL",bonusquestion="HAAS")
+fit1 <- lavaan::cfa(model = first_order, data = tmp, meanstructure = TRUE,estimator = "MLR")
+fit1.meas <- lavaan::fitMeasures(fit1,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+print(fit1.meas)
+
+```
+
+
+### First and Second-Order Model
+
+Let's explore how the episodes (Constructs) operate when build as second-order model with sub-constructs.
+
+```{r}
+#| echo: true
+#| id: exp2-cfa-2nd
+set.seed(3110)
+
+second_order <- "
+# sub-factors: EDR
+E =~ E1 + E6 + E7
+D =~ D1 + D6 + D7
+R =~ R1 + R3 + R7
+
+# sub-factors: FM
+M =~ M1 + M3 + F1
+F =~ F3 + F6 + F10
+
+# sub-factors: CB
+G =~ G5 + G2 + G9
+L =~ L5 + L6 + L7
+
+# sub-factors: PEP
+C =~ C2 + C3 + C6
+X =~ X4 + X8 + X9
+
+# sub-factors: AIA
+B =~ B3 + B4 + B5
+I =~ I1 + I2
+A =~ A1 + A3 + A5
+
+# 2nd order factors
+
+EDR =~ E + D + R
+FM =~ M + F
+CB =~ G + L 
+PEP =~ C + X
+AIA =~ B + I + A  
+"
+
+items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","F1","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
+
+tmp <- CFA_items(df_f,vignette = 1:12, items=items,vignette_name="ALL",bonusquestion="HAAS")
+fit2 <- lavaan::cfa(model = second_order, data = tmp, meanstructure = TRUE, estimator = "MLR")
+
+fit2.meas <- lavaan::fitMeasures(fit2,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+print(fit2.meas)
+
+```
+
+
+### Bi-factor Model
+
+Test whether the items load on both a general factor and their specific episode factors (sub-constructs).
+
+```{r}
+#| echo: false
+#| eval: true
+#| id: exp2-bifactor
+set.seed(3110)
+
+bifactor_model <- "
+# general factor
+g =~ E1 + E6 + E7 + D1 + D6 + D7 + R1 + R3 + R7 + M1 + M3 + F1 + F3 + F6 + F10 + G5 + G2 + G9 + L5 + L6 + L7 + C2 + C3 + C6 + X4 + X8 + X9 + B3 + B4 + B5 + I1 + I2 + A1 + A3 + A5
+
+# sub-factors: EDR
+E =~ E1 + E6 + E7
+D =~ D1 + D6 + D7
+R =~ R1 + R3 + R7
+
+# sub-factors: FM
+M =~ M1 + M3 + F1
+F =~ F3 + F6 + F10
+
+# sub-factors: CB
+G =~ G5 + G2 + G9
+L =~ L5 + L6 + L7
+
+# sub-factors: PEP
+C =~ C2 + C3 + C6
+X =~ X4 + X8 + X9
+
+# sub-factors: AIA
+B =~ B3 + B4 + B5
+I =~ I1 + I2
+A =~ A1 + A3 + A5
+
+# orthogonal factors
+# g ~~ 0*E
+# g ~~ 0*D
+# g ~~ 0*R  
+# g ~~ 0*M  
+# g ~~ 0*F
+# g ~~ 0*G
+# g ~~ 0*L
+# g ~~ 0*C
+# g ~~ 0*X
+# g ~~ 0*B
+# g ~~ 0*I
+# g ~~ 0*A
+"
+
+items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","F1","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
+tmp <- CFA_items(df_f,vignette = 1:12, items=items,vignette_name="ALL",bonusquestion="HAAS")
+fit3 <- lavaan::cfa(model = bifactor_model, data = tmp, meanstructure = TRUE,orthogonal=TRUE, estimator = "MLR")
+
+fit3.meas <- lavaan::fitMeasures(fit3,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+print(fit3.meas)
+
+# diagnostics
+#parameterEstimates(fit3)  # Any weird values
+#cor(tmp, use = "complete.obs")
+```
+
+### Second-order Model only
+
+Test whether the items work through 5 constructs only (all sub-constructs are included in each construct).
+
+
+```{r}
+#| echo: false
+#| eval: true
+#| id: exp2-secondorderonly
+
+episodes <- "
+EDR =~ E1 + E6 + E7 + D1 + D6 + D7 + R1 + R3 + R7
+FM =~ M1 + M3 + F1 + F3 + F6 + F10
+CB =~ G5 + G2 + G9 + L5 + L6 + L7 
+PEP =~ C2 + C3 + C6 + X4 + X8 + X9
+AIA =~ B3 + B4 + B5 + I1 + I2 + A1 + A3 + A5
+"
+
+items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","F1","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
+
+tmp <- CFA_items(df_f,vignette = 1:12, items=items,vignette_name="ALL",bonusquestion="HAAS")
+fit4 <- lavaan::cfa(model = episodes, data = tmp, meanstructure = TRUE, estimator = "MLR")
+fit4.meas <- lavaan::fitMeasures(fit4,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+print(fit4.meas)
+
+```
+
+### First-order, Second-order and a Generic Third-order
+
+```{r}
+#| echo: false
+#| eval: true
+#| id: exp2-secondorder-g
+
+episodes2 <- "
+
+# first-order factors
+
+# sub-factors: EDR
+E =~ E1 + E6 + E7
+D =~ D1 + D6 + D7
+R =~ R1 + R3 + R7
+
+# sub-factors: FM
+M =~ M1 + M3 + F1
+F =~ F3 + F6 + F10
+
+# sub-factors: CB
+G =~ G5 + G2 + G9
+L =~ L5 + L6 + L7
+
+# sub-factors: PEP
+C =~ C2 + C3 + C6
+X =~ X4 + X8 + X9
+
+# sub-factors: AIA
+B =~ B3 + B4 + B5
+I =~ I1 + I2
+A =~ A1 + A3 + A5
+
+# 2nd order factors
+
+EDR =~ E + D + R
+FM =~ M + F
+CB =~ G + L 
+PEP =~ C + X
+AIA =~ B + I + A  
+
+# 3rd order factor
+
+g =~ EDR + FM + CB + PEP + AIA
+
+"
+
+items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","F1","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
+
+tmp <- CFA_items(df_f,vignette = 1:12, items=items,vignette_name="ALL",bonusquestion="HAAS")
+fit5 <- lavaan::cfa(model = episodes2, data = tmp, meanstructure = TRUE, estimator = "MLR")
+fit5.meas <- lavaan::fitMeasures(fit5,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+print(fit5.meas)
+
+```
+
+### Visualise Models
+
+```{r}
+#| echo: false
+#| id: plot-fi
+#| fig.width: 10
+library(semptools)
+library(semPlot)
+cat("First-order\n")
+p1 <- semPaths(fit1, whatLabels="est",
+        sizeMan = 3.25,
+        node.width = 1,
+        intercepts = FALSE,
+        edge.label.cex = .75,
+        style = "mx",
+        nCharNodes = 0, 
+        nCharEdges = 0,
+        mar = c(10, 5, 26, 5))
+#p1b<-set_cfa_layout(p1,fcov_curve = 1.25,loading_position = .8)
+#plot(p1)
+
+cat("First and second-order\n")
+
+p2 <- semPaths(fit2, whatLabels="est",
+        sizeMan = 3.25,
+        node.width = 1,
+        intercepts = FALSE,
+        edge.label.cex = .75,
+        style = "mx",
+        nCharNodes = 0, 
+        nCharEdges = 0,
+        mar = c(10, 5, 26, 5))
+#p2b<-set_cfa_layout(p2)
+#plot(p2)
+
+cat("Bifactor\n")
+
+p3 <- semPaths(fit3, whatLabels="est",
+        sizeMan = 3.25,
+        node.width = 1,
+        edge.label.cex = .75,
+        style = "ram",
+        mar = c(10, 5, 10, 5))
+#plot(p3)
+
+cat("Second-order only\n")
+p4 <- semPaths(fit4, whatLabels="est",
+        sizeMan = 3.25,
+        node.width = 0.5,
+        intercepts = FALSE,
+        edge.label.cex = 0.75,
+        style = "ram",
+        nCharNodes = 0, 
+        nCharEdges = 0,
+        mar = c(10, 5, 26, 5))
+#plot(p4)
+
+cat("1st, 2nd, and third-order\n")
+p5 <- semPaths(fit5, whatLabels="est",
+        sizeMan = 3.25,
+        node.width = 0.5,
+        intercepts = FALSE,
+        edge.label.cex = 0.75,
+        style = "ram",
+        nCharNodes = 0, 
+        nCharEdges = 0,
+        mar = c(10, 5, 26, 5))
+#plot(p5)
+```
+
+### Summarise Model Fits
+
+```{r}
+#| echo: false
+#| id: exp2-summarise-fits
+#| results: asis
+
+fit_measures <- rbind(fit1.meas,
+                      fit2.meas,
+                      fit3.meas,
+                      fit4.meas,
+                      fit5.meas)
+rownames(fit_measures) <- c("1st-order",
+                             "1st and 2nd-order",
+                             "Bifactor",
+                             "Second-order only",
+                             "1-,2-, 3rd-order")
+print(knitr::kable(fit_measures,digits=2))
+```
+
+
+### Compare Structures
+
+```{r}
+#| echo: true
+#| eval: true
+#| id: compare-structures 
+
+o <- compareFit(fit1, fit2, fit3, fit4, fit5)
+summary(o)
+```
+
+## Construct Reliability (Composite Reliability)
+
+Measure of internal consistency using omega from the second-order model.
+
+```{r}
+#| echo: true
+#| id: exp2-reliabilty
+
+# Calculate reliability indices:
+# 0.60 questionable, 0.70 acceptable, 0.80 good, 0.90 excellent
+# This is done using omega, not alpha
+compRelSEM(fit1,tau.eq=F)                 # all acceptable good excellent
+compRelSEM(fit2,higher = c("EDR","FM","CB","PEP","AIA"),tau.eq=F) # all acceptable good excellent
+compRelSEM(fit3, tau.eq=F)               # g good but constructs are poor 
+compRelSEM(fit4,tau.eq=F)                # all above 0.80
+compRelSEM(fit5,tau.eq=F,higher="g")     # all above 0.80
+
+cor_matrix <- lavInspect(fit2, "cor.lv")
+print(knitr::kable(cor_matrix,digits=2,caption="Correlations between the latent factors (for sub-constructs and constructs)."))
+
+```
+
+## Discriminant Validity
+
+
+### Average Variance Explained (traditional)
+
+Measure of discriminant validity from the first-order model.
+
+```{r}
+#| echo: true
+#| id: exp2-discriminant-validity-trad
+
+# calculate average variance explained, 0.50+ is acceptable 
+lavInspect(fit1, "cor.lv")
+# First-order model
+AVE(fit1)  # all above 0.50
+# First and second-order
+AVE(fit2)  # all above 0.50
+# Bifactor
+AVE(fit3,omit.factors="g")  # All below 0.50
+# Second-order only
+AVE(fit4)  # FM, CB and AIA above 0.50, EDR and PEP below 0.50
+# 1st, 2nd, and third-order
+AVE(fit5)  # all above 0.50
+
+```
+
+### Discriminant Validity with HTMT
+
+Let's use the modern Heterotrait--Monotrait Ratio (HTMT) method to assess discriminant validity. It uses ratio of the correlations (Henseler, Ringlet & Sarstedt, 2015). 
+
+#### All Sub-constructs (first-order model)
+
+
+```{r}
+#| echo: true
+#| eval: true
+#| fig.height: 6
+#| fig.width: 8
+#| id: other-ways1
+#| output: asis
+
+htmt_matrix <- htmt(first_order,data = tmp,htmt2 = FALSE)
+print(knitr::kable(htmt_matrix,digits=3,caption='Discriminant Validity at the level of Sub-Constructs.'))
+
+diag(htmt_matrix)=NA
+round(min(htmt_matrix,na.rm=TRUE),3)
+round(max(htmt_matrix,na.rm=TRUE),3)
+round(median(htmt_matrix,na.rm=TRUE),3)
+
+```
+
+#### All Constructs (second-order model)
+
+
+```{r}
+#| echo: true
+#| eval: true
+#| fig.height: 6
+#| fig.width: 8
+#| id: other-ways2
+#| output: asis
+
+htmt_matrix <- htmt(episodes,data = tmp,htmt2 = FALSE)
+print(knitr::kable(htmt_matrix,digits=3,caption='Discriminant Validity at the level of Constructs.'))
+
+diag(htmt_matrix)=NA
+round(min(htmt_matrix,na.rm=TRUE),3)
+round(max(htmt_matrix,na.rm=TRUE),3)
+round(median(htmt_matrix,na.rm=TRUE),3)
+
+```

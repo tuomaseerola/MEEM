@@ -1,0 +1,250 @@
+---
+title: "Exp. 2 - Describe Data"
+toc: false
+knitr:
+  opts_chunk:
+    fig.path: "figures/"
+---
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| messages: false
+#| eval: true
+#| id: exp2-setup
+
+library(tidyr)
+library(dplyr)
+library(stringr)
+library(here)
+library(psych)
+library(ggplot2)
+
+```
+
+This notebook describes the **Experiment 2 data**: preprocessing, outlier removal, demographics, mean ratings, and distributions. The data in factor study experiment 2 consists of 12 vignettes, with optimised (CFA) 35 items, that utilises between-subject design for vignettes, N=1200 (N=100 for each vignette), with a subset (≈ 50/50%) of participants answering additional questions (GEMIAC N=579, HAAS N=639).
+
+## Load and preprocess data
+
+```{r}
+#| echo: true
+#| id: exp2-load-data
+#| warning: false
+#| messages: false
+#| eval: true
+source('scr/read_EFA_qualtrics.R') # custom function
+source('scr/convert_items_long.R') # custom function
+source('scr/participant_reliability.R') # custom function
+
+#fn <- "data/Episodes_September 9, 2025_14.01.csv" # N=600 GEMIAC
+#d <- read_EFA_qualtrics(filename = fn,bonusquestion = "GEMIAC")
+fn <- "data/Episodes_September 11, 2025_09.14.csv" # N=601-1100 HAAS
+d <- read_EFA_qualtrics(filename = fn,bonusquestion = "HAAS")
+df <- convert_items_long(d)
+reliability <- participant_reliability(df,THRESHOLD = 0.001,verbose=TRUE)
+
+df_f <- df %>% filter(!ProlificID %in% reliability$removed_participants)
+```
+
+### Summarise participant count across sub-experiments (vignettes)
+
+```{r}
+#| echo: true
+#| id: exp2-summarise-counts
+#| eval: true
+#| results: asis
+S <- summarise(group_by(df_f,VigNro),n=n()/35) # divide by no. of items
+print(knitr::kable(S))
+```
+
+
+```{r}
+#| echo: false
+#| id: exp2-load-data-rds
+#| eval: false
+# If needed, load data
+df_f <- readRDS("data/items35_N1200.rds")
+```
+
+```{r}
+#| echo: false
+#| output: asis
+#| id: exp2-vignette-labels
+
+df_f$itemCategory<-NA
+df_f$itemCategory[str_detect(df_f$item_label,"E|D|R")]<-"EDR"
+df_f$itemCategory[str_detect(df_f$item_label,"M|F")]<-"FM"
+df_f$itemCategory[str_detect(df_f$item_label,"C|S")]<-"CB"
+df_f$itemCategory[str_detect(df_f$item_label,"U|P")]<-"PEP"
+df_f$itemCategory[str_detect(df_f$item_label,"I|X|B")]<-"AIA"
+
+```
+
+## Demographics
+
+```{r}
+#| id: exp2-demographics
+# get only one row per participant
+demographics <- df_f %>%
+  select(ProlificID, Age, Gender, OMSI,VigNro) %>%
+  distinct()
+#### report
+print(paste("Age (M):",round(mean(demographics$Age, na.rm=TRUE),2)))
+print(paste("Age (SD):",round(sd(demographics$Age, na.rm=TRUE),2)))
+print(table(demographics$Gender))/nrow(demographics)
+print(table(demographics$OMSI))
+demographics$OMSI_cat <- factor(demographics$OMSI,
+                                levels = c("Nonmusician",
+                                           "Music-loving Nonmusician",
+                                           "Amateur musician",
+                                           "Serious amateur musician",
+                                           "Semiprofessional musician",
+                                           "Professional musician"),
+                                labels = c("Nonmusician",
+                                           "Nonmusician",
+                                           "Musician",
+                                           "Musician",
+                                           "Musician",
+                                           "Musician"))
+table(demographics$OMSI_cat)/nrow(demographics)
+# subsets
+table(demographics$Gender, demographics$VigNro)
+chisq.test(table(demographics$Gender, demographics$VigNro))
+
+
+T<-table(demographics$OMSI_cat, demographics$VigNro)
+print(T)
+
+chisq.test(table(demographics$OMSI_cat, demographics$VigNro))
+
+summary(aov(Age ~ VigNro, data = demographics))
+
+```
+
+
+## Visualise the mean item ratings
+
+```{r}
+#| echo: true
+#| id: exp2-visualise
+#| fig.width: 10
+#| fig.height: 10
+#| fig.res: 300
+source('scr/visualise_means.R')
+V <- NULL
+V[1]<-'EDR: Enjoyment'
+V[2]<-'EDR: Distraction'
+V[3]<-'EDR: Relaxation'
+V[4]<-'FM: Motivation'
+V[5]<-'FM: Focus'
+V[6]<-'CB: Group cohesion'
+V[7]<-'CB: Loneliness (reduction)'
+V[8]<-'PEP: Coping'
+V[9]<-'PEP: Expressing feelings'
+V[10]<-'AIA: Being Moved'
+V[11]<-'AIA: Curiosity'
+V[12]<-'AIA: Aesthetics'
+
+# F1 should be in Motivation, temporarily rename just for figure
+df_f$item_label[df_f$item_label=="F1"] <- "M_F1"
+
+source('scr/rename_specific_items.R') # We decided to relabel some constructs for clarity
+df_fR <- rename_specific_items(df_f)
+
+# Make into a factor
+df_fR$VigNro <- factor(df_fR$VigNro,labels=V)
+df_fR$Construct <- df_fR$itemCategory
+
+```
+
+### EDR items
+
+```{r}
+#| echo: false
+#| id: exp2-vis1
+#| fig.width: 10
+#| fig.height: 10
+#| fig.res: 300
+df_fR_tmp <- dplyr::filter(df_fR,Construct=="EDR")
+fig1 <- visualise_means(df_fR_tmp,Construct="EDR")
+print(fig1)
+```
+
+### FM items
+
+```{r}
+#| echo: false
+#| id: exp2-vis2
+#| fig.width: 10
+#| fig.height: 10
+#| fig.res: 300
+df_fR_tmp <- dplyr::filter(df_fR,Construct=="FM")
+fig2 <- visualise_means(df_fR_tmp,Construct="FM")
+print(fig2)
+```
+
+
+### CB items
+
+```{r}
+#| echo: false
+#| id: exp2-vis3
+#| fig.width: 10
+#| fig.height: 10
+#| fig.res: 300
+
+df_fR_tmp <- dplyr::filter(df_fR,Construct=="CB")
+fig3 <- visualise_means(df_fR_tmp,Construct="CB")
+print(fig3)
+```
+
+### PEP items
+
+```{r}
+#| echo: false
+#| id: exp2-vis4
+#| fig.width: 10
+#| fig.height: 10
+#| fig.res: 300
+
+df_fR_tmp <- dplyr::filter(df_fR,Construct=="PEP")
+fig4 <- visualise_means(df_fR_tmp,Construct="PEP")
+print(fig4)
+```
+
+### AIA items
+
+```{r}
+#| echo: false
+#| id: exp2-vis5
+#| fig.width: 10
+#| fig.height: 10
+#| fig.res: 300
+
+df_fR_tmp <- dplyr::filter(df_fR,Construct=="AIA")
+fig5 <- visualise_means(df_fR_tmp,Construct="AIA")
+print(fig5)
+```
+
+### Distributions
+
+Show rating distributions across the vignettes.
+
+```{r}
+#| echo: false
+#| id: exp2-visualise2
+#| fig.width: 10
+#| fig.height: 10
+#| fig.res: 300
+
+g <- ggplot(df_fR, aes(y=value,fill=VigNro))+
+  geom_histogram(bins=5, color="black",show.legend = FALSE)+
+  facet_wrap(.~VigNro)+
+  coord_flip()+
+  xlab("Count")+
+  ylab("Rating")+
+  theme_classic()
+print(g)
+
+```

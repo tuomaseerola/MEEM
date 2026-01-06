@@ -1,0 +1,247 @@
+StartDate,EndDate,Status,IPAddress,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,RecipientLastName,RecipientFirstName,RecipientEmail,ExternalReference,LocationLatitude,LocationLongitude,DistributionChannel,UserLanguage,"Consent ","Age ","Gender ",OMSI,"Prolific ID ",C _1,C _2,C _3,C _4,C _5,C _6,C _7,C _8,C _9,C _10,C _11,C _12,C _13,C _14,C _15,C _16,C _17,"C_Rel ",S_1,S_2,S_3,S_4,S_5,S_6,S_7,S_8,S_9,S_10,S_11,S_12,S_13,S_14,S_15,S_16,S_Rel,Music check,PROLIFIC_PID
+Start Date,End Date,Response Type,IP Address,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Recipient Last Name,Recipient First Name,Recipient Email,External Data Reference,Location Latitude,Location Longitude,Distribution Channel,User Language,Do you consent to participating?,"What is your age? (e.g., 99)",What is your gender?,"In terms of your musical interest and expertise, which title best describes you?","What is your prolific ID?
+Please note that this response should auto-fill with the correct ID","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - I felt like a member of a group while listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - I felt a bond with the other people listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music made me feel more connected with those around me","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - I felt more connected with other people because of the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - I felt connected to the people I was sharing this musical experience with","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - I felt connected with people who also listen to this music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music made me feel connected to my peers or family","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music brought people together","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music made me feel more connected to a group","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music helped me feel closer to people","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music made me feel connected to the people I care about","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music made me feel like I belonged","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - I felt a special connection to the people I shared this music with","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - Listening to music made me feel less lonely","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music helped me feel less lonely","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - If you see this statement then select strongly disagree as your answer","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - I used the music to keep me company",How relevant was the scenario based on your own life experience?,"Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - I felt like a member of a group while listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - I felt a bond with the other people listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music made me feel more connected with those around me","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - I felt more connected with other people because of the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - I felt connected to the people I was sharing this musical experience with","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - I felt connected with people who also listen to this music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music made me feel connected to my peers or family","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music brought people together","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music made me feel more connected to a group","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music helped me feel closer to people","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music made me feel connected to the people I care about","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music made me feel like I belonged","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - I felt a special connection to the people I shared this music with","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - Listening to music made me feel less lonely","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music helped me feel less lonely","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - I used the music to keep me company",How relevant was the scenario based on your own life experience?,Did you listen to music while completing this survey?,PROLIFIC_PID
+"{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""status""}","{""ImportId"":""ipAddress""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""_recordId""}","{""ImportId"":""recipientLastName""}","{""ImportId"":""recipientFirstName""}","{""ImportId"":""recipientEmail""}","{""ImportId"":""externalDataReference""}","{""ImportId"":""locationLatitude""}","{""ImportId"":""locationLongitude""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID1218656807""}","{""ImportId"":""QID1218656808_TEXT""}","{""ImportId"":""QID1218656809""}","{""ImportId"":""QID1218656810""}","{""ImportId"":""QID1218656811_TEXT""}","{""ImportId"":""QID1218656816_1""}","{""ImportId"":""QID1218656816_2""}","{""ImportId"":""QID1218656816_3""}","{""ImportId"":""QID1218656816_4""}","{""ImportId"":""QID1218656816_5""}","{""ImportId"":""QID1218656816_6""}","{""ImportId"":""QID1218656816_7""}","{""ImportId"":""QID1218656816_8""}","{""ImportId"":""QID1218656816_9""}","{""ImportId"":""QID1218656816_10""}","{""ImportId"":""QID1218656816_11""}","{""ImportId"":""QID1218656816_12""}","{""ImportId"":""QID1218656816_13""}","{""ImportId"":""QID1218656816_14""}","{""ImportId"":""QID1218656816_15""}","{""ImportId"":""QID1218656816_16""}","{""ImportId"":""QID1218656816_17""}","{""ImportId"":""QID1218656817""}","{""ImportId"":""QID11_1""}","{""ImportId"":""QID11_2""}","{""ImportId"":""QID11_3""}","{""ImportId"":""QID11_4""}","{""ImportId"":""QID11_5""}","{""ImportId"":""QID11_6""}","{""ImportId"":""QID11_7""}","{""ImportId"":""QID11_8""}","{""ImportId"":""QID11_9""}","{""ImportId"":""QID11_10""}","{""ImportId"":""QID11_11""}","{""ImportId"":""QID11_12""}","{""ImportId"":""QID11_13""}","{""ImportId"":""QID11_14""}","{""ImportId"":""QID11_15""}","{""ImportId"":""QID11_16""}","{""ImportId"":""QID12""}","{""ImportId"":""QID1218656845""}","{""ImportId"":""PROLIFIC_PID""}"
+2025-08-29 05:23:57,2025-08-29 05:24:55,0,129.234.0.212,100,58,1,2025-08-29 05:24:55,R_220S8vxfilHvg0V,,,,,54.7757,-1.5781,anonymous,EN,2,99,5,6,6847fbd96237884b522218cf,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,4,2,6847fbd96237884b522218cf
+2025-08-29 05:26:11,2025-08-29 05:26:49,0,129.234.0.212,100,37,1,2025-08-29 05:26:49,R_8bTYRDZE1p4uvUl,,,,,54.7757,-1.5781,anonymous,EN,2,99,5,6,6847fbd96237884b522218cf,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,4,2,6847fbd96237884b522218cf
+2025-08-29 07:42:40,2025-08-29 07:43:31,0,129.234.0.212,100,50,1,2025-08-29 07:43:31,R_22QBv2fMm9R0Gho,,,,,54.7757,-1.5781,anonymous,EN,2,99,5,6,6847fbd96237884b522218cf,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,4,2,6847fbd96237884b522218cf
+2025-08-29 09:22:40,2025-08-29 09:23:36,0,129.234.0.212,100,56,1,2025-08-29 09:23:37,R_2i8u5TwQNBTjPV9,,,,,54.7757,-1.5781,anonymous,EN,2,99,5,6,6847fbd96237884b522218cf,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,2,6847fbd96237884b522218cf
+2025-08-29 09:28:30,2025-08-29 09:30:37,0,217.44.151.171,100,126,1,2025-08-29 09:30:37,R_2dkxagr5Aor4OnD,,,,,52.2718,-3.0058,anonymous,EN,2,28,2,2,676b1de2c7e0e0fed8203575,3,4,3,4,3,5,3,4,4,3,4,3,5,3,4,1,3,2,3,3,3,4,3,4,3,3,3,5,4,3,3,4,4,4,1,2,676b1de2c7e0e0fed8203575
+2025-08-29 09:28:52,2025-08-29 09:31:01,0,185.126.160.41,100,128,1,2025-08-29 09:31:01,R_2OIPfc1uMc2A1Vj,,,,,51.7994,-4.9658,anonymous,EN,2,44,1,4,654f89d4924d0d5a050f375d,5,5,5,5,4,4,5,4,5,5,5,5,5,5,5,4,5,3,3,5,5,5,4,5,4,5,5,5,4,4,5,5,5,5,4,2,654f89d4924d0d5a050f375d
+2025-08-29 09:28:35,2025-08-29 09:31:37,0,82.133.14.205,100,181,1,2025-08-29 09:31:37,R_2neXSTCdxYbv7z3,,,,,52.3325,-0.1844,anonymous,EN,2,54,1,1,5cfde288bab656000198b943,4,4,4,4,4,5,4,4,4,3,3,3,4,2,2,1,1,3,1,1,2,3,1,5,4,1,2,4,5,4,1,4,4,4,2,2,5cfde288bab656000198b943
+2025-08-29 09:29:45,2025-08-29 09:32:04,0,86.133.220.71,100,139,1,2025-08-29 09:32:05,R_8j7IzUpTUM7aDm6,,,,,51.1658,-1.7847,anonymous,EN,2,48,1,2,5be4c588854f100001537d04,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,1,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,2,5be4c588854f100001537d04
+2025-08-29 09:30:14,2025-08-29 09:34:24,0,2.219.52.203,100,250,1,2025-08-29 09:34:24,R_8E68O7w6yxS2WJW,,,,,51.4017,-0.1624,anonymous,EN,2,53,2,2,56eb00e515ef53000b46726c,4,5,3,4,4,4,4,4,3,4,4,4,5,3,3,1,2,4,2,3,2,4,3,3,2,3,3,4,4,3,3,4,4,4,2,2,56eb00e515ef53000b46726c
+2025-08-29 09:38:12,2025-08-29 09:39:55,0,86.163.16.18,100,102,1,2025-08-29 09:39:55,R_8iWKdZcOdkAwuvN,,,,,52.9687,-1.0889,anonymous,EN,2,24,2,2,6070eac7c04a391b5267809f,4,4,4,5,5,4,4,5,4,4,4,4,4,3,4,1,3,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,2,2,6070eac7c04a391b5267809f
+2025-08-29 09:38:20,2025-08-29 09:40:18,0,80.4.166.3,100,117,1,2025-08-29 09:40:19,R_23DZtZwSdwgIrPq,,,,,51.5878,0.015,anonymous,EN,2,47,1,3,5e68d2b5576136000ba058a2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,1,4,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,2,5e68d2b5576136000ba058a2
+2025-08-29 09:38:36,2025-08-29 09:40:52,0,80.3.218.240,100,136,1,2025-08-29 09:40:52,R_2Wa40EbMeGkfXLX,,,,,54.9313,-1.5855,anonymous,EN,2,21,1,1,676055469b245b53e81358d0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,2,1,2,5,2,4,2,4,5,4,2,5,4,4,5,5,5,5,1,2,676055469b245b53e81358d0
+2025-08-29 09:38:20,2025-08-29 09:40:53,0,152.37.123.155,100,153,1,2025-08-29 09:40:54,R_22o8cMlqjP3NTfF,,,,,51.5327,-0.0996,anonymous,EN,2,54,2,2,5eaec18fbb7b8901200d16dd,4,4,4,4,4,3,4,4,4,4,4,4,4,4,4,1,3,3,3,3,3,4,3,3,3,3,3,3,3,3,3,4,4,4,2,2,5eaec18fbb7b8901200d16dd
+2025-08-29 09:38:16,2025-08-29 09:41:04,0,31.94.22.166,100,168,1,2025-08-29 09:41:05,R_2fypwTOaafLrQRP,,,,,51.4801,-3.1855,anonymous,EN,2,31,1,2,5737270f14f69e000d7bc08a,5,5,5,5,5,4,5,5,5,5,5,4,4,1,5,1,1,3,3,2,2,4,2,2,5,3,3,5,4,2,4,4,5,4,2,2,5737270f14f69e000d7bc08a
+2025-08-29 09:38:48,2025-08-29 09:41:28,0,80.0.43.202,100,160,1,2025-08-29 09:41:29,R_2ci2pr4mVciNuUS,,,,,51.4801,-3.1855,anonymous,EN,2,34,2,2,60c877753b4b7ace80a2e22c,5,5,4,5,5,5,5,4,4,3,5,4,5,1,2,1,1,3,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,2,1,60c877753b4b7ace80a2e22c
+2025-08-29 09:38:55,2025-08-29 09:42:02,0,82.10.204.151,100,187,1,2025-08-29 09:42:03,R_8QzZczTeYZQhdOd,,,,,53.4096,-2.9792,anonymous,EN,2,29,1,3,5bbe9a9570f8df0001c13f11,4,4,4,4,5,4,4,5,4,4,5,5,5,4,4,1,4,3,5,4,4,4,4,4,4,4,5,5,4,4,5,5,5,5,2,2,5bbe9a9570f8df0001c13f11
+2025-08-29 09:40:32,2025-08-29 09:42:14,0,86.179.11.219,100,101,1,2025-08-29 09:42:14,R_8CK80K3nioVvSgK,,,,,51.3793,0.1072,anonymous,EN,2,43,2,2,5ed9788e4ea9bd5183ca97e9,4,2,4,3,3,2,4,4,4,4,3,5,3,4,2,1,1,3,5,3,4,3,3,2,5,1,3,2,4,5,4,2,3,2,1,2,5ed9788e4ea9bd5183ca97e9
+2025-08-29 09:40:30,2025-08-29 09:42:57,0,77.99.238.14,100,147,1,2025-08-29 09:42:57,R_2ujbIAgUklWWCfD,,,,,51.4435,-0.3289,anonymous,EN,2,45,2,3,66b13e9ca1a27e58226f1761,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,1,5,3,4,4,5,4,4,4,4,4,4,4,4,4,4,5,4,5,3,2,66b13e9ca1a27e58226f1761
+2025-08-29 09:40:29,2025-08-29 09:43:15,0,86.186.72.67,100,166,1,2025-08-29 09:43:17,R_2y8Sy1VIebWxovK,,,,,53.1835,-2.5119,anonymous,EN,2,57,1,1,650064e9af85cff3692f07f9,5,4,4,4,4,5,3,4,4,4,3,4,3,4,4,1,4,4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,650064e9af85cff3692f07f9
+2025-08-29 09:38:54,2025-08-29 09:43:28,0,90.197.131.146,100,273,1,2025-08-29 09:43:28,R_2x3WjECU9IXeEwN,,,,,51.6251,-3.4723,anonymous,EN,2,69,1,2,59d6677d416c900001ea58f3,4,4,4,3,4,5,4,4,3,4,4,4,3,4,4,1,4,3,4,4,3,4,4,4,4,4,4,4,5,4,4,4,3,4,3,2,59d6677d416c900001ea58f3
+2025-08-29 09:40:57,2025-08-29 09:44:01,0,90.198.50.232,100,183,1,2025-08-29 09:44:02,R_8cbdjaNKb0hAxNO,,,,,52.4617,-1.843,anonymous,EN,2,55,2,2,59136492bfce7c0001aea83d,4,4,4,4,5,4,5,4,4,4,5,4,4,3,2,1,4,4,4,4,3,4,4,4,5,3,4,5,5,4,4,5,4,4,2,2,59136492bfce7c0001aea83d
+2025-08-29 09:38:53,2025-08-29 09:44:03,0,51.19.185.12,100,309,1,2025-08-29 09:44:03,R_2n2EklzZi23UUWE,,,,,56.5292,-3.0745,anonymous,EN,2,61,2,2,67dc687bd93f2802388b5117,3,5,4,4,4,4,5,5,4,4,5,5,5,4,4,1,3,4,2,2,3,3,2,3,4,3,2,3,5,2,2,5,5,5,3,2,67dc687bd93f2802388b5117
+2025-08-29 09:40:37,2025-08-29 09:44:37,0,86.148.210.58,100,239,1,2025-08-29 09:44:37,R_2t4dCBXiikSAbK1,,,,,52.4112,-4.0716,anonymous,EN,2,40,1,4,5bcda2ee6fd72000014996e4,4,4,4,4,4,4,4,4,4,4,3,4,4,4,4,1,2,4,3,3,2,3,3,4,4,3,3,4,4,2,3,4,4,4,2,2,5bcda2ee6fd72000014996e4
+2025-08-29 09:38:57,2025-08-29 09:45:18,0,94.14.173.127,100,381,1,2025-08-29 09:45:19,R_2g6A5yQfR9lXCPW,,,,,55.9439,-3.0515,anonymous,EN,2,51,2,2,680e1b9a36b987121bbc9c9a,4,3,4,4,4,3,3,5,4,4,4,4,5,2,2,1,2,1,2,2,2,2,4,3,3,3,2,4,4,3,4,2,2,3,2,2,680e1b9a36b987121bbc9c9a
+2025-08-29 10:09:16,2025-08-29 10:11:13,0,188.214.8.87,100,116,1,2025-08-29 10:11:13,R_2G9uIFa2TU9jQDg,,,,,51.5064,-0.02,anonymous,EN,2,27,2,2,5f83439c29a6a64ad16a0c74,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,1,4,3,1,2,2,4,2,4,4,2,2,2,4,2,4,1,1,5,1,2,5f83439c29a6a64ad16a0c74
+2025-08-29 10:09:40,2025-08-29 10:11:27,0,82.37.31.241,100,107,1,2025-08-29 10:11:27,R_2EYkrXjQLDhvdpH,,,,,51.5638,-0.0765,anonymous,EN,2,29,2,2,55c495d2fdf99b2d6cabb691,4,4,4,4,4,4,4,4,3,4,4,4,4,3,3,1,3,3,4,4,3,4,4,4,4,4,3,3,4,3,4,4,4,4,3,2,55c495d2fdf99b2d6cabb691
+2025-08-29 10:09:23,2025-08-29 10:11:55,0,95.214.231.91,100,151,1,2025-08-29 10:11:55,R_2dlGd5tIO3nw2HN,,,,,51.4626,-0.2059,anonymous,EN,2,42,1,2,63d13c076dd249ca3a6bffbb,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,1,3,1,2,3,3,3,3,3,4,4,3,3,3,4,3,4,4,4,2,2,63d13c076dd249ca3a6bffbb
+2025-08-29 10:09:24,2025-08-29 10:12:14,0,81.149.89.95,100,169,1,2025-08-29 10:12:14,R_8VR3JNqc1zBsYE1,,,,,51.5435,-0.1733,anonymous,EN,2,38,1,1,59b69d4fb269ef0001801733,4,5,4,4,5,4,5,4,5,4,4,3,5,3,3,1,4,3,3,4,4,4,3,2,4,2,2,4,5,3,5,2,2,3,3,2,59b69d4fb269ef0001801733
+2025-08-29 10:10:50,2025-08-29 10:12:23,0,104.28.86.109,100,93,1,2025-08-29 10:12:23,R_8l3FLpTbO8QybGe,,,,,51.3904,-0.0992,anonymous,EN,2,33,1,1,67129f965260be663a982f67,4,4,4,3,4,4,4,4,4,4,4,4,4,4,4,4,5,3,4,4,4,4,4,4,4,4,4,3,5,4,5,5,4,5,3,2,67129f965260be663a982f67
+2025-08-29 10:09:11,2025-08-29 10:12:28,0,62.49.230.226,100,196,1,2025-08-29 10:12:29,R_8hxizLPAYWtLt4d,,,,,51.4223,-0.1984,anonymous,EN,2,26,2,2,5a7226d9f660ae0001a9a547,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,1,5,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,2,2,5a7226d9f660ae0001a9a547
+2025-08-29 10:09:24,2025-08-29 10:12:39,0,82.16.87.202,100,195,1,2025-08-29 10:12:39,R_291cFyzDjpEfmWY,,,,,53.4698,-3.0024,anonymous,EN,2,41,2,1,5a0c4184fe645f0001e9f5dd,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,1,3,3,2,4,2,4,4,4,4,4,4,4,4,4,4,4,4,5,2,2,5a0c4184fe645f0001e9f5dd
+2025-08-29 10:09:19,2025-08-29 10:12:39,0,90.242.206.112,100,200,1,2025-08-29 10:12:40,R_8JPDyVw6CDqvczw,,,,,55.9999,-3.8906,anonymous,EN,2,32,1,1,5c77d238e926fc00170b4975,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,1,4,3,1,4,2,1,2,3,4,1,2,4,4,2,4,4,4,5,2,2,5c77d238e926fc00170b4975
+2025-08-29 10:09:18,2025-08-29 10:12:40,0,82.11.250.96,100,201,1,2025-08-29 10:12:40,R_8U7Mf0vAwBc0X6h,,,,,51.7783,0.1061,anonymous,EN,2,25,2,2,60ddb2f00524f416aef58a3e,3,4,3,3,4,4,4,3,3,4,4,4,3,4,5,1,2,3,3,5,4,5,4,5,5,4,3,4,5,5,5,5,5,4,4,2,60ddb2f00524f416aef58a3e
+2025-08-29 10:09:51,2025-08-29 10:12:47,0,82.5.183.80,100,175,1,2025-08-29 10:12:47,R_2ktEmXUKJMAokBl,,,,,51.2483,-1.1266,anonymous,EN,2,38,2,2,5e1f7b5450f6aa0122fcef8b,2,4,4,4,4,4,2,3,2,4,4,2,4,2,2,1,2,2,2,4,4,4,4,4,2,4,2,4,4,3,4,2,2,2,2,2,5e1f7b5450f6aa0122fcef8b
+2025-08-29 10:11:11,2025-08-29 10:13:01,0,92.26.218.8,100,110,1,2025-08-29 10:13:02,R_2SRKNzoQC2MqGit,,,,,51.43,-0.0492,anonymous,EN,2,49,2,1,5afbf02302b1b5000103e313,4,4,4,4,4,4,4,4,4,4,4,4,4,2,2,1,2,3,2,3,2,4,3,4,4,2,2,4,4,3,4,4,4,4,1,2,5afbf02302b1b5000103e313
+2025-08-29 10:10:00,2025-08-29 10:13:40,0,86.175.239.73,100,219,1,2025-08-29 10:13:40,R_2ZZ3n495vpARhYd,,,,,54.3281,-5.7153,anonymous,EN,2,62,2,1,5f4a9eb861da210d3496cb34,3,4,3,3,3,4,4,4,2,4,3,4,3,4,5,1,4,3,4,3,4,3,3,3,4,3,3,4,4,4,3,4,4,4,2,2,5f4a9eb861da210d3496cb34
+2025-08-29 10:09:26,2025-08-29 10:13:41,0,80.4.241.128,100,254,1,2025-08-29 10:13:41,R_8x1T9GmOPR9OogN,,,,,51.753,-0.3256,anonymous,EN,2,71,1,1,622a29743b7c0ca5eee56e24,2,3,4,4,4,4,3,3,3,3,3,4,4,4,4,1,3,1,2,2,2,1,2,3,2,1,2,2,2,2,1,3,3,4,1,2,622a29743b7c0ca5eee56e24
+2025-08-29 10:11:42,2025-08-29 10:13:44,0,86.167.233.51,100,121,1,2025-08-29 10:13:44,R_29h3ZOEHDaaGCRz,,,,,51.4719,-0.1616,anonymous,EN,2,25,2,2,5fe7bc4ec39215684de426f4,1,2,3,3,3,3,3,2,3,3,3,2,3,2,2,1,2,4,5,3,4,5,5,3,4,5,3,3,5,4,4,5,5,5,2,2,5fe7bc4ec39215684de426f4
+2025-08-29 10:09:57,2025-08-29 10:13:46,0,77.98.108.212,100,229,1,2025-08-29 10:13:46,R_8kcw0CAXSlDMdyg,,,,,51.4674,-0.3556,anonymous,EN,2,55,2,1,5ceac2dd06aa230001363420,3,4,4,4,4,3,4,4,4,4,4,3,4,4,3,1,3,3,3,4,3,3,3,4,4,3,4,4,3,4,3,4,4,4,3,2,5ceac2dd06aa230001363420
+2025-08-29 10:11:14,2025-08-29 10:13:52,0,51.7.74.245,100,157,1,2025-08-29 10:13:52,R_8CZW41fdxtnWtXo,,,,,53.6771,-1.9208,anonymous,EN,2,36,1,2,60524a9ece19f6b376473cf7,4,4,4,5,4,4,5,5,5,5,5,4,4,4,4,1,2,2,4,4,4,4,4,4,4,4,4,4,4,4,4,5,5,5,3,2,60524a9ece19f6b376473cf7
+2025-08-29 10:09:33,2025-08-29 10:13:53,0,86.11.176.21,100,259,1,2025-08-29 10:13:53,R_24OhxOrZe8Q6voy,,,,,51.6555,-0.3893,anonymous,EN,2,58,2,2,66dbaacdf336df22101e14d3,3,3,4,4,4,4,4,4,4,4,5,4,4,3,3,1,2,2,2,2,2,2,2,2,2,2,2,2,5,3,2,4,4,4,2,2,66dbaacdf336df22101e14d3
+2025-08-29 10:09:18,2025-08-29 10:13:56,0,46.208.190.123,100,277,1,2025-08-29 10:13:56,R_2qkt10xw5HAf5fn,,,,,55.9947,-3.7758,anonymous,EN,2,66,2,2,5e1e5c3c80e02e1c36679187,4,4,4,4,4,4,4,4,4,4,3,3,4,2,2,1,2,2,3,4,3,3,3,4,3,3,3,3,4,3,3,2,2,2,3,2,5e1e5c3c80e02e1c36679187
+2025-08-29 10:11:14,2025-08-29 10:14:10,0,86.30.75.102,100,176,1,2025-08-29 10:14:11,R_8maAICihE4mOW9I,,,,,51.8702,0.9006,anonymous,EN,2,45,1,2,63174af7d57182f9bf90c094,2,4,4,4,5,4,5,4,4,4,4,4,4,4,4,1,4,3,2,4,4,4,4,4,4,4,4,4,4,4,4,4,5,5,4,2,63174af7d57182f9bf90c094
+2025-08-29 10:09:55,2025-08-29 10:14:14,0,86.16.48.187,100,258,1,2025-08-29 10:14:14,R_2t2U9cPOWk7oV6Q,,,,,52.519,-1.9094,anonymous,EN,2,42,1,1,5fbf90f025a567296d943c7e,4,5,4,4,5,5,5,5,5,5,4,4,5,5,2,1,3,3,4,4,4,5,5,5,4,5,4,5,4,4,4,3,3,3,2,2,5fbf90f025a567296d943c7e
+2025-08-29 10:09:35,2025-08-29 10:14:55,0,82.43.112.33,100,320,1,2025-08-29 10:14:56,R_8f1BxIDp3a28MfP,,,,,53.4972,-1.1808,anonymous,EN,2,65,1,3,6786682cfe5424ad10237085,4,4,4,4,4,4,4,4,5,3,4,3,4,3,2,1,3,2,2,3,1,4,2,4,3,4,3,3,4,4,3,3,4,5,2,2,6786682cfe5424ad10237085
+2025-08-29 13:31:49,2025-08-29 13:32:01,0,176.27.135.157,100,11,1,2025-08-29 13:32:01,R_8gH0Jl1RNWV2Lwl,,,,,55.7645,-4.0318,anonymous,EN,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,66fc4c33d23e6dbcc76af82b
+2025-08-29 13:31:38,2025-08-29 13:33:37,0,90.195.180.147,100,119,1,2025-08-29 13:33:38,R_2WSqgkbglfzwyqJ,,,,,53.2827,-3.0433,anonymous,EN,2,47,1,2,6659cc755e12f99a9efc39e5,3,3,4,4,3,3,3,3,3,4,4,3,3,4,3,1,2,3,3,3,3,3,4,3,3,3,3,3,3,3,4,2,3,3,2,2,6659cc755e12f99a9efc39e5
+2025-08-29 13:31:36,2025-08-29 13:34:04,0,90.254.92.198,100,148,1,2025-08-29 13:34:05,R_8vjC3VdKc847wER,,,,,52.5664,-2.0662,anonymous,EN,2,34,1,2,5c4f5967aac8be0001716a65,5,4,1,5,5,5,4,4,4,4,5,5,3,5,5,1,5,4,2,2,2,3,4,4,3,2,3,4,2,2,3,4,4,4,1,2,5c4f5967aac8be0001716a65
+2025-08-29 13:31:47,2025-08-29 13:34:20,0,79.135.127.33,100,152,1,2025-08-29 13:34:20,R_8isSI0XjVmQj07r,,,,,51.9414,1.2834,anonymous,EN,2,58,1,2,5b9d57e5737d030001ad2cbf,4,4,4,4,4,4,4,3,5,4,4,4,4,1,1,1,1,3,3,3,4,3,3,4,2,2,1,4,4,1,3,4,4,4,2,2,5b9d57e5737d030001ad2cbf
+2025-08-29 13:31:46,2025-08-29 13:34:33,0,86.0.135.41,100,166,1,2025-08-29 13:34:33,R_8tF0wejOWuPF3Qh,,,,,56.0648,-3.4489,anonymous,EN,2,38,2,2,61601f0ddc31a716116888f1,1,1,1,2,1,1,2,4,1,2,2,1,1,2,2,1,3,1,1,2,1,1,1,1,2,3,1,1,2,2,1,5,5,5,2,2,61601f0ddc31a716116888f1
+2025-08-29 13:31:48,2025-08-29 13:34:39,0,5.151.197.52,100,170,1,2025-08-29 13:34:39,R_8EgTnLQdlmBgD29,,,,,50.3762,-4.1755,anonymous,EN,2,21,1,3,676c7da865c13c570db0242b,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,1,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,1,676c7da865c13c570db0242b
+2025-08-29 13:31:49,2025-08-29 13:34:40,0,93.96.106.234,100,170,1,2025-08-29 13:34:40,R_8EmorOmaxBTOq2X,,,,,52.539,-1.9883,anonymous,EN,2,41,2,2,6012d27152fa5e09eb6a29e0,5,4,4,4,4,4,4,4,4,4,4,4,4,5,4,1,4,3,4,4,3,4,4,4,4,4,4,4,4,4,4,3,3,4,1,2,6012d27152fa5e09eb6a29e0
+2025-08-29 13:32:31,2025-08-29 13:35:03,0,45.143.112.141,100,152,1,2025-08-29 13:35:04,R_8f7ZKzXlRCXnQ5J,,,,,51.3499,-2.6934,anonymous,EN,2,70,2,2,66c8a81f25959e5f183e2bb3,5,5,5,5,4,5,5,5,5,5,5,5,5,4,4,1,3,4,5,4,4,5,3,4,5,4,4,5,4,5,4,5,5,5,3,2,66c8a81f25959e5f183e2bb3
+2025-08-29 13:32:13,2025-08-29 13:35:07,0,176.27.135.157,100,174,1,2025-08-29 13:35:08,R_2dZdycvE2hq9iMw,,,,,55.7645,-4.0318,anonymous,EN,2,63,1,1,66fc4c33d23e6dbcc76af82b,4,3,4,3,4,3,4,3,4,3,4,4,4,4,4,1,4,4,3,3,4,4,3,3,5,3,3,4,5,3,3,5,4,5,4,1,66fc4c33d23e6dbcc76af82b
+2025-08-29 13:31:49,2025-08-29 13:35:23,0,176.254.91.106,100,214,1,2025-08-29 13:35:24,R_8PzTcDrJq7s5y8Z,,,,,52.6494,-1.1203,anonymous,EN,2,34,2,2,5eab170759f5390b776df5a1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,2,5eab170759f5390b776df5a1
+2025-08-29 13:32:37,2025-08-29 13:35:36,0,83.106.36.38,100,178,1,2025-08-29 13:35:36,R_2EAzLLiGPHlFsA6,,,,,53.373,-3.1013,anonymous,EN,2,25,2,3,5f11eb333c6e2c0df5b92270,4,4,5,5,5,4,5,5,4,4,5,3,5,2,4,1,2,3,2,5,2,5,5,5,5,5,3,5,5,4,4,5,5,5,1,2,5f11eb333c6e2c0df5b92270
+2025-08-29 13:31:49,2025-08-29 13:35:43,0,82.30.85.1,100,234,1,2025-08-29 13:35:44,R_8z3TvaXhJd5Wkvv,,,,,52.0444,1.1273,anonymous,EN,2,52,1,1,6266b7c4afe8a0ff03ca1f53,4,4,5,4,4,4,5,5,5,4,4,3,4,5,4,1,2,4,1,1,1,1,2,1,4,1,1,4,5,1,4,4,4,5,1,2,6266b7c4afe8a0ff03ca1f53
+2025-08-29 13:31:41,2025-08-29 13:36:09,0,2.101.90.137,100,267,1,2025-08-29 13:36:09,R_8AFImEA3kMqUYFD,,,,,51.5384,-0.039,anonymous,EN,2,77,2,2,67db2ea56e3dd10aeebf61ab,2,3,3,4,2,4,4,4,2,3,3,4,5,3,3,1,1,2,1,4,3,3,3,3,2,2,2,3,4,2,4,4,4,5,1,1,67db2ea56e3dd10aeebf61ab
+2025-08-29 13:33:10,2025-08-29 13:36:19,0,193.237.154.2,100,188,1,2025-08-29 13:36:20,R_8mLCW8kbJlOSzQR,,,,,51.5803,0.7193,anonymous,EN,2,33,1,2,672f246d1d67d71960402ef8,3,3,3,2,4,4,3,3,4,3,3,4,3,3,2,1,2,3,3,3,2,3,2,2,4,2,2,3,4,4,2,4,4,4,3,2,672f246d1d67d71960402ef8
+2025-08-29 13:36:17,2025-08-29 13:36:23,0,94.174.192.83,100,5,1,2025-08-29 13:36:23,R_2LpXSUUk7qE4Z5p,,,,,51.4638,0.1434,anonymous,EN,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,66a356f556472a46c90f7f44
+2025-08-29 13:33:48,2025-08-29 13:36:34,0,78.151.29.80,100,165,1,2025-08-29 13:36:34,R_20ZjWSugYptLeVv,,,,,53.5029,-2.6455,anonymous,EN,2,24,2,2,672946ef8187e4253c5ff800,5,4,4,4,5,5,5,5,5,4,4,4,5,5,5,1,4,4,5,5,5,5,4,4,5,5,5,5,5,4,5,5,5,5,4,2,672946ef8187e4253c5ff800
+2025-08-29 13:32:53,2025-08-29 13:36:45,0,81.96.11.103,100,231,1,2025-08-29 13:36:45,R_2f9XALPdtBUvjO2,,,,,55.0345,-1.4285,anonymous,EN,2,64,2,2,5d2f85f28e588a0019164d77,5,5,5,4,5,5,4,5,5,4,5,4,5,3,3,1,2,3,1,1,3,4,1,1,5,1,1,3,5,3,3,5,5,5,2,2,5d2f85f28e588a0019164d77
+2025-08-29 13:32:48,2025-08-29 13:36:53,0,46.233.91.99,100,244,1,2025-08-29 13:36:53,R_8W4hUGRjLkQZG3n,,,,,51.4743,-0.0928,anonymous,EN,2,64,2,2,5b9e4dc6e671c60001228654,4,4,4,4,4,4,4,4,4,4,3,4,3,4,4,1,2,3,2,2,2,3,2,4,4,2,2,3,5,2,5,4,4,4,2,2,5b9e4dc6e671c60001228654
+2025-08-29 13:33:14,2025-08-29 13:37:47,0,89.243.150.120,100,272,1,2025-08-29 13:37:48,R_2lsCjYotERhgAY9,,,,,52.8996,-1.2714,anonymous,EN,2,72,2,2,5f1b05a8703c380d1393bb27,5,5,4,5,5,5,5,5,5,5,5,5,5,4,4,1,4,3,5,5,3,4,5,5,5,5,4,4,5,5,5,4,5,5,2,2,5f1b05a8703c380d1393bb27
+2025-08-29 13:31:44,2025-08-29 13:37:52,0,81.187.237.189,100,368,1,2025-08-29 13:37:52,R_8IY7r3wyJbbbQup,,,,,51.6,-0.2167,anonymous,EN,2,75,2,2,5c5cad3e4ee81200018eafe2,4,5,4,4,4,4,4,5,4,4,4,4,4,3,3,1,2,3,2,2,2,5,2,4,5,2,2,4,5,3,5,3,3,5,4,2,5c5cad3e4ee81200018eafe2
+2025-08-29 13:33:41,2025-08-29 13:37:58,0,86.12.176.180,100,257,1,2025-08-29 13:37:58,R_2t6kzJVTQLzspxb,,,,,53.5866,-2.4354,anonymous,EN,2,56,2,2,669abbd715fcf110f94bba86,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,3,3,2,3,2,3,2,3,4,2,1,4,4,3,4,5,5,5,3,2,669abbd715fcf110f94bba86
+2025-08-29 13:33:17,2025-08-29 13:38:12,0,95.214.228.233,100,294,1,2025-08-29 13:38:13,R_2ffBlKlWJuACSo4,,,,,51.4626,-0.2059,anonymous,EN,2,41,2,2,5ab87be55cd105000161a5a8,3,4,2,2,4,2,3,3,3,2,3,2,4,2,2,1,3,4,5,5,5,5,5,5,5,5,5,5,5,5,5,4,3,5,4,2,5ab87be55cd105000161a5a8
+2025-08-29 13:34:27,2025-08-29 13:38:48,0,78.144.158.137,100,261,1,2025-08-29 13:38:49,R_8qlmgWTwXXcCehe,,,,,53.3488,-1.4091,anonymous,EN,2,56,1,1,6672d8e448c47131ea7bae78,4,4,5,5,4,4,4,4,4,4,5,3,3,4,5,1,4,3,3,4,2,3,2,4,3,2,3,3,3,3,3,3,4,4,1,2,6672d8e448c47131ea7bae78
+2025-08-29 13:34:20,2025-08-29 13:38:57,0,92.236.78.240,100,276,1,2025-08-29 13:38:57,R_8kKPqHkMsPnsRLM,,,,,56.4806,-2.9358,anonymous,EN,2,40,1,2,610678bb1bfc5138d4957250,4,3,5,5,4,4,3,5,2,4,4,3,4,4,4,1,4,3,3,2,2,2,3,4,4,2,3,2,5,3,4,5,5,5,2,2,610678bb1bfc5138d4957250
+2025-08-29 13:36:29,2025-08-29 13:39:07,0,86.29.234.182,100,158,1,2025-08-29 13:39:08,R_2VCG5dHjfr6SeUV,,,,,52.6726,-2.4488,anonymous,EN,2,38,1,2,5ec1a76a903b335cae864ca8,3,4,4,3,4,3,4,5,3,4,4,4,4,4,4,1,2,2,2,1,2,3,2,4,3,2,1,4,4,3,4,4,4,4,1,2,5ec1a76a903b335cae864ca8
+2025-08-29 13:36:26,2025-08-29 13:39:09,0,94.174.192.83,100,162,1,2025-08-29 13:39:09,R_2GqYFigEH2k6Tt3,,,,,51.4638,0.1434,anonymous,EN,2,57,1,2,66a356f556472a46c90f7f44,4,4,4,4,4,4,5,5,5,5,5,4,4,5,5,1,5,4,3,3,4,3,3,3,5,5,3,4,5,5,4,5,5,4,3,2,66a356f556472a46c90f7f44
+2025-08-29 13:37:55,2025-08-29 13:40:51,0,31.49.76.89,100,175,1,2025-08-29 13:40:51,R_8dYEHs3cOkWUUIF,,,,,52.6513,-1.0876,anonymous,EN,2,34,2,3,665cee5fd03ef20ed8cff4df,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,1,5,3,3,3,4,3,2,2,2,2,2,3,5,4,5,4,4,5,3,2,665cee5fd03ef20ed8cff4df
+2025-08-29 13:33:11,2025-08-29 13:41:38,0,81.102.160.224,100,507,1,2025-08-29 13:41:39,R_2411NaTtvqzxk6L,,,,,50.368,-4.1329,anonymous,EN,2,43,2,2,5b97f2375612b30001acc4c9,4,4,5,4,4,4,4,5,4,4,4,4,4,2,3,1,3,3,4,4,4,4,4,4,3,4,4,4,5,4,4,4,3,3,3,2,5b97f2375612b30001acc4c9
+2025-08-29 13:41:52,2025-08-29 13:44:00,0,82.132.245.13,100,127,1,2025-08-29 13:44:00,R_8LSIoI2lnx3nUWd,,,,,52.4867,-1.8989,anonymous,EN,2,30,1,2,6346883183e9dda2b38f6c40,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,1,4,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,2,6346883183e9dda2b38f6c40
+2025-08-29 13:41:52,2025-08-29 13:44:06,0,143.159.50.159,100,133,1,2025-08-29 13:44:06,R_25SE4UJYFaencqZ,,,,,51.1003,-1.8785,anonymous,EN,2,36,2,1,5d31dc6e42678e001a0bdedd,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,1,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,2,5d31dc6e42678e001a0bdedd
+2025-08-29 13:44:00,2025-08-29 13:52:23,0,94.3.233.200,100,503,1,2025-08-29 13:52:24,R_8EQ8zWC3UHycSsh,,,,,52.0618,1.156,anonymous,EN,2,41,1,1,58bef6fd31de840001e84ba0,3,5,5,3,5,3,5,5,3,5,5,3,4,5,5,1,1,3,3,3,4,5,1,5,4,2,1,5,5,3,3,5,5,5,1,2,58bef6fd31de840001e84ba0
+2025-08-29 13:55:19,2025-08-29 13:57:02,0,109.152.44.220,100,103,1,2025-08-29 13:57:03,R_2rUmqSHffC95BuF,,,,,51.1492,-0.9687,anonymous,EN,2,32,2,1,5efde724d80f81077c0800b9,4,3,4,3,4,4,3,4,2,3,4,3,3,4,4,1,4,2,1,4,4,4,3,3,5,4,4,4,4,4,4,2,3,4,2,2,5efde724d80f81077c0800b9
+2025-08-29 13:55:26,2025-08-29 13:58:18,0,146.90.104.172,100,171,1,2025-08-29 13:58:18,R_2ANEmYEcXzX0kRm,,,,,52.1894,-2.2451,anonymous,EN,2,33,2,2,59e7302d0fb3a90001bd981b,5,5,5,5,4,5,4,5,5,5,5,5,4,5,3,1,3,3,5,5,5,3,5,5,5,5,5,5,5,5,5,5,4,5,4,2,59e7302d0fb3a90001bd981b

@@ -1,0 +1,178 @@
+StartDate,EndDate,Status,IPAddress,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,RecipientLastName,RecipientFirstName,RecipientEmail,ExternalReference,LocationLatitude,LocationLongitude,DistributionChannel,UserLanguage,"Consent ","Age ","Gender ",OMSI,"Prolific ID ",C _1,C _2,C _3,C _4,C _5,C _6,C _7,C _8,C _9,C _10,C _11,C _12,C _13,C _14,C _15,C _16,C _17,"C_Rel ",S_1,S_2,S_3,S_4,S_5,S_6,S_7,S_8,S_9,S_10,S_11,S_12,S_13,S_14,S_15,S_16,S_Rel,Music check,PROLIFIC_PID
+Start Date,End Date,Response Type,IP Address,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Recipient Last Name,Recipient First Name,Recipient Email,External Data Reference,Location Latitude,Location Longitude,Distribution Channel,User Language,Do you consent to participating?,"What is your age? (e.g., 99)",What is your gender?,"In terms of your musical interest and expertise, which title best describes you?","What is your prolific ID?
+Please note that this response should auto-fill with the correct ID","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - I felt like a member of a group while listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - I felt a bond with the other people listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music made me feel more connected with those around me","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - I felt more connected with other people because of the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - I felt connected to the people I was sharing this musical experience with","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - I felt connected with people who also listen to this music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music made me feel connected to my peers or family","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music brought people together","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music made me feel more connected to a group","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music helped me feel closer to people","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music made me feel connected to the people I care about","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music made me feel like I belonged","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - I felt a special connection to the people I shared this music with","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - Listening to music made me feel less lonely","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - The music helped me feel less lonely","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - If you see this statement then select strongly disagree as your answer","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While with your friends at a cafe, a particular song comes on. You instantly recognise the music from your past, leading to an exchange of stories about your experiences together. - I used the music to keep me company",How relevant was the scenario based on your own life experience?,"Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - I felt like a member of a group while listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - I felt a bond with the other people listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music made me feel more connected with those around me","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - I felt more connected with other people because of the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - I felt connected to the people I was sharing this musical experience with","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - I felt connected with people who also listen to this music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music made me feel connected to my peers or family","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music brought people together","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music made me feel more connected to a group","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music helped me feel closer to people","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music made me feel connected to the people I care about","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music made me feel like I belonged","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - I felt a special connection to the people I shared this music with","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - Listening to music made me feel less lonely","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - The music helped me feel less lonely","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you. - I used the music to keep me company",How relevant was the scenario based on your own life experience?,Did you listen to music while completing this survey?,PROLIFIC_PID
+"{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""status""}","{""ImportId"":""ipAddress""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""_recordId""}","{""ImportId"":""recipientLastName""}","{""ImportId"":""recipientFirstName""}","{""ImportId"":""recipientEmail""}","{""ImportId"":""externalDataReference""}","{""ImportId"":""locationLatitude""}","{""ImportId"":""locationLongitude""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID1218656807""}","{""ImportId"":""QID1218656808_TEXT""}","{""ImportId"":""QID1218656809""}","{""ImportId"":""QID1218656810""}","{""ImportId"":""QID1218656811_TEXT""}","{""ImportId"":""QID1218656816_1""}","{""ImportId"":""QID1218656816_2""}","{""ImportId"":""QID1218656816_3""}","{""ImportId"":""QID1218656816_4""}","{""ImportId"":""QID1218656816_5""}","{""ImportId"":""QID1218656816_6""}","{""ImportId"":""QID1218656816_7""}","{""ImportId"":""QID1218656816_8""}","{""ImportId"":""QID1218656816_9""}","{""ImportId"":""QID1218656816_10""}","{""ImportId"":""QID1218656816_11""}","{""ImportId"":""QID1218656816_12""}","{""ImportId"":""QID1218656816_13""}","{""ImportId"":""QID1218656816_14""}","{""ImportId"":""QID1218656816_15""}","{""ImportId"":""QID1218656816_16""}","{""ImportId"":""QID1218656816_17""}","{""ImportId"":""QID1218656817""}","{""ImportId"":""QID11_1""}","{""ImportId"":""QID11_2""}","{""ImportId"":""QID11_3""}","{""ImportId"":""QID11_4""}","{""ImportId"":""QID11_5""}","{""ImportId"":""QID11_6""}","{""ImportId"":""QID11_7""}","{""ImportId"":""QID11_8""}","{""ImportId"":""QID11_9""}","{""ImportId"":""QID11_10""}","{""ImportId"":""QID11_11""}","{""ImportId"":""QID11_12""}","{""ImportId"":""QID11_13""}","{""ImportId"":""QID11_14""}","{""ImportId"":""QID11_15""}","{""ImportId"":""QID11_16""}","{""ImportId"":""QID12""}","{""ImportId"":""QID1218656845""}","{""ImportId"":""PROLIFIC_PID""}"
+2025-08-29 05:23:57,2025-08-29 05:24:55,0,129.234.0.212,100,58,1,2025-08-29 05:24:55,R_220S8vxfilHvg0V,,,,,54.7757,-1.5781,anonymous,EN,2,99,5,6,6847fbd96237884b522218cf,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,4,2,6847fbd96237884b522218cf
+2025-08-29 05:26:11,2025-08-29 05:26:49,0,129.234.0.212,100,37,1,2025-08-29 05:26:49,R_8bTYRDZE1p4uvUl,,,,,54.7757,-1.5781,anonymous,EN,2,99,5,6,6847fbd96237884b522218cf,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,4,2,6847fbd96237884b522218cf
+2025-08-29 07:42:40,2025-08-29 07:43:31,0,129.234.0.212,100,50,1,2025-08-29 07:43:31,R_22QBv2fMm9R0Gho,,,,,54.7757,-1.5781,anonymous,EN,2,99,5,6,6847fbd96237884b522218cf,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,4,2,6847fbd96237884b522218cf
+2025-08-29 09:22:40,2025-08-29 09:23:36,0,129.234.0.212,100,56,1,2025-08-29 09:23:37,R_2i8u5TwQNBTjPV9,,,,,54.7757,-1.5781,anonymous,EN,2,99,5,6,6847fbd96237884b522218cf,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,2,6847fbd96237884b522218cf
+2025-08-29 09:28:30,2025-08-29 09:30:37,0,217.44.151.171,100,126,1,2025-08-29 09:30:37,R_2dkxagr5Aor4OnD,,,,,52.2718,-3.0058,anonymous,EN,2,28,2,2,676b1de2c7e0e0fed8203575,3,4,3,4,3,5,3,4,4,3,4,3,5,3,4,1,3,2,3,3,3,4,3,4,3,3,3,5,4,3,3,4,4,4,1,2,676b1de2c7e0e0fed8203575
+2025-08-29 09:28:52,2025-08-29 09:31:01,0,185.126.160.41,100,128,1,2025-08-29 09:31:01,R_2OIPfc1uMc2A1Vj,,,,,51.7994,-4.9658,anonymous,EN,2,44,1,4,654f89d4924d0d5a050f375d,5,5,5,5,4,4,5,4,5,5,5,5,5,5,5,4,5,3,3,5,5,5,4,5,4,5,5,5,4,4,5,5,5,5,4,2,654f89d4924d0d5a050f375d
+2025-08-29 09:28:35,2025-08-29 09:31:37,0,82.133.14.205,100,181,1,2025-08-29 09:31:37,R_2neXSTCdxYbv7z3,,,,,52.3325,-0.1844,anonymous,EN,2,54,1,1,5cfde288bab656000198b943,4,4,4,4,4,5,4,4,4,3,3,3,4,2,2,1,1,3,1,1,2,3,1,5,4,1,2,4,5,4,1,4,4,4,2,2,5cfde288bab656000198b943
+2025-08-29 09:29:45,2025-08-29 09:32:04,0,86.133.220.71,100,139,1,2025-08-29 09:32:05,R_8j7IzUpTUM7aDm6,,,,,51.1658,-1.7847,anonymous,EN,2,48,1,2,5be4c588854f100001537d04,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,1,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,2,5be4c588854f100001537d04
+2025-08-29 09:30:14,2025-08-29 09:34:24,0,2.219.52.203,100,250,1,2025-08-29 09:34:24,R_8E68O7w6yxS2WJW,,,,,51.4017,-0.1624,anonymous,EN,2,53,2,2,56eb00e515ef53000b46726c,4,5,3,4,4,4,4,4,3,4,4,4,5,3,3,1,2,4,2,3,2,4,3,3,2,3,3,4,4,3,3,4,4,4,2,2,56eb00e515ef53000b46726c

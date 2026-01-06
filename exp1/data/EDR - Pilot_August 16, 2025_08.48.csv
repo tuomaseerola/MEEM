@@ -1,0 +1,349 @@
+StartDate,EndDate,Status,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,DistributionChannel,UserLanguage,"Consent ",ID,"Age ",Gender,OMSI10 ,D _1,D _2,D _3,D _4,D _5,D _6,D _7,D _8,D _9,D _10,D _11,D _12,D _13,D _14,D _15,D _16,D _17,D _18,D _19,D _20,D _21,D _22,"D_Rep ",R _1,R _2,R _3,R _4,R _5,R _6,R _7,R _8,R _9,R _10,R _11,R _12,R _13,R _14,R _15,R _16,R _17,R _18,R _19,R _20,R _21,R _22,R_Rel ,E_1,E_2,E_3,E_4,E_5,E_6,E_7,E_8,E_9,E_10,E_11,E_12,E_13,E_14,E_15,E_16,E_17,E_18,E_19,E_20,E_21,E_22,E_Rel,"Music check ",PROLIFIC_PID
+Start Date,End Date,Response Type,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Distribution Channel,User Language,Do you consent to participating?,"What is your prolific ID?
+Please note that this response should auto-fill with the correct ID","What is your age? (e.g., 99)",What is your gender?,"In terms of your musical interest and expertise, which title best describes you?","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - Listening to music was a good way of entertaining myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - The music gave me pleasure","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I enjoyed how the music made me feel","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I was delighted by the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I felt like I was enjoying myself because of the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I was having a good time listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I used the music to have a good time","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - The music made me feel calm or relaxed","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I used the music to soothe my mind","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I was using the music to relax","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I used the music to calm myself down and relax","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - Listening to the music helped me recharge","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - Relaxing with the music made me feel better","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - Music provided a relaxing mood","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - The music helped me break away from the situation","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - The music pushed my worries aside","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - The music allowed me to escape from my daily routines","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - Music distracted my mind from the outside world","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I wanted to have background music on to distract myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - Music acted as a mental shield against my distressing thoughts","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I wanted the music to help me forget what I was doing","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - The music made me forget what I was thinking about",How relevant was the scenario based on your own life experience?,"Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - Listening to music was a good way of entertaining myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - The music gave me pleasure","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I enjoyed how the music made me feel","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I was delighted by the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I felt like I was enjoying myself because of the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I was having a good time listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I used the music to have a good time","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - The music made me feel calm or relaxed","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I used the music to soothe my mind","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I was using the music to relax","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I used the music to calm myself down and relax","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - Listening to the music helped me recharge","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - Relaxing with the music made me feel better","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - Music provided a relaxing mood","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - The music helped me break away from the situation","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - The music pushed my worries aside","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - The music allowed me to escape from my daily routines","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - Music distracted my mind from the outside world","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I wanted to have background music on to distract myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - Music acted as a mental shield against my distressing thoughts","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I wanted the music to help me forget what I was doing","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - The music made me forget what I was thinking about",How relevant was the scenario based on your own life experience?,"Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - Listening to music was a good way of entertaining myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - The music gave me pleasure","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I enjoyed how the music made me feel","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I was delighted by the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I felt like I was enjoying myself because of the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I was having a good time listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I used the music to have a good time","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - The music made me feel calm or relaxed","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I used the music to soothe my mind","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I was using the music to relax","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I used the music to calm myself down and relax","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - Listening to the music helped me recharge","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - Relaxing with the music made me feel better","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - Music provided a relaxing mood","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - The music helped me break away from the situation","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - The music pushed my worries aside","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - The music allowed me to escape from my daily routines","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - Music distracted my mind from the outside world","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I wanted to have background music on to distract myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - Music acted as a mental shield against my distressing thoughts","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I wanted the music to help me forget what I was doing","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - The music made me forget what I was thinking about",How relevant was the scenario based on your own life experience?,Did you listen to music while completing this survey?,PROLIFIC_PID
+"{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""status""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""_recordId""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID34""}","{""ImportId"":""QID37_TEXT""}","{""ImportId"":""QID1_TEXT""}","{""ImportId"":""QID3""}","{""ImportId"":""QID4""}","{""ImportId"":""QID36_1""}","{""ImportId"":""QID36_2""}","{""ImportId"":""QID36_3""}","{""ImportId"":""QID36_4""}","{""ImportId"":""QID36_5""}","{""ImportId"":""QID36_6""}","{""ImportId"":""QID36_7""}","{""ImportId"":""QID36_8""}","{""ImportId"":""QID36_9""}","{""ImportId"":""QID36_10""}","{""ImportId"":""QID36_11""}","{""ImportId"":""QID36_12""}","{""ImportId"":""QID36_13""}","{""ImportId"":""QID36_14""}","{""ImportId"":""QID36_15""}","{""ImportId"":""QID36_16""}","{""ImportId"":""QID36_17""}","{""ImportId"":""QID36_18""}","{""ImportId"":""QID36_19""}","{""ImportId"":""QID36_20""}","{""ImportId"":""QID36_21""}","{""ImportId"":""QID36_22""}","{""ImportId"":""QID41""}","{""ImportId"":""QID35_1""}","{""ImportId"":""QID35_2""}","{""ImportId"":""QID35_3""}","{""ImportId"":""QID35_4""}","{""ImportId"":""QID35_5""}","{""ImportId"":""QID35_6""}","{""ImportId"":""QID35_7""}","{""ImportId"":""QID35_8""}","{""ImportId"":""QID35_9""}","{""ImportId"":""QID35_10""}","{""ImportId"":""QID35_11""}","{""ImportId"":""QID35_12""}","{""ImportId"":""QID35_13""}","{""ImportId"":""QID35_14""}","{""ImportId"":""QID35_15""}","{""ImportId"":""QID35_16""}","{""ImportId"":""QID35_17""}","{""ImportId"":""QID35_18""}","{""ImportId"":""QID35_19""}","{""ImportId"":""QID35_20""}","{""ImportId"":""QID35_21""}","{""ImportId"":""QID35_22""}","{""ImportId"":""QID40""}","{""ImportId"":""QID5_1""}","{""ImportId"":""QID5_2""}","{""ImportId"":""QID5_3""}","{""ImportId"":""QID5_4""}","{""ImportId"":""QID5_5""}","{""ImportId"":""QID5_6""}","{""ImportId"":""QID5_7""}","{""ImportId"":""QID5_8""}","{""ImportId"":""QID5_9""}","{""ImportId"":""QID5_10""}","{""ImportId"":""QID5_11""}","{""ImportId"":""QID5_12""}","{""ImportId"":""QID5_13""}","{""ImportId"":""QID5_14""}","{""ImportId"":""QID5_15""}","{""ImportId"":""QID5_16""}","{""ImportId"":""QID5_17""}","{""ImportId"":""QID5_18""}","{""ImportId"":""QID5_19""}","{""ImportId"":""QID5_20""}","{""ImportId"":""QID5_21""}","{""ImportId"":""QID5_22""}","{""ImportId"":""QID38""}","{""ImportId"":""QID42""}","{""ImportId"":""PROLIFIC_PID""}"
+2025-05-21 03:07:30,2025-05-21 03:14:50,1,100,439,1,2025-05-21 03:14:51,R_8tZQWbJuELBKL7z,preview,EN,2,,,1,5,2,3,3,2,4,2,3,4,5,3,4,3,4,4,5,5,2,5,5,5,5,4,,4,4,4,3,4,4,5,5,5,5,5,5,5,5,3,4,3,4,2,2,3,4,,5,5,5,5,5,5,5,3,3,4,2,3,4,4,2,4,4,4,3,1,3,3,,,
+2025-05-21 03:21:07,2025-05-21 03:31:31,1,100,624,1,2025-05-21 03:31:31,R_8b0siV2R4hGK3VD,preview,EN,2,,,2,3,4,2,4,1,2,4,2,5,5,5,5,2,5,5,5,5,5,5,5,5,5,5,,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,4,5,,5,5,5,5,5,5,5,5,3,4,4,4,4,5,1,3,2,4,1,3,1,1,,,
+2025-05-21 04:31:06,2025-05-21 04:36:46,0,100,340,1,2025-05-21 04:36:47,R_8w9UKRNjAvIIHkd,anonymous,EN,2,,,1,3,5,3,3,3,4,3,4,5,4,4,3,3,3,3,4,4,5,5,5,4,5,5,,4,4,4,5,4,4,4,5,4,5,4,4,5,4,4,5,3,5,2,3,5,4,,5,4,4,5,5,4,4,3,2,3,2,3,3,4,2,2,4,4,5,2,4,5,,,
+2025-05-21 04:38:36,2025-05-21 04:40:22,0,63,105,0,2025-05-28 04:40:24,R_20pi1R2ny8t5XrC,anonymous,EN,2,,,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2025-06-06 08:46:59,2025-06-06 08:54:01,0,100,421,1,2025-06-06 08:54:01,R_2THRDAnvboBPYUp,anonymous,EN,,,,5,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,,
+2025-06-10 02:18:11,2025-06-10 02:38:40,0,63,1228,0,2025-06-17 02:38:41,R_8xJkIekwTRvUbNE,anonymous,EN,,,,5,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2025-08-11 15:05:32,2025-08-11 15:07:23,0,100,111,1,2025-08-11 15:07:24,R_2cvkkhGClnEsuQj,anonymous,EN,2,6847fbd96237884b522218cf,99,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,,,6847fbd96237884b522218cf
+2025-08-12 03:47:52,2025-08-12 03:49:12,1,100,80,1,2025-08-12 03:49:13,R_8F4iF4qDxSMAs4l,preview,EN,2,,99,4,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,,
+2025-08-12 03:49:27,2025-08-12 03:49:47,1,100,19,1,2025-08-12 03:49:47,R_8roJt22KHnVVuYw,preview,EN,1,,99,4,6,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2025-08-12 03:50:48,2025-08-12 03:50:59,1,100,11,1,2025-08-12 03:51:00,R_8ZIxETh67nFaHPC,preview,EN,1,,99,4,6,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2025-08-12 03:51:40,2025-08-12 03:51:43,1,100,3,1,2025-08-12 03:51:44,R_8uhet1KA9nzKIw1,preview,EN,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2025-08-12 03:51:50,2025-08-12 03:53:07,1,100,77,1,2025-08-12 03:53:08,R_8JPbzKs1mM2ZwVg,preview,EN,2,,99,4,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,,
+2025-08-12 03:57:24,2025-08-12 04:01:49,0,100,264,1,2025-08-12 04:01:49,R_2jc8mLrCz2oQfx5,anonymous,EN,2,6847fbd96237884b522218cf,99,4,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,,6847fbd96237884b522218cf
+2025-08-12 04:00:36,2025-08-12 04:19:52,0,100,1155,1,2025-08-12 04:19:52,R_8kFFa5bU6eccQ5T,anonymous,EN,2,,99,1,1,2,2,3,2,3,2,2,2,2,3,3,2,2,3,5,4,5,5,5,5,4,4,4,4,4,5,4,3,4,3,3,3,5,4,5,3,4,3,4,3,2,2,3,3,3,4,5,5,5,5,5,5,5,2,2,3,2,3,3,3,3,3,2,3,3,1,2,2,4,,
+2025-08-12 04:56:38,2025-08-12 04:58:20,1,100,101,1,2025-08-12 04:58:20,R_2FeWUVBtwIQLp0w,preview,EN,2,,99,4,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,,
+2025-08-12 05:30:30,2025-08-12 05:36:50,1,100,380,1,2025-08-12 05:36:51,R_8f0HnwMNjU3LL0B,preview,EN,2,,99,4,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,,
+2025-08-12 05:41:59,2025-08-12 05:43:22,1,100,82,1,2025-08-12 05:43:22,R_84kTBj2U70YxffX,preview,EN,2,,99,4,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,1,
+2025-08-12 05:46:56,2025-08-12 05:49:27,0,100,150,1,2025-08-12 05:49:27,R_2Qoo8UywPyNmKee,anonymous,EN,2,6847fbd96237884b522218cf,99,4,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,2,6847fbd96237884b522218cf
+2025-08-12 06:01:09,2025-08-12 06:02:24,0,100,75,1,2025-08-12 06:02:24,R_27p9v3y9zu8DH2a,anonymous,EN,2,6847fbd96237884b522218cf,99,4,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,2,6847fbd96237884b522218cf
+2025-08-12 06:06:18,2025-08-12 06:10:22,0,100,244,1,2025-08-12 06:10:22,R_8QSDu2UpxNMWuVS,anonymous,EN,2,5aff33bae55f90000139f664,38,1,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,5,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,5,5,5,5,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,5,5,3,1,5,3,2,5aff33bae55f90000139f664
+2025-08-12 06:07:12,2025-08-12 06:10:47,0,100,215,1,2025-08-12 06:10:48,R_8FQX1eMlXVERvy8,anonymous,EN,2,62babccea6f10f16ce6a5a75,30,2,2,4,4,3,3,4,3,3,5,4,5,4,4,5,5,4,4,3,4,4,4,3,3,3,3,4,4,3,3,3,3,5,4,5,5,4,5,5,5,5,3,4,4,4,4,4,3,5,5,4,5,5,5,5,3,3,3,3,4,5,3,3,4,4,3,3,3,2,3,3,2,62babccea6f10f16ce6a5a75
+2025-08-12 06:09:30,2025-08-12 06:13:48,0,100,258,1,2025-08-12 06:13:48,R_87o5N0sTDtr1CI9,anonymous,EN,2,6658b2f320f33b713aa253b1,32,2,2,4,4,4,4,4,4,3,4,4,4,4,4,4,4,4,4,4,4,4,4,2,4,3,4,4,5,4,4,4,3,4,4,4,4,4,4,4,4,4,4,4,4,5,4,5,3,5,5,5,5,5,5,5,4,4,4,4,4,4,5,4,4,4,4,4,4,4,4,4,2,6658b2f320f33b713aa253b1
+2025-08-12 06:10:10,2025-08-12 06:14:46,0,100,276,1,2025-08-12 06:14:47,R_27tvRPSoMJjsXNn,anonymous,EN,2,66c4a32221f616ebf48ab21d,52,1,3,4,4,4,3,3,4,3,4,4,5,4,2,5,4,5,3,4,5,5,3,4,4,2,5,4,4,4,3,5,4,5,5,5,5,3,4,5,4,5,5,4,5,3,5,5,2,3,3,4,3,2,3,4,3,3,3,2,2,3,5,3,3,4,4,2,2,2,2,3,2,66c4a32221f616ebf48ab21d
+2025-08-12 06:07:38,2025-08-12 06:16:57,0,100,558,1,2025-08-12 06:16:57,R_8NCghxdRYVpTtYF,anonymous,EN,2,677a8e5affbe5673b3a79e6b,60,1,1,4,4,4,3,4,4,4,3,2,4,3,5,4,4,4,3,4,4,3,2,3,3,1,5,4,4,3,4,4,3,3,3,3,3,3,3,4,3,2,3,2,4,1,2,3,1,5,4,5,4,4,5,5,4,3,4,3,4,4,4,3,3,3,3,3,3,3,3,3,2,677a8e5affbe5673b3a79e6b
+2025-08-12 14:19:22,2025-08-12 14:22:33,0,100,191,1,2025-08-12 14:22:34,R_2wprRU5Uq3yol64,anonymous,EN,2,601ecf037d641438c0840330,43,2,2,2,3,3,2,3,2,3,4,4,5,4,4,4,4,2,4,3,4,4,5,3,4,3,4,4,3,4,4,4,3,4,4,5,4,4,5,3,4,4,2,4,3,5,3,3,4,5,4,5,4,5,4,4,3,2,3,4,3,4,3,2,3,5,3,1,2,2,3,3,2,601ecf037d641438c0840330
+2025-08-12 14:21:55,2025-08-12 14:26:20,0,100,264,1,2025-08-12 14:26:20,R_2FW2upDE8mOubI0,anonymous,EN,2,676325eda58341cdb24d207c,22,1,6,3,3,3,2,4,2,3,4,4,4,3,4,3,4,4,3,3,3,3,3,3,2,3,3,3,2,4,3,4,3,3,4,3,2,4,4,3,3,3,3,3,3,3,4,3,3,4,4,3,4,2,2,4,4,2,3,3,4,3,4,4,3,3,4,2,4,4,4,3,1,676325eda58341cdb24d207c
+2025-08-12 14:22:02,2025-08-12 14:26:51,0,100,288,1,2025-08-12 14:26:51,R_8rP2gvDhNJSg1v0,anonymous,EN,2,5dd05d80b2204f1487f7812c,41,1,4,4,4,4,3,4,5,3,4,5,4,4,4,4,4,5,5,5,5,5,4,4,5,4,4,3,4,5,3,4,4,5,4,5,5,4,5,4,4,4,3,4,5,3,5,4,3,5,4,5,4,5,5,5,2,2,1,4,4,4,5,4,4,3,2,3,4,4,3,2,2,5dd05d80b2204f1487f7812c
+2025-08-12 14:22:37,2025-08-12 14:26:52,0,100,255,1,2025-08-12 14:26:53,R_2s1iUUTCMFe8nlw,anonymous,EN,2,615e95eddff82cf25e73abb2,28,1,1,3,2,3,2,3,2,2,2,2,2,2,3,2,3,2,1,3,3,2,3,2,2,1,4,5,4,4,5,4,4,4,4,5,4,3,5,4,3,3,5,4,4,3,4,3,4,5,5,5,5,5,5,4,3,3,3,3,3,4,3,3,3,3,4,2,3,2,4,3,2,615e95eddff82cf25e73abb2
+2025-08-12 14:23:28,2025-08-12 14:27:10,0,100,222,1,2025-08-12 14:27:11,R_2DO7TvDNOZJr981,anonymous,EN,2,676056c4ad585b4aeebf6154,20,2,2,4,3,3,3,3,3,3,3,4,4,4,3,4,3,4,5,4,5,5,5,4,4,2,4,5,5,5,5,5,5,3,3,4,4,4,5,4,5,4,5,5,3,4,4,4,4,3,2,2,1,1,2,1,3,2,2,2,2,2,1,3,2,2,3,4,2,4,2,2,1,676056c4ad585b4aeebf6154
+2025-08-12 14:23:08,2025-08-12 14:27:17,0,100,248,1,2025-08-12 14:27:17,R_8S2L1e7wxE9lehx,anonymous,EN,2,5e682759984ee80128a78dca,23,1,2,5,5,5,4,5,4,2,4,4,5,4,4,5,5,4,5,2,5,2,5,2,5,3,5,5,5,4,5,5,5,5,5,5,5,4,5,5,5,5,5,4,4,5,5,4,4,3,5,5,5,5,5,5,5,5,5,5,4,5,5,1,4,3,4,2,5,2,4,2,1,5e682759984ee80128a78dca
+2025-08-12 14:22:55,2025-08-12 14:27:41,0,100,285,1,2025-08-12 14:27:41,R_2PigfX24ZyIDLLy,anonymous,EN,2,62682277645054f5802459b8,59,1,2,5,5,5,4,5,5,4,4,4,4,5,4,5,5,5,4,5,4,4,4,4,2,3,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,4,5,5,4,3,5,4,4,5,5,4,4,4,5,5,4,4,4,2,3,4,4,3,3,3,3,2,3,2,3,3,2,62682277645054f5802459b8
+2025-08-12 14:22:16,2025-08-12 14:28:12,0,100,356,1,2025-08-12 14:28:13,R_265vfUQIauiXMBY,anonymous,EN,2,63d44d432dba83234be6588c,43,2,2,3,3,3,4,3,3,3,3,3,3,3,4,3,3,3,3,3,4,4,3,4,4,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,5,5,5,5,5,5,5,5,5,4,4,5,5,5,4,5,5,5,4,4,5,5,3,2,63d44d432dba83234be6588c
+2025-08-12 14:24:35,2025-08-12 14:28:28,0,100,233,1,2025-08-12 14:28:28,R_8sk3BDTbDlxK9hf,anonymous,EN,2,5e96185ae3d45508abe19a36,41,1,1,5,5,5,5,5,5,4,5,5,5,5,5,5,5,4,5,5,4,3,5,4,4,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,2,5e96185ae3d45508abe19a36
+2025-08-12 14:25:15,2025-08-12 14:28:42,0,100,207,1,2025-08-12 14:28:42,R_8JRwHNA0kw5BXD0,anonymous,EN,2,60461bfeeac81b04cf62f7a6,63,2,2,4,5,5,5,5,5,5,4,5,4,5,4,5,5,5,5,3,5,5,5,5,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,4,4,4,5,5,5,5,5,5,4,4,5,4,5,5,5,4,5,5,5,5,5,4,3,2,60461bfeeac81b04cf62f7a6
+2025-08-12 14:22:21,2025-08-12 14:29:08,0,100,407,1,2025-08-12 14:29:09,R_2c0ZYj1tFUzJUAb,anonymous,EN,2,648353f2886c3c0072018e4a,54,2,2,2,5,2,3,2,3,2,4,5,2,4,3,4,3,4,2,3,4,4,4,3,2,2,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,4,3,4,4,4,3,2,5,4,3,4,4,4,4,4,4,2,3,2,4,2,3,2,3,3,2,648353f2886c3c0072018e4a
+2025-08-12 14:25:53,2025-08-12 14:29:32,0,100,219,1,2025-08-12 14:29:33,R_8kzxRO8bFqOg3y5,anonymous,EN,2,61f2ad60a09e72f23cbaf86d,23,3,2,4,4,4,4,4,3,4,2,3,3,3,4,4,3,3,3,3,3,3,3,2,2,2,5,5,4,4,5,5,4,4,4,4,5,5,5,5,3,3,3,3,3,4,3,3,3,2,4,4,4,4,5,5,3,2,3,3,3,2,2,5,3,3,2,3,4,3,4,3,1,61f2ad60a09e72f23cbaf86d
+2025-08-12 14:25:30,2025-08-12 14:32:06,0,100,396,1,2025-08-12 14:32:07,R_88ByK9KViJWBLdL,anonymous,EN,2,67e2a624e55987ea03570bc1,249,1,2,5,4,4,5,5,4,5,5,5,4,4,4,4,4,5,5,4,5,5,4,5,5,3,4,5,5,5,5,5,5,5,5,4,5,5,5,5,5,3,4,5,4,4,5,4,3,5,5,5,5,5,5,5,5,5,5,5,4,5,5,4,4,3,4,5,5,4,5,4,2,67e2a624e55987ea03570bc1
+2025-08-12 14:25:44,2025-08-12 14:32:32,0,100,408,1,2025-08-12 14:32:32,R_8Y5s5CvrfggOqrK,anonymous,EN,2,66742c4307bb2004831faaef,31,2,2,4,4,3,4,4,3,5,3,3,4,4,4,4,2,4,4,4,3,2,4,3,4,3,4,4,4,5,4,4,4,4,5,4,5,4,5,5,4,5,3,5,5,5,4,3,4,4,4,5,5,4,5,5,4,5,5,4,5,5,4,5,5,5,5,4,5,4,4,4,1,66742c4307bb2004831faaef
+2025-08-12 14:45:49,2025-08-12 14:52:20,0,100,390,1,2025-08-12 14:52:21,R_2kYSeT7c8nyN3nM,anonymous,EN,2,637545d6428d85daeedc3df5,51,1,2,4,4,4,4,4,4,3,4,4,4,4,4,4,4,4,4,4,4,4,4,3,4,2,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,2,2,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,4,4,4,3,2,2,4,3,2,637545d6428d85daeedc3df5
+2025-08-16 08:30:05,2025-08-16 08:32:56,0,100,170,1,2025-08-16 08:32:56,R_8iCtlTPSSEyOMbn,anonymous,EN,2,6813ef0e8fdad3ca067b605e,31,1,3,3,3,4,3,4,4,4,4,4,3,4,4,3,4,4,3,2,4,4,4,3,4,2,3,3,4,3,4,4,4,4,4,4,4,4,4,4,3,3,3,4,4,4,3,4,1,4,4,4,4,5,4,4,4,5,4,5,4,3,4,5,4,4,4,5,3,5,5,3,2,6813ef0e8fdad3ca067b605e
+2025-08-16 08:30:16,2025-08-16 08:33:24,0,100,187,1,2025-08-16 08:33:24,R_8qsHH8pUQaJjAMZ,anonymous,EN,2,5b7fef3c6d519f000114a332,26,2,1,2,2,3,2,3,3,2,2,3,3,3,3,3,3,4,4,4,4,3,4,4,4,3,4,4,3,4,4,4,3,3,3,3,3,4,4,3,2,2,2,2,2,2,2,3,3,4,4,4,3,3,4,4,4,3,4,4,3,4,4,4,3,4,3,3,3,3,4,2,2,5b7fef3c6d519f000114a332
+2025-08-16 08:30:10,2025-08-16 08:33:31,0,100,201,1,2025-08-16 08:33:31,R_2gNve3bvn0ydwf9,anonymous,EN,2,5ca650fc557aec0012e200d8,45,2,3,3,3,2,2,3,2,2,3,3,4,3,3,3,3,3,3,3,4,4,3,4,4,2,4,4,4,4,4,4,4,5,4,5,5,4,5,4,4,4,4,4,4,4,4,4,3,4,4,4,4,4,4,4,4,4,4,4,3,4,4,4,3,4,4,4,3,4,4,2,2,5ca650fc557aec0012e200d8
+2025-08-16 08:30:16,2025-08-16 08:33:34,0,100,197,1,2025-08-16 08:33:34,R_8VWuu3dvgnq7kC5,anonymous,EN,2,6774c5b0b19b119861c73439,19,2,2,3,4,4,3,3,4,3,5,4,4,5,3,4,5,4,4,3,3,5,5,5,4,3,4,4,4,5,4,4,4,4,5,5,5,5,4,5,3,4,5,4,4,5,5,3,4,3,5,4,5,4,4,3,3,4,4,4,3,4,4,3,4,4,4,3,4,5,4,4,2,6774c5b0b19b119861c73439
+2025-08-16 08:31:06,2025-08-16 08:33:54,0,100,168,1,2025-08-16 08:33:54,R_8BSkYkWLwJEwAkW,anonymous,EN,2,63d3f940fcdb352e6bfd9715,22,1,1,2,2,2,2,2,2,2,3,3,3,3,2,3,3,3,3,3,3,3,3,3,2,2,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,2,4,3,3,3,3,3,4,2,2,2,2,2,2,2,2,3,3,3,2,2,3,3,1,2,63d3f940fcdb352e6bfd9715
+2025-08-16 08:30:18,2025-08-16 08:34:24,0,100,246,1,2025-08-16 08:34:24,R_2Bq3iw4VrUl04Nj,anonymous,EN,2,66bb59dbe4570983dcb1d743,21,2,3,4,3,5,3,4,4,4,4,5,4,4,5,5,5,4,3,3,4,5,4,4,4,3,5,4,4,4,4,5,4,5,5,5,5,5,5,5,4,4,4,5,4,5,4,4,3,5,4,5,5,4,5,4,3,4,3,3,4,4,4,4,3,4,3,3,3,3,3,2,2,66bb59dbe4570983dcb1d743
+2025-08-16 08:30:22,2025-08-16 08:34:25,0,100,242,1,2025-08-16 08:34:25,R_2Bu5iIprS9VEPiV,anonymous,EN,2,613dd5fb512aabe8d5d32393,35,2,2,4,3,4,4,5,4,3,3,5,3,3,4,3,4,4,4,5,4,5,5,4,5,1,4,5,5,4,5,4,2,5,5,5,4,4,5,5,5,4,4,5,3,4,5,5,4,3,5,5,5,5,5,5,3,3,3,3,3,4,3,2,3,2,3,2,2,1,4,2,2,613dd5fb512aabe8d5d32393
+2025-08-16 08:29:57,2025-08-16 08:34:38,0,100,280,1,2025-08-16 08:34:38,R_8kpNYi0lxSQcbMc,anonymous,EN,2,604fa685e33606f9a0ee8189,29,2,2,3,3,3,2,3,3,2,2,3,3,3,2,3,2,3,4,4,4,5,5,4,3,3,5,5,5,4,4,5,5,5,4,5,3,4,5,5,3,3,4,4,3,2,2,3,4,4,4,4,4,4,5,5,3,4,3,2,3,4,3,4,4,4,5,4,4,4,4,2,2,604fa685e33606f9a0ee8189
+2025-08-16 08:30:45,2025-08-16 08:34:59,0,100,253,1,2025-08-16 08:35:00,R_8mmCTIwVr0nN5FG,anonymous,EN,2,598971de71fb500001aaa40c,34,1,1,3,3,2,2,2,2,2,3,3,4,3,2,4,3,4,4,2,4,2,2,2,4,2,4,4,3,3,3,3,3,4,3,4,4,3,4,4,4,3,3,4,3,2,3,3,2,4,4,4,3,4,4,4,3,3,3,3,4,3,3,3,3,4,3,2,2,3,4,2,2,598971de71fb500001aaa40c
+2025-08-16 08:32:26,2025-08-16 08:36:40,0,100,254,1,2025-08-16 08:36:40,R_2k0LSS69wZJfMgW,anonymous,EN,2,644940c6c6b71b43c2f0d552,58,2,2,2,3,3,3,2,2,2,3,3,3,3,2,3,3,2,2,2,2,4,2,4,2,2,4,4,4,4,4,4,3,4,4,4,4,4,4,4,3,3,4,3,4,3,4,3,3,4,5,4,4,5,4,4,4,3,4,4,3,4,4,3,4,4,4,2,2,3,3,2,2,644940c6c6b71b43c2f0d552
+2025-08-16 08:30:57,2025-08-16 08:37:13,0,100,376,1,2025-08-16 08:37:14,R_8sRVkprmqd6Zgl1,anonymous,EN,2,5edeea354d54cb1a825aa8f9,47,1,2,4,5,5,5,4,5,4,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,4,4,5,4,4,5,5,5,5,5,5,5,5,4,4,4,5,4,4,4,4,4,4,4,4,4,4,4,2,5edeea354d54cb1a825aa8f9
+2025-08-16 08:32:30,2025-08-16 08:37:31,0,100,301,1,2025-08-16 08:37:32,R_8DMSV1bx3Vs3d0D,anonymous,EN,2,5697ac41eaa915000b8d3378,58,2,2,3,3,3,3,3,3,3,2,2,3,3,2,3,2,2,2,2,2,2,2,2,2,2,4,4,4,4,3,4,4,4,4,4,4,4,4,4,3,3,4,4,4,2,3,3,3,4,4,4,4,4,5,4,4,4,4,4,4,4,4,3,3,4,2,3,2,2,2,3,1,5697ac41eaa915000b8d3378
+2025-08-16 08:30:13,2025-08-16 08:38:00,0,100,466,1,2025-08-16 08:38:00,R_2GVfkYDZQ1bSRGN,anonymous,EN,2,6175749cda10b46effac4c6d,26,2,2,5,4,5,4,5,5,5,5,4,4,4,4,4,5,5,4,3,4,4,5,4,4,4,5,4,5,4,4,4,5,5,5,5,4,5,5,4,4,5,3,4,4,4,4,4,4,5,5,5,4,4,5,4,4,4,4,5,4,4,5,4,4,4,4,4,4,4,4,4,1,6175749cda10b46effac4c6d
+2025-08-16 08:32:08,2025-08-16 08:38:11,0,100,363,1,2025-08-16 08:38:12,R_8QLEgooZIunfdGI,anonymous,EN,2,6065f9d75bd3321f0bafa750,35,1,2,3,3,4,4,4,5,3,4,4,4,5,4,4,4,4,4,4,5,4,4,4,3,2,5,5,5,5,4,5,4,5,4,5,4,5,5,5,5,3,5,5,5,5,5,5,3,5,5,5,5,5,5,5,3,4,3,3,5,5,3,5,5,5,5,5,5,3,3,3,2,6065f9d75bd3321f0bafa750
+2025-08-16 08:32:03,2025-08-16 08:38:54,0,100,411,1,2025-08-16 08:38:55,R_8vcxnbVwEsBVzx4,anonymous,EN,2,673261aea87e76010a5c969a,36,2,2,5,5,5,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,2,1,673261aea87e76010a5c969a
+2025-08-16 08:30:11,2025-08-16 08:39:12,0,100,540,1,2025-08-16 08:39:12,R_2fxA5PYzYLJsUnN,anonymous,EN,2,5e9f5bbf176a980b6531f799,54,2,2,3,4,4,3,2,4,4,3,3,2,3,4,4,3,4,2,3,3,4,4,3,2,3,4,5,5,5,5,5,3,4,5,5,5,5,4,5,4,4,5,4,5,4,5,5,4,5,5,5,4,5,5,5,2,2,2,3,5,4,3,1,4,2,3,2,2,4,2,4,2,5e9f5bbf176a980b6531f799
+2025-08-16 08:30:10,2025-08-16 08:39:48,0,100,578,1,2025-08-16 08:39:49,R_88GS7KQpFFrMqyH,anonymous,EN,2,661fd2da5312a50b2d084d4e,38,2,2,3,3,2,2,3,2,3,3,2,2,3,2,3,2,3,2,3,4,4,3,3,3,3,3,3,4,4,4,4,4,4,4,5,5,4,4,4,4,4,4,4,4,4,4,4,3,4,4,5,4,4,4,4,5,4,4,4,4,4,4,5,4,4,4,4,4,4,4,3,2,661fd2da5312a50b2d084d4e
+2025-08-16 08:32:46,2025-08-16 08:41:16,0,100,510,1,2025-08-16 08:41:16,R_2RIqU9vYbSdBuPn,anonymous,EN,2,5eca536f9aa4f658d641a7d9,54,2,1,1,4,3,3,3,3,3,3,5,5,5,5,4,3,5,5,3,5,5,5,1,5,1,3,3,5,3,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,3,5,4,5,5,5,5,5,5,5,1,5,1,1,5,5,3,5,5,5,5,3,3,3,5,4,2,5eca536f9aa4f658d641a7d9
+2025-08-16 08:34:11,2025-08-16 08:42:13,0,100,482,1,2025-08-16 08:42:13,R_207wnicOudjpeby,anonymous,EN,2,668ee4ea1d03ca7693e83297,54,2,2,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,4,4,5,5,5,2,5,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,4,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,4,5,5,3,3,3,4,4,2,668ee4ea1d03ca7693e83297
+2025-08-16 08:44:07,2025-08-16 08:46:57,0,100,169,1,2025-08-16 08:46:57,R_2pu23SY5iT72IkQ,anonymous,EN,2,6570809f57bfe1f9f1e9ef93,20,1,2,3,4,5,3,3,3,2,5,5,5,4,5,4,5,5,5,5,4,4,4,4,4,3,5,5,5,5,5,5,5,4,5,4,4,4,4,4,5,4,5,4,4,5,4,4,4,5,5,4,5,5,5,5,3,1,3,2,4,3,3,2,1,1,1,1,1,3,5,3,2,6570809f57bfe1f9f1e9ef93

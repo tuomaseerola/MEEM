@@ -22,27 +22,30 @@ website:
         aria-label: GitHub
   page-navigation: true
   back-to-top-navigation: true
-#  sidebar:
-#    - title: "Home"
-#      style: "floating"
-#      collapse-level: 3
-#      align: left
-#      contents: 
-#          - text: "Home"
-#            href: index.qmd
-#          - section: "Analysis"
-#            contents:
-#                - item_analysis.qmd
-#                - expert_eval_round1.qmd
-#                - expert_eval_round2.qmd
-#                - expert_eval_round2_repr.qmd
+  sidebar:
+    - title: "Home"
+      style: "floating"
+      collapse-level: 3
+      align: left
+      contents: 
+          - text: "Home"
+            href: index.qmd
+          - section: "Experiment"
+            contents:
+                - exp1/preprocessing.qmd
+                - exp1/CFA_direct.qmd
+                - exp1/measurement_invariance.qmd
+                - exp2/describe_data.qmd
+                - exp2/CFA.qmd
+                - exp2/higher_order_structure.qmd
+                - exp2/vignette_to_emotions.qmd
   page-footer: 
     right: 
       - icon: github
-        href: https://github.com/tuomaseerola/
+        href: https://github.com/tuomaseerola/MEEM/
 format:
   html:
     theme: materia # zephyr, lumen, pulse, materia, yeti, zephyr
     css: styles.css
-    toc: true
+    toc: false
     page-layout: full

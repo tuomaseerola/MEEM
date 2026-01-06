@@ -1,0 +1,232 @@
+StartDate,EndDate,Status,IPAddress,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,RecipientLastName,RecipientFirstName,RecipientEmail,ExternalReference,LocationLatitude,LocationLongitude,DistributionChannel,UserLanguage,"Consent ","Age ","Gender ",OMSI,"Prolific ID ",U_1,U_2,U_3,U_4,U_5,U_6,U_7,U_8,U_9,U_10,U_11,U_12,U_13,U_14,U_15,U_16,U_17,U_18,U_19,U_20,U_21,"U_Rel ",P_1,P_2,P_3,P_4,P_5,P_6,P_7,P_8,P_9,P_10,P_11,P_12,P_13,P_14,P_15,P_16,P_17,P_18,P_19,P_20,P_Rel,Music check,PROLIFIC_PID
+Start Date,End Date,Response Type,IP Address,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Recipient Last Name,Recipient First Name,Recipient Email,External Data Reference,Location Latitude,Location Longitude,Distribution Channel,User Language,Do you consent to participating?,"What is your age? (e.g., 99)",What is your gender?,"In terms of your musical interest and expertise, which title best describes you?","What is your prolific ID?
+Please note that this response should auto-fill with the correct ID","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - I used the music to cope with my situation","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - I found solace in the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - Listening to music comforted me","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - The music helped me understand different feelings in myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - The music was like therapy for me","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - The music was comforting to me","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - The music helped me process my emotions","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - I felt comforted by the music, as if it understood me","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - The music helped me reflect on how I was feeling","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - The music made me feel secure","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - The music helped me express myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - The music expressed what I could not","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - Listening to music allowed me to emotionally express myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - I used the music to express how I was feeling","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - Listening to music helped me express how I was feeling","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - I vented my emotions by listening to music that expressed my feelings","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - The music let me vent my frustration","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - The music helped me work through my thoughts","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - The music helped me release my mental tension","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - Listening to music allowed me to figure out how I wanted to express myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+You have just been told that you didn’t get the job you applied for. To handle the news, you turn to music to provide a sense of support as you manage your thoughts. - If you see this statement then select strongly disagree",How relevant was the scenario based on your own life experience?,"Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - I used the music to cope with my situation","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - I found solace in the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - Listening to music comforted me","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - The music helped me understand different feelings in myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - The music was like therapy for me","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - The music was comforting to me","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - The music helped me process my emotions","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - I felt comforted by the music, as if it understood me","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - The music helped me reflect on how I was feeling","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - The music made me feel secure","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - The music helped me express myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - The music expressed what I could not","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - Listening to music allowed me to emotionally express myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - I used the music to express how I was feeling","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - Listening to music helped me express how I was feeling","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - I vented my emotions by listening to music that expressed my feelings","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - The music let me vent my frustration","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - The music helped me work through my thoughts","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - The music helped me release my mental tension","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others. - Listening to music allowed me to figure out how I wanted to express myself",How relevant was the scenario based on your own life experience?,Did you listen to music while completing this survey?,PROLIFIC_PID
+"{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""status""}","{""ImportId"":""ipAddress""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""_recordId""}","{""ImportId"":""recipientLastName""}","{""ImportId"":""recipientFirstName""}","{""ImportId"":""recipientEmail""}","{""ImportId"":""externalDataReference""}","{""ImportId"":""locationLatitude""}","{""ImportId"":""locationLongitude""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID1218656807""}","{""ImportId"":""QID1218656808_TEXT""}","{""ImportId"":""QID1218656809""}","{""ImportId"":""QID1218656810""}","{""ImportId"":""QID1218656811_TEXT""}","{""ImportId"":""QID1218656816_1""}","{""ImportId"":""QID1218656816_2""}","{""ImportId"":""QID1218656816_3""}","{""ImportId"":""QID1218656816_4""}","{""ImportId"":""QID1218656816_5""}","{""ImportId"":""QID1218656816_6""}","{""ImportId"":""QID1218656816_7""}","{""ImportId"":""QID1218656816_8""}","{""ImportId"":""QID1218656816_9""}","{""ImportId"":""QID1218656816_10""}","{""ImportId"":""QID1218656816_11""}","{""ImportId"":""QID1218656816_12""}","{""ImportId"":""QID1218656816_13""}","{""ImportId"":""QID1218656816_14""}","{""ImportId"":""QID1218656816_15""}","{""ImportId"":""QID1218656816_16""}","{""ImportId"":""QID1218656816_17""}","{""ImportId"":""QID1218656816_18""}","{""ImportId"":""QID1218656816_19""}","{""ImportId"":""QID1218656816_20""}","{""ImportId"":""QID1218656816_21""}","{""ImportId"":""QID1218656817""}","{""ImportId"":""QID11_1""}","{""ImportId"":""QID11_2""}","{""ImportId"":""QID11_3""}","{""ImportId"":""QID11_4""}","{""ImportId"":""QID11_5""}","{""ImportId"":""QID11_6""}","{""ImportId"":""QID11_7""}","{""ImportId"":""QID11_8""}","{""ImportId"":""QID11_9""}","{""ImportId"":""QID11_10""}","{""ImportId"":""QID11_11""}","{""ImportId"":""QID11_12""}","{""ImportId"":""QID11_13""}","{""ImportId"":""QID11_14""}","{""ImportId"":""QID11_15""}","{""ImportId"":""QID11_16""}","{""ImportId"":""QID11_17""}","{""ImportId"":""QID11_18""}","{""ImportId"":""QID11_19""}","{""ImportId"":""QID11_20""}","{""ImportId"":""QID12""}","{""ImportId"":""QID1218656845""}","{""ImportId"":""PROLIFIC_PID""}"
+2025-09-01 06:32:28,2025-09-01 06:32:35,0,129.234.0.212,100,6,1,2025-09-01 06:32:35,R_2DtXGzEtsBcYDpw,,,,,54.7757,-1.5781,anonymous,EN,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,6847fbd96237884b522218cf
+2025-09-01 06:32:41,2025-09-01 06:34:17,0,129.234.0.212,100,95,1,2025-09-01 06:34:17,R_2fdGBx76dMYxh9g,,,,,54.7757,-1.5781,anonymous,EN,2,99,5,6,6847fbd96237884b522218cf,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,2,6847fbd96237884b522218cf
+2025-09-02 03:07:51,2025-09-02 03:09:21,0,129.234.0.212,100,89,1,2025-09-02 03:09:22,R_8PmPvV7LPWkpi3n,,,,,54.7757,-1.5781,anonymous,EN,2,99,5,6,6847fbd96237884b522218cf,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,2,6847fbd96237884b522218cf
+2025-09-02 03:12:27,2025-09-02 03:15:36,0,90.198.197.84,100,189,1,2025-09-02 03:15:37,R_8GuWMnbxNQ4tq6T,,,,,52.5927,-1.8084,anonymous,EN,2,36,1,2,6686a05c23a7183ec7b77450,3,2,3,2,3,2,2,2,3,2,2,3,3,3,3,3,3,2,3,2,1,2,4,5,4,3,4,4,4,4,4,4,4,3,4,5,5,4,3,3,4,3,3,2,6686a05c23a7183ec7b77450
+2025-09-02 03:13:04,2025-09-02 03:16:26,0,2.103.196.141,100,202,1,2025-09-02 03:16:27,R_2K6pE06bPErujCh,,,,,55.867,-4.2621,anonymous,EN,2,43,2,2,5f9ac9de923dca223848cf19,4,4,5,4,3,5,4,5,4,4,4,4,4,4,4,4,4,4,4,4,1,2,4,4,5,4,3,5,4,4,4,4,4,4,4,4,4,4,3,4,3,4,3,2,5f9ac9de923dca223848cf19
+2025-09-02 03:14:22,2025-09-02 03:17:46,0,88.97.215.118,100,203,1,2025-09-02 03:17:46,R_20NMfdw3NiaBwbC,,,,,51.7283,-1.2406,anonymous,EN,2,67,2,2,60d4497712b0332d4ccb9c48,4,4,4,4,4,4,4,3,4,3,3,3,3,3,4,3,4,4,4,4,1,1,4,4,4,4,3,4,4,4,4,3,3,4,4,4,4,3,3,4,4,4,2,1,60d4497712b0332d4ccb9c48
+2025-09-02 03:14:12,2025-09-02 03:17:57,0,51.6.246.223,100,225,1,2025-09-02 03:17:57,R_8OkA8CrpVHo6E68,,,,,51.4244,-2.4542,anonymous,EN,2,56,2,2,5c48c13bcae0ab0001890ce4,4,4,3,3,4,3,3,4,5,3,5,5,4,4,5,5,5,4,5,3,1,2,4,5,4,5,3,5,4,5,4,3,4,5,4,4,4,5,4,3,3,4,3,2,5c48c13bcae0ab0001890ce4
+2025-09-02 03:13:00,2025-09-02 03:19:05,0,77.101.63.36,100,364,1,2025-09-02 03:19:06,R_85R9Idid9ALOAnH,,,,,52.6261,-1.9611,anonymous,EN,2,54,2,2,6710a58eeff954cb2243950e,4,5,4,4,5,5,5,5,4,4,5,4,5,4,5,5,4,4,4,4,1,4,5,5,5,4,5,5,5,5,4,5,4,5,4,4,5,4,5,5,4,5,4,2,6710a58eeff954cb2243950e
+2025-09-02 03:25:11,2025-09-02 03:27:06,0,86.3.39.209,100,115,1,2025-09-02 03:27:07,R_2IDCSeJG5QRB5rb,,,,,52.3499,-2.2698,anonymous,EN,2,53,2,3,5c4592d7f608210001a4b0a8,4,3,3,2,3,4,2,2,2,3,2,2,2,2,2,2,2,3,3,2,1,3,4,4,4,4,4,4,4,4,4,3,4,4,4,4,4,4,3,4,4,3,4,2,5c4592d7f608210001a4b0a8
+2025-09-02 03:25:15,2025-09-02 03:27:26,0,62.232.154.122,100,130,1,2025-09-02 03:27:26,R_8NwzCzla8jhy1ud,,,,,56.4806,-2.9358,anonymous,EN,2,34,1,2,5e56584b888eb7000a1acb2b,4,4,4,2,3,5,4,3,4,3,4,2,3,4,4,4,4,4,4,2,1,2,3,4,3,3,3,4,4,3,3,4,3,3,4,4,4,4,4,4,4,4,2,2,5e56584b888eb7000a1acb2b
+2025-09-02 03:24:59,2025-09-02 03:28:57,0,86.153.194.178,100,237,1,2025-09-02 03:28:57,R_2FnTEMZlpkHsmcx,,,,,54.9999,-1.4386,anonymous,EN,2,52,2,5,67d04e57ae59b71e07329bf5,5,5,5,4,5,5,5,5,5,3,4,5,4,5,4,4,4,5,5,4,1,4,3,5,5,5,5,5,4,4,5,3,4,5,5,5,5,3,3,4,5,4,4,2,67d04e57ae59b71e07329bf5
+2025-09-02 03:26:17,2025-09-02 03:30:12,0,82.37.160.111,100,234,1,2025-09-02 03:30:12,R_2q9wLGbQ86G7m3i,,,,,52.5664,-2.0662,anonymous,EN,2,34,2,1,59269aac7724de000109190f,4,3,4,2,4,4,5,4,4,2,4,4,4,5,4,4,5,5,2,5,1,3,5,3,2,5,4,4,5,4,5,3,5,2,5,5,5,5,3,3,5,4,4,2,59269aac7724de000109190f
+2025-09-02 03:27:48,2025-09-02 03:30:32,0,143.58.163.67,100,163,1,2025-09-02 03:30:32,R_8eihUEvaOvvB3Wh,,,,,51.5088,-0.093,anonymous,EN,2,38,2,4,5de8e0ac9ba3e8000a970881,5,5,5,4,4,5,4,4,3,4,4,3,4,3,3,5,5,3,4,3,1,3,5,5,5,3,4,5,5,4,3,4,3,4,4,4,3,5,5,4,5,3,3,2,5de8e0ac9ba3e8000a970881
+2025-09-02 03:26:23,2025-09-02 03:30:58,0,86.165.5.89,100,274,1,2025-09-02 03:30:58,R_8ujoizzgceHeUpz,,,,,50.9575,-0.5128,anonymous,EN,2,45,2,2,5d8878251f684d0001737c56,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,4,5,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,2,5d8878251f684d0001737c56
+2025-09-02 03:28:33,2025-09-02 03:31:00,0,82.14.9.194,100,146,1,2025-09-02 03:31:01,R_2i42ukqvj6SQQul,,,,,52.5189,-1.9189,anonymous,EN,2,36,2,2,574027971407a30010773dd7,4,3,4,4,4,4,3,4,3,4,4,2,5,4,4,4,3,3,4,4,1,3,4,3,5,4,4,4,4,5,5,4,4,4,4,4,4,4,2,4,4,4,3,2,574027971407a30010773dd7
+2025-09-02 03:28:23,2025-09-02 03:31:22,0,86.24.248.100,100,179,1,2025-09-02 03:31:23,R_2wEx7dgOz0bcicx,,,,,53.6479,-1.7812,anonymous,EN,2,54,2,2,66faeeeafd0c076eec88cfcb,5,5,5,5,5,5,5,5,5,4,4,5,5,5,4,4,5,4,4,4,1,3,4,5,5,5,5,5,5,5,4,4,5,5,4,4,5,5,4,4,4,4,2,2,66faeeeafd0c076eec88cfcb
+2025-09-02 03:28:25,2025-09-02 03:31:43,0,82.9.94.46,100,198,1,2025-09-02 03:31:43,R_8E0XlFXDe7jPLDw,,,,,51.4801,-3.1855,anonymous,EN,2,32,2,2,5ba0df3c9c31af0001ff7795,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,1,3,4,5,5,4,4,4,5,4,4,4,5,4,4,4,4,4,4,4,4,4,4,2,5ba0df3c9c31af0001ff7795
+2025-09-02 03:28:37,2025-09-02 03:31:59,0,86.128.150.66,100,201,1,2025-09-02 03:32:00,R_8Em1Vv2ahdhGTxT,,,,,53.3861,-1.4065,anonymous,EN,2,60,2,2,663b88bfc26125e23f752e31,5,5,5,4,4,5,4,5,4,4,3,5,4,4,5,4,3,5,4,5,1,4,4,5,5,5,3,5,5,5,5,4,5,5,5,3,4,3,2,4,3,3,3,2,663b88bfc26125e23f752e31
+2025-09-02 03:24:13,2025-09-02 03:33:16,0,80.229.1.205,100,542,1,2025-09-02 03:33:17,R_8U9IGnH3Rxoi3uC,,,,,52.2053,-0.6081,anonymous,EN,2,54,2,2,6364c680c75f0a035ba3abff,4,4,4,4,3,4,4,3,3,3,3,3,4,4,4,4,4,4,4,4,1,3,4,4,4,4,4,4,4,4,4,4,3,4,4,3,4,4,3,4,4,4,3,1,6364c680c75f0a035ba3abff
+2025-09-02 03:28:21,2025-09-02 03:33:32,0,94.10.182.85,100,311,1,2025-09-02 03:33:32,R_2UY18QsAkHAOjgm,,,,,51.5384,-0.039,anonymous,EN,2,61,1,2,6730f965beb7513190d2be93,5,5,5,4,5,5,5,5,5,5,3,4,5,5,5,5,3,4,5,3,1,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,3,4,5,4,2,2,6730f965beb7513190d2be93
+2025-09-02 03:26:28,2025-09-02 03:34:07,0,86.1.26.3,100,459,1,2025-09-02 03:34:07,R_8Hv72oGiOGp2CJi,,,,,53.6252,-1.4117,anonymous,EN,2,51,2,3,5e07c976f6191f137214e91f,5,5,5,3,5,5,3,4,4,4,3,3,3,3,3,3,4,4,4,3,1,4,5,5,5,4,5,5,4,5,5,4,4,4,4,4,4,4,4,4,4,4,4,2,5e07c976f6191f137214e91f
+2025-09-02 03:26:27,2025-09-02 03:35:54,0,80.4.22.13,100,566,1,2025-09-02 03:35:55,R_2tu6TQovhjTLE8u,,,,,53.7981,-1.7623,anonymous,EN,2,36,2,2,5997e57d6b939900012da0e2,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,2,1,5997e57d6b939900012da0e2
+2025-09-02 03:30:24,2025-09-02 03:42:12,0,163.171.12.91,100,708,1,2025-09-02 03:42:13,R_2nqdm5i231Y7itr,,,,,53.4628,-2.1626,anonymous,EN,2,38,1,2,5ad22ebba010190001b363e8,1,1,1,1,1,4,1,1,3,2,1,1,1,1,1,1,1,1,3,1,1,1,4,4,4,4,2,4,4,4,3,2,4,4,4,4,4,3,4,3,3,4,1,2,5ad22ebba010190001b363e8

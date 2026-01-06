@@ -1,0 +1,306 @@
+---
+title: "Exp. 1 - Measurement invariance"
+toc: false
+knitr:
+  opts_chunk:
+    fig.path: "figures/"
+---
+
+Measurement invariance across the vignettes was examined using multigroup CFA in lavaan with robust maximum likelihood estimation (MLR) and participant ID as a clustering variable. Configural, metric, and scalar invariance models were compared sequentially. Table 1 below summarises the invariance results, but generally model fit did not degrade substantially when factor loadings were constrained (ΔCFI = .001, ΔRMSEA = .008), suggesting metric invariance for FM, CB and AIA. However, when intercepts were constrained (ΔCFI < .005, ΔRMSEA < .004), all constructs failed to support the scalar invariance across vignettes.
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| id: libraries
+library(tidyr)
+library(dplyr)
+library(stringr)
+#library(here)
+library(psych)
+library(lavaan)
+set.seed(3110)
+```
+
+## EDR
+
+```{r}
+#| echo: true
+#| id: sem-edr
+
+df <- readRDS(file="data/EDR_N100.rds")
+tmp <- dplyr::filter(df,vignette=="E" | vignette=="D" | vignette=="R")
+tmp_w <- pivot_wider(tmp, names_from = item_label, values_from = value,id_expand = FALSE,id_cols = c('ID','vignette'))
+tmp_w<-data.frame(tmp_w)
+rownames(tmp_w) <- 1:nrow(tmp_w)
+
+model <- "
+E =~ E1 + E6 + E7
+D =~ D1 + D6 + D7
+R =~ R1 + R3 + R7
+"
+# baseline
+model.baseline <- lavaan::cfa(model, data = tmp_w,meanstructure = TRUE,estimator = "MLR")
+
+# configural invariance
+model.configural <- lavaan::cfa(model, data = tmp_w, group = "vignette",meanstructure = TRUE,estimator = "MLR")
+#s<-semTools::compareFit(model.baseline,model.configural)
+#summary(s,fit.measures="all")
+config1 <- lavTestLRT(model.baseline,model.configural)$`Pr(>Chisq)`[2]
+# metric invariance
+model.metric <- lavaan::cfa(model, data = tmp_w, group = "vignette",group.equal=c("loadings"),meanstructure = TRUE,estimator = "MLR")
+#s<-semTools::compareFit(model.configural, model.metric)
+#summary(s,fit.measures="all")
+metric1 <- lavTestLRT(model.configural,model.metric)$`Pr(>Chisq)`[2]
+
+# scalar invariance
+model.scalar <- lavaan::cfa(model, data = tmp_w, group = "vignette", group.equal=c("loadings","intercepts"),meanstructure = TRUE,estimator = "MLR")
+#summary(model.scalar, standardized = TRUE, fit.measures = TRUE)
+#s<-semTools::compareFit(model.metric, model.scalar)
+#summary(s)
+scalar1 <- lavTestLRT(model.metric,model.scalar)$`Pr(>Chisq)`[2]
+
+s<-semTools::compareFit(model.baseline,model.configural, model.metric,model.scalar,nested = TRUE)
+summary(s)
+
+```
+
+## FM
+
+```{r}
+#| echo: true
+#| id: sem-fm
+df <- readRDS(file="data/FM_N100.rds")
+
+tmp <- dplyr::filter(df,vignette=="F" | vignette=="M")
+tmp_w <- pivot_wider(tmp, names_from = item_label, values_from = value,id_expand = FALSE,id_cols = c('ID','vignette'))
+tmp_w<-data.frame(tmp_w)
+rownames(tmp_w) <- 1:nrow(tmp_w)
+#tmp_w <- select(tmp_w, -ID)
+tmp_w$ID<-as.numeric(as.factor(tmp_w$ID))
+tmp_w$vignette<-as.factor(tmp_w$vignette)
+
+model <- '
+    M =~ M1 + M3 + F1
+    F =~ F3 + F6 + F10
+'
+
+# baseline
+model.baseline <- lavaan::cfa(model, data = tmp_w,meanstructure = TRUE,estimator = "MLR")
+
+# configural invariance
+model.configural <- lavaan::cfa(model, data = tmp_w, group = "vignette",meanstructure = TRUE,estimator = "MLR")
+#s<-semTools::compareFit(model.baseline,model.configural)
+#summary(s,fit.measures="all")
+config2 <- lavTestLRT(model.baseline,model.configural)$`Pr(>Chisq)`[2]
+# metric invariance
+model.metric <- lavaan::cfa(model, data = tmp_w, group = "vignette",group.equal=c("loadings"),meanstructure = TRUE,estimator = "MLR")
+#s<-semTools::compareFit(model.configural, model.metric)
+#summary(s,fit.measures="all")
+metric2 <- lavTestLRT(model.configural,model.metric)$`Pr(>Chisq)`[2]
+
+# scalar invariance
+model.scalar <- lavaan::cfa(model, data = tmp_w, group = "vignette", group.equal=c("loadings","intercepts"),meanstructure = TRUE,estimator = "MLR")
+#summary(model.scalar, standardized = TRUE, fit.measures = TRUE)
+#s<-semTools::compareFit(model.metric, model.scalar)
+#summary(s)
+scalar2 <- lavTestLRT(model.metric,model.scalar)$`Pr(>Chisq)`[2]
+
+s<-semTools::compareFit(model.baseline,model.configural, model.metric,model.scalar,nested = TRUE)
+summary(s)
+
+```
+
+## CB
+
+```{r}
+#| echo: true
+#| id: sem-cb
+
+df <- readRDS(file="data/CB_N100.rds")
+
+tmp <- dplyr::filter(df,vignette=="C" | vignette=="S")
+tmp_w <- pivot_wider(tmp, names_from = item_label, values_from = value,id_expand = FALSE,id_cols = c('ID','vignette'))
+tmp_w<-data.frame(tmp_w)
+rownames(tmp_w) <- 1:nrow(tmp_w)
+tmp_w$ID<-as.numeric(as.factor(tmp_w$ID))
+tmp_w$vignette<-as.factor(tmp_w$vignette)
+
+model <- "
+    C =~ C5 + C2 + C9
+    S =~ S5 + S6 + S7 
+"
+
+# baseline
+model.baseline <- lavaan::cfa(model, data = tmp_w,meanstructure = TRUE,estimator = "MLR")
+
+# configural invariance
+model.configural <- lavaan::cfa(model, data = tmp_w, group = "vignette",meanstructure = TRUE,estimator = "MLR")
+#s<-semTools::compareFit(model.baseline,model.configural)
+#summary(s,fit.measures="all")
+config3 <- lavTestLRT(model.baseline,model.configural)$`Pr(>Chisq)`[2]
+# metric invariance
+model.metric <- lavaan::cfa(model, data = tmp_w, group = "vignette",group.equal=c("loadings"),meanstructure = TRUE,estimator = "MLR")
+#s<-semTools::compareFit(model.configural, model.metric)
+#summary(s,fit.measures="all")
+metric3 <- lavTestLRT(model.configural,model.metric)$`Pr(>Chisq)`[2]
+
+# scalar invariance
+model.scalar <- lavaan::cfa(model, data = tmp_w, group = "vignette", group.equal=c("loadings","intercepts"),meanstructure = TRUE,estimator = "MLR")
+#summary(model.scalar, standardized = TRUE, fit.measures = TRUE)
+#s<-semTools::compareFit(model.metric, model.scalar)
+#summary(s)
+scalar3 <- lavTestLRT(model.metric,model.scalar)$`Pr(>Chisq)`[2]
+
+s<-semTools::compareFit(model.baseline,model.configural, model.metric,model.scalar,nested = TRUE)
+summary(s)
+
+```
+
+## PEP
+
+```{r}
+#| echo: true
+#| id: sem-pep
+
+df <- readRDS(file="data/PEP_N100.rds")
+
+tmp <- dplyr::filter(df,vignette=="U" | vignette=="P")
+tmp_w <- pivot_wider(tmp, names_from = item_label, values_from = value,id_expand = FALSE,id_cols = c('ID','vignette'))
+tmp_w<-data.frame(tmp_w)
+rownames(tmp_w) <- 1:nrow(tmp_w)
+#tmp_w <- select(tmp_w, -ID)
+tmp_w$ID<-as.numeric(as.factor(tmp_w$ID))
+tmp_w$vignette<-as.factor(tmp_w$vignette)
+
+model <- "
+    U =~ U2 + U3 + U6
+    P =~ P4 + P8 + P9
+"
+
+
+# baseline
+model.baseline <- lavaan::cfa(model, data = tmp_w,meanstructure = TRUE,estimator = "MLR")
+
+# configural invariance
+model.configural <- lavaan::cfa(model, data = tmp_w, group = "vignette",meanstructure = TRUE,estimator = "MLR")
+#s<-semTools::compareFit(model.baseline,model.configural)
+#summary(s,fit.measures="all")
+config4 <- lavTestLRT(model.baseline,model.configural)$`Pr(>Chisq)`[2]
+# metric invariance
+model.metric <- lavaan::cfa(model, data = tmp_w, group = "vignette",group.equal=c("loadings"),meanstructure = TRUE,estimator = "MLR")
+#s<-semTools::compareFit(model.configural, model.metric)
+#summary(s,fit.measures="all")
+metric4 <- lavTestLRT(model.configural,model.metric)$`Pr(>Chisq)`[2]
+
+# scalar invariance
+model.scalar <- lavaan::cfa(model, data = tmp_w, group = "vignette", group.equal=c("loadings","intercepts"),meanstructure = TRUE,estimator = "MLR")
+#summary(model.scalar, standardized = TRUE, fit.measures = TRUE)
+#s<-semTools::compareFit(model.metric, model.scalar)
+#summary(s)
+scalar4 <- lavTestLRT(model.metric,model.scalar)$`Pr(>Chisq)`[2]
+
+s<-semTools::compareFit(model.baseline,model.configural, model.metric,model.scalar,nested = TRUE)
+summary(s)
+
+```
+
+## AIA
+
+```{r}
+#| echo: true
+#| id: sem-aia
+
+df <- readRDS(file="data/AIA_N101.rds")
+
+tmp <- dplyr::filter(df,vignette=="I" | vignette=="X" | vignette=="B")
+tmp_w <- pivot_wider(tmp, names_from = item_label, values_from = value,id_expand = FALSE,id_cols = c('ID','vignette'))
+tmp_w<-data.frame(tmp_w)
+rownames(tmp_w) <- 1:nrow(tmp_w)
+tmp_w$ID<-as.numeric(as.factor(tmp_w$ID))
+tmp_w$vignette<-as.factor(tmp_w$vignette)
+
+model <- "
+    I =~ I3 + I4 + I5
+    X =~ X1 + X2
+    B =~ B1 + B3 + B5
+"
+
+
+# baseline
+model.baseline <- lavaan::cfa(model, data = tmp_w,meanstructure = TRUE,estimator = "MLR")
+
+# configural invariance
+model.configural <- lavaan::cfa(model, data = tmp_w, group = "vignette",meanstructure = TRUE,estimator = "MLR")
+#s<-semTools::compareFit(model.baseline,model.configural)
+#summary(s,fit.measures="all")
+config5 <- lavTestLRT(model.baseline,model.configural)$`Pr(>Chisq)`[2]
+# metric invariance
+model.metric <- lavaan::cfa(model, data = tmp_w, group = "vignette",group.equal=c("loadings"),meanstructure = TRUE,estimator = "MLR")
+#s<-semTools::compareFit(model.configural, model.metric)
+#summary(s,fit.measures="all")
+metric5 <- lavTestLRT(model.configural,model.metric)$`Pr(>Chisq)`[2]
+
+# scalar invariance
+model.scalar <- lavaan::cfa(model, data = tmp_w, group = "vignette", group.equal=c("loadings","intercepts"),meanstructure = TRUE,estimator = "MLR")
+#summary(model.scalar, standardized = TRUE, fit.measures = TRUE)
+#s<-semTools::compareFit(model.metric, model.scalar)
+#summary(s)
+scalar5 <- lavTestLRT(model.metric,model.scalar)$`Pr(>Chisq)`[2]
+
+s<-semTools::compareFit(model.baseline,model.configural, model.metric,model.scalar,nested = TRUE)
+summary(s)
+
+```
+
+## Summary
+
+```{r}
+#| echo: false
+#| eval: true
+#| id: compile-results
+#| output: asis
+options(scipen=999)
+# Compile a table of results from all analyses above
+results_table1 <- rbind(
+  configural = c(config1,config2,config3,config4,config5),
+  metric = c(metric1,metric2,metric3,metric4,metric5),
+  scalar = c(scalar1,scalar2,scalar3,scalar4,scalar5)
+)
+rownames(results_table1) <- c("Configural","Metric","Scalar")
+colnames(results_table1) <- c("EDR","FM","CB","PEP","AIA")
+
+print(knitr::kable(t(results_table1),digits=3,caption="Measurement Invariance p-values for robust CFA analysis across constructs."))
+
+
+```
+
+
+
+```{r}
+#| eval: false
+#| echo: false
+#| id: item-invar
+
+library(misty)
+df <- readRDS(file="data/EDR_N100.rds")
+tmp <- dplyr::filter(df,vignette=="E" | vignette=="D" | vignette=="R")
+tmp_w <- pivot_wider(tmp, names_from = item_label, values_from = value,id_expand = FALSE,id_cols = c('ID','vignette'))
+tmp_w<-data.frame(tmp_w)
+rownames(tmp_w) <- 1:nrow(tmp_w)
+#tmp_w <- select(tmp_w, -ID)
+model.test1 = list(factor1 = c("E1", "E6", "E7"), factor2 = c("D1", "D6", "D7"), factor3 = c("R1", "R3", "R7"))
+invariance1 <- item.invar(data=tmp_w,model=model.test1,
+                          group="vignette",
+                          estimator="MLR",
+                          print.fit="robust")
+#invariance2 <- item.invar(data=ratings,model=model.test2,group="vignette")
+invariance1$model.fit$metric
+
+```
+
+
+
+
+

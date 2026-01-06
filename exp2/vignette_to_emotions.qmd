@@ -1,0 +1,467 @@
+---
+title: "Exp. 2 - Vignettes and Emotions"
+toc: false
+knitr:
+  opts_chunk:
+    fig.path: "figures/"
+---
+
+This notebook will extract the emotion ratings for Experiment 2, where about half the participants rated HAAS adjectives and the others chosen 0 to 15 GEMIAC emotion categories (specific N reported below for both subsets). The purpose here is to offer some convergent validity measures (two common emotion measures) that can be compared to sub-constructs.
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| messages: false
+#| id: exp2-setup
+library(tidyr)
+library(dplyr)
+library(stringr)
+library(here)
+library(ggplot2)
+```
+
+## Get HAAS data
+
+```{r}
+#| echo: false
+#| warning: false
+#| messages: false
+#| id: exp2-rawdata
+
+source('scr/read_EFA_qualtrics.R') # custom function
+source('scr/convert_items_long.R') # custom function
+source('scr/participant_reliability.R') # custom function
+
+#fn <- "data/Episodes_September 9, 2025_14.01.csv" # N=600 GEMIAC
+#d <- read_EFA_qualtrics(filename = fn,bonusquestion = "GEMIAC")
+fn <- "data/Episodes_September 11, 2025_09.14.csv" # N=601-1100 HAAS
+d <- read_EFA_qualtrics(filename = fn,bonusquestion = "HAAS")
+df <- convert_items_long(d)
+reliability <- participant_reliability(df,THRESHOLD = 0.001,verbose=FALSE) 
+
+df_f <- df %>% filter(!ProlificID %in% reliability$removed_participants)
+
+source('scr/rename_specific_items.R') # We decided to relabel some constructs for clarity
+df_f <- rename_specific_items(df_f)
+```
+
+### HAAS
+
+```{r}
+#| echo: false
+#| warning: false
+#| messages: false
+#| id: exp2-haas-emotions
+
+df_f_long <- df_f %>%
+   pivot_longer(
+     cols = starts_with("HAAS_"),
+     names_to = "Emotion",
+     values_to = "Rating"
+   )
+
+haas <- c("Interested","Active","Strong","Calm","Placid","Content","Anxious","Irritable","Guilty","Bored","Sad","Tired")
+
+haas_quadrants <- c("pos_high","pos_high","pos_high","pos_low","pos_low","pos_low","neg_high","neg_high","neg_high","neg_low","neg_low","neg_low")
+
+df_f_long$Emotion <- str_replace(df_f_long$Emotion,"HAAS_1$",haas[1])
+df_f_long$Emotion <- str_replace(df_f_long$Emotion,"HAAS_2$",haas[2])
+df_f_long$Emotion <- str_replace(df_f_long$Emotion,"HAAS_3",haas[3])
+df_f_long$Emotion <- str_replace(df_f_long$Emotion,"HAAS_4",haas[4])
+df_f_long$Emotion <- str_replace(df_f_long$Emotion,"HAAS_5",haas[5])
+df_f_long$Emotion <- str_replace(df_f_long$Emotion,"HAAS_6",haas[6])
+df_f_long$Emotion <- str_replace(df_f_long$Emotion,"HAAS_7",haas[7])
+df_f_long$Emotion <- str_replace(df_f_long$Emotion,"HAAS_8",haas[8])
+df_f_long$Emotion <- str_replace(df_f_long$Emotion,"HAAS_9",haas[9])
+df_f_long$Emotion <- str_replace(df_f_long$Emotion,"HAAS_10",haas[10])
+df_f_long$Emotion <- str_replace(df_f_long$Emotion,"HAAS_11",haas[11])
+df_f_long$Emotion <- str_replace(df_f_long$Emotion,"HAAS_12",haas[12])
+
+df_f_long$EmotionQ <- df_f_long$Emotion
+df_f_long$EmotionQ <- str_replace(df_f_long$EmotionQ,haas[1],haas_quadrants[1])
+df_f_long$EmotionQ <- str_replace(df_f_long$EmotionQ,haas[2],haas_quadrants[2])
+df_f_long$EmotionQ <- str_replace(df_f_long$EmotionQ,haas[3], haas_quadrants[3])
+df_f_long$EmotionQ <- str_replace(df_f_long$EmotionQ,haas[4], haas_quadrants[4])
+df_f_long$EmotionQ <- str_replace(df_f_long$EmotionQ,haas[5], haas_quadrants[5])
+df_f_long$EmotionQ <- str_replace(df_f_long$EmotionQ,haas[6], haas_quadrants[6])
+df_f_long$EmotionQ <- str_replace(df_f_long$EmotionQ,haas[7], haas_quadrants[7])
+df_f_long$EmotionQ <- str_replace(df_f_long$EmotionQ,haas[8], haas_quadrants[8])
+df_f_long$EmotionQ <- str_replace(df_f_long$EmotionQ,haas[9], haas_quadrants[9])
+df_f_long$EmotionQ <- str_replace(df_f_long$EmotionQ,haas[10],haas_quadrants[10])
+df_f_long$EmotionQ <- str_replace(df_f_long$EmotionQ,haas[11],haas_quadrants[11])
+df_f_long$EmotionQ <- str_replace(df_f_long$EmotionQ,haas[12],haas_quadrants[12])
+
+# remove items, now the values are duplicated 35 times!
+df_haas <- dplyr::filter(df_f_long, item =="Gen_1")
+# remove empty responses, ie. those who responded to GEMIAC
+df_haas <- dplyr::filter(df_haas, !is.na(Rating) & Rating>0)
+
+# Haas ratings were made on a 5-point scale, 0 not at all, slightly, moderately, very, extremely
+# Add constructs to the data
+df_haas$Construct<-"??"
+df_haas$Construct[df_haas$VigNro < 4]<-"EDR"
+df_haas$Construct[df_haas$VigNro == 4 | df_haas$VigNro == 5]<-"FM"
+df_haas$Construct[df_haas$VigNro == 6 | df_haas$VigNro == 7]<-"CB"
+df_haas$Construct[df_haas$VigNro == 8 | df_haas$VigNro == 9]<-"PEP"
+df_haas$Construct[df_haas$VigNro > 9]<-"AIA"
+
+# Labels for vignettes 1 to 12.
+V <- c('Enjoyment', 'Distraction', 'Relaxation', 'EnergyControl', 'Focus', 'GroupCohesion', 'ReduceLoneliness', 'Coping', 'Express', 'Spirituality', 'Curiosity', 'Aesthetics')
+
+# Make into factors and ensure the correct order
+df_haas$VigNro<-factor(df_haas$VigNro,labels=V)
+df_haas$Construct<-factor(df_haas$Construct,levels = c("EDR","FM","CB","PEP","AIA"))
+
+```
+
+#### Visualise
+
+```{r}
+#| echo: false
+#| warning: false
+#| messages: false
+#| id: exp2-haas-plot
+
+haas_summary <- df_haas %>%
+  group_by(VigNro, Construct, EmotionQ) %>%
+  summarise(
+    Mean_Rating = mean(Rating),
+    SD_Rating = sd(Rating),
+    N = n(),
+    SE_Rating = SD_Rating / sqrt(N/4)
+  ) %>%
+  ungroup()
+
+#### Summarise valence and arousal separately
+haas_summary2<- df_haas %>%
+  group_by(VigNro, Construct) %>%
+  summarise(
+    Arousal = (sum(Rating[EmotionQ %in% c("pos_high","neg_high")]) - sum(Rating[EmotionQ %in% c("pos_low","neg_low")]))/sum(Rating[EmotionQ %in% c("pos_high","neg_high","pos_low","neg_low")]),
+    Valence = (sum(Rating[EmotionQ %in% c("pos_high","pos_low")]) - sum(Rating[EmotionQ %in% c("neg_high","neg_low")]))/sum(Rating[EmotionQ %in% c("pos_high","neg_high","pos_low","neg_low")]),
+    N = n(),
+  ) %>%
+  ungroup()
+
+# with means and SDs
+haas_summary2<- df_haas %>%
+  group_by(VigNro, Construct) %>%
+  summarise(
+    Arousal = (mean(Rating[EmotionQ %in% c("pos_high","neg_high")]) - mean(Rating[EmotionQ %in% c("pos_low","neg_low")])),
+    Valence = (mean(Rating[EmotionQ %in% c("pos_high","pos_low")]) - mean(Rating[EmotionQ %in% c("neg_high","neg_low")])),
+    ArousalSD = (sd(Rating[EmotionQ %in% c("pos_high","neg_high")])),
+    ValenceSD = (sd(Rating[EmotionQ %in% c("pos_high","pos_low")])),
+    N = n(),
+  ) %>%
+  ungroup()
+
+haas_summary2$ArousalSE <- haas_summary2$ArousalSD / sqrt(haas_summary2$N/12)
+haas_summary2$ValenceSE <- haas_summary2$ValenceSD / sqrt(haas_summary2$N/12)
+
+library(ggrepel)
+g0 <- ggplot(haas_summary2, 
+             aes(x = Valence, 
+                 y = Arousal, 
+                 color = Construct, 
+                 group = Construct,
+                 shape=Construct,
+                 label=VigNro)) +
+  geom_point(size=4) +
+  geom_text_repel(show.legend = F)+
+  geom_errorbar(aes(ymin = Arousal - ArousalSE, ymax = Arousal + ArousalSE), width = 0.05,alpha=0.35) +
+  geom_errorbar(aes(xmin = Valence - ValenceSE, xmax = Valence + ValenceSE), width = 0.05,alpha=0.35) +
+#  facet_wrap(~ Construct, scales="free_x") +
+  scale_color_brewer(palette = "Set1") +
+  scale_shape_manual(values = c(16,17,15,16,17))+
+  geom_hline(yintercept = 0, linetype="dashed", color = "gray50")+
+  geom_vline(xintercept = 1.5, linetype="dashed", color = "gray50")+ # scale_y_continuous(limits = c(1, 5), breaks = seq(1, 5, by = 1)) +
+  #coord_equal()+
+#  labs(title = "Mean HAAS Emotion Ratings by Vignette",
+#       x = "Vignette Number",
+#       y = "Mean Rating") +
+  theme_classic()
+ # theme(legend.position = "bottom")
+print(g0)
+
+#ggsave("figures/exp2_haas_valence_arousal.png", plot = g0, width = 6, height = 5)
+
+g1 <- ggplot(haas_summary, aes(x = VigNro, y = Mean_Rating, color = EmotionQ, group = EmotionQ)) +
+  geom_line() +
+  geom_point() +
+  geom_errorbar(aes(ymin = Mean_Rating - SE_Rating, ymax = Mean_Rating + SE_Rating), width = 0.2) +
+  facet_wrap(~ Construct, scales="free_x") +
+  scale_color_brewer(palette = "Set1") +
+  scale_y_continuous(limits = c(1, 5), breaks = seq(1, 5, by = 1)) +
+  labs(title = "Mean HAAS Emotion Ratings by Vignette",
+       x = "Vignette Number",
+       y = "Mean Rating") +
+  theme_classic() +
+  theme(legend.position = "bottom")
+
+
+print(g1)
+
+#print(knitr::kable(haas_summary, digits = 2, caption = "HAAS Emotion Ratings Summary"))
+
+haas_summary3 <- df_haas %>%
+    group_by(ProlificID) %>%
+  summarise(
+    Arousal = (sum(Rating[EmotionQ %in% c("pos_high","neg_high")]) - sum(Rating[EmotionQ %in% c("pos_low","neg_low")]))/sum(Rating[EmotionQ %in% c("pos_high","neg_high","pos_low","neg_low")]),
+    Valence = (sum(Rating[EmotionQ %in% c("pos_high","pos_low")]) - sum(Rating[EmotionQ %in% c("neg_high","neg_low")]))/sum(Rating[EmotionQ %in% c("pos_high","neg_high","pos_low","neg_low")]),
+    N = n(),
+  ) %>%
+  ungroup()
+
+#dim(df_haas)
+#dim(haas_summary3)
+
+```
+
+#### Correlation of HAAS emotion ratings with the factor scores (Convergent Validity)
+
+```{r}
+#| id: exp2-factor-vs-haas
+#| results: asis
+
+# Extract factor scores from your CFA
+#factor_scores <- lavPredict(fit1, method = "regression")
+fs0 <- read.csv(file = here("exp2/data","factor_scores_exp2.csv"))
+
+# HAAS: Correlate with emotion ratings
+df_haas_wide <- df_haas %>%
+  pivot_wider(names_from = EmotionQ, values_from = Rating)
+S <- summarise(group_by(df_haas_wide,ProlificID),pos_high_M=mean(pos_high,na.rm=TRUE),pos_low_M=mean(pos_low,na.rm=TRUE),neg_high_M=mean(neg_high,na.rm=TRUE),neg_low_M=mean(neg_low,na.rm=TRUE))
+
+print(paste("N =",length(unique(S$ProlificID))))
+
+combined_HAAS <- merge(fs0, S, by="ProlificID")
+#dim(combined_HAAS) #639
+vars<-c("E","D","R","M","F","G","L","C","X","B","I","A","pos_high_M","pos_low_M","neg_high_M","neg_low_M")
+matrix <- dplyr::select(combined_HAAS, all_of(vars))
+cm <- cor(matrix, use="pairwise.complete.obs")
+print(knitr::kable(cm, digits = 2, caption = "Correlation Matrix between Factor Scores and HAAS Emotion Ratings."))
+
+# Just arousal and valence
+combined_HAAS2 <- merge(fs0, haas_summary3, by="ProlificID")
+vars<-c("E","D","R","M","F","G","L","C","X","B","I","A","Arousal","Valence")
+matrix <- dplyr::select(combined_HAAS2, all_of(vars))
+cm <- cor(matrix, use="pairwise.complete.obs")
+print(knitr::kable(cm, digits = 2, caption = "Correlation Matrix between Factor Scores and HAAS Valence and Arousal Ratings."))
+
+```
+
+## Get GEMIAC data
+
+```{r}
+#| echo: false
+#| id: exp2-gemiac-init
+source('scr/read_EFA_qualtrics.R') # custom function
+source('scr/convert_items_long.R') # custom function
+source('scr/participant_reliability.R') # custom function
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| eval: true
+#| results: asis
+#| id: gemiac_rawdata
+fn <- "data/Episodes_September 9, 2025_14.01.csv" # N=600 GEMIAC
+d <- read_EFA_qualtrics(filename = fn,bonusquestion = "GEMIAC",verbose=FALSE)
+df <- convert_items_long(d)
+reliability <- participant_reliability(df,THRESHOLD = 0.001,verbose=FALSE) 
+df_f2 <- df %>% filter(!ProlificID %in% reliability$removed_participants)
+source('scr/rename_specific_items.R') # We decided to relabel some constructs for clarity
+df_f2 <- rename_specific_items(df_f2)
+
+# No. of participants in each vignette doing GEMIAC
+S <- summarise(group_by(df_f2,VigNro),n=n()/35)
+print(knitr::kable(S,caption='Summary'))
+# Check the N
+print(sum(S$n))
+length(unique(df_f2$ProlificID))
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+#| messages: false
+#| fig.height: 14
+#| fig.width: 14
+#| id: gemiac_process
+
+#str(df_f2)
+#df_f2$Emotion
+
+library(tidyverse)
+
+df_f3 <- df_f2 %>%
+  bind_cols(
+    set_names(
+      map(1:16, ~ as.integer(str_detect(df_f2$Emotion, paste0("(?:^|,)", .x, "(?:,|$)")))),
+      paste0("emotion_", 1:16)
+    )
+  )
+#head(df_f3)
+
+# fixed from Qualtrics 26/11/2025
+GEMIAC<-c("Filled with wonder, amazed","Moved, touched","Enchanted, in awe","????","Inspired, enthusiastic","Energetic, lively","Joyful, wanting to dance","Powerful, strong","Full of tenderness, warmhearted", "Tense, uneasy", "Relaxed, peaceful", "Melancholic, sad", "Nostalgic, sentimental", "Indifferent, bored", "Agitated, aggressive", "None of these")
+
+colnames(df_f3)[colnames(df_f3)=="emotion_1"]<-GEMIAC[1]
+colnames(df_f3)[colnames(df_f3)=="emotion_2"]<-GEMIAC[2]
+colnames(df_f3)[colnames(df_f3)=="emotion_3"]<-GEMIAC[3]
+colnames(df_f3)[colnames(df_f3)=="emotion_4"]<-GEMIAC[4]
+colnames(df_f3)[colnames(df_f3)=="emotion_5"]<-GEMIAC[5]
+colnames(df_f3)[colnames(df_f3)=="emotion_6"]<-GEMIAC[6]
+colnames(df_f3)[colnames(df_f3)=="emotion_7"]<-GEMIAC[7]
+colnames(df_f3)[colnames(df_f3)=="emotion_8"]<-GEMIAC[8]
+colnames(df_f3)[colnames(df_f3)=="emotion_9"]<-GEMIAC[9]
+colnames(df_f3)[colnames(df_f3)=="emotion_10"]<-GEMIAC[10]
+colnames(df_f3)[colnames(df_f3)=="emotion_11"]<-GEMIAC[11]
+colnames(df_f3)[colnames(df_f3)=="emotion_12"]<-GEMIAC[12]
+colnames(df_f3)[colnames(df_f3)=="emotion_13"]<-GEMIAC[13]
+colnames(df_f3)[colnames(df_f3)=="emotion_14"]<-GEMIAC[14]
+colnames(df_f3)[colnames(df_f3)=="emotion_15"]<-GEMIAC[15]
+colnames(df_f3)[colnames(df_f3)=="emotion_16"]<-GEMIAC[16]
+
+# Take only one row for each participant
+df_f3_unique <- df_f3 %>%
+  distinct(ProlificID, .keep_all = TRUE)
+
+#dim(df_f3_unique)
+#names(df_f3_unique)
+
+# Add constructs (based on vignettes)
+df_f3_unique$Construct<-"??"
+df_f3_unique$Construct[df_f3_unique$VigNro < 4]<-"EDR"
+df_f3_unique$Construct[df_f3_unique$VigNro == 4 | df_f3_unique$VigNro == 5]<-"FM"
+df_f3_unique$Construct[df_f3_unique$VigNro == 6 | df_f3_unique$VigNro == 7]<-"CB"
+df_f3_unique$Construct[df_f3_unique$VigNro == 8 | df_f3_unique$VigNro == 9]<-"PEP"
+df_f3_unique$Construct[df_f3_unique$VigNro > 9]<-"AIA"
+# Make into factor and sort the order
+df_f3_unique$Construct<-factor(df_f3_unique$Construct,levels = c("EDR","FM","CB","PEP","AIA"))
+#levels(df_f3_unique$Construct)
+
+# Label vignettes
+V <- c('Enjoyment', 'Distraction', 'Relaxation', 'EnergyControl', 'Focus', 'GroupCohesion', 'ReduceLoneliness', 'Coping', 'Express', 'Spirituality', 'Curiosity', 'Aesthetics')
+# Make into factor 
+df_f3_unique$VigNro<-factor(df_f3_unique$VigNro,labels=V)
+#levels(df_f3_unique$VigNro)
+
+#dim(df_f3_unique)
+#table(df_f3_unique$Construct)
+#table(df_f3_unique$VigNro,df_f3_unique$item_label)
+
+#### Further pivot long ------
+
+df_f3_long <- df_f3_unique %>%
+   pivot_longer(
+     cols = GEMIAC,
+     names_to = "Emotion_New",
+     values_to = "Rating"
+   )
+df_gemiac<-df_f3_long
+
+# Removes the non-selected emotions
+df_gemiac <- dplyr::filter(df_f3_long, !is.na(Rating) & Rating>0)
+
+#table(df_gemiac$Emotion_New)
+#sum(table(df_gemiac$Emotion_New))
+
+GEMIAC_summary <- df_gemiac %>%
+  group_by(VigNro, Construct, Emotion_New) %>%
+  summarise(
+    N = n()
+  ) %>%
+  arrange(VigNro,Construct,desc(N)) %>%
+  ungroup()
+
+
+GEMIAC_summary <- df_gemiac %>%
+  group_by(VigNro, Construct, Emotion_New) %>%
+  summarise(
+    N = n(),
+    .groups = 'drop'
+  ) %>%
+  group_by(VigNro) %>%
+  mutate(
+    Total = sum(N),
+    Proportion = N / Total
+  ) %>%
+  arrange(VigNro, Construct, desc(N)) %>%
+  ungroup()
+
+```
+
+### GEMIAC plot
+
+```{r}
+#| echo: false
+#| warning: false
+#| messages: false
+#| fig.height: 11
+#| fig.width: 11
+#| eval: true
+#| results: 'asis'
+#| id: gemiac_plot
+
+#gemiac_summary$N<-gemiac_summary$N/max(gemiac_summary$N)
+
+library(RColorBrewer)
+colors_15 <- c(
+  brewer.pal(6, "Set2")[1:6],
+    brewer.pal(9, "Set1")
+)
+GEMIAC_summary$valence<-"Positive"
+GEMIAC_summary$valence[GEMIAC_summary$Emotion_New %in% c("Tense, uneasy","Melancholic, sad","Indifferent, bored","Agitated, aggressive")]<-"Negative"
+
+g2 <- ggplot(GEMIAC_summary, aes(x = VigNro, y = N, color = Emotion_New, fill=valence,shape=valence,group = Emotion_New)) +
+  geom_line() +
+  geom_point() +
+  facet_wrap(~ Construct, scales="free_x") +
+  scale_color_manual(name="GEMIAC",values = colors_15) +
+  scale_shape_manual(values = c(25,24))+
+  scale_fill_manual(values = c("Positive"="white","Negative"="black"))+
+#  scale_y_continuous(limits = c(1, 5), breaks = seq(1, 5, by = 1)) +
+  labs(title = "Mean GEMIAC Emotions by Vignette",
+       x = "Vignette Number",
+       y = "Count") +
+  theme_classic(base_size=14) +
+  theme(legend.position = "bottom")
+print(g2)
+
+# alt
+g3 <- ggplot(GEMIAC_summary, 
+             aes(x = Emotion_New, 
+                 y = N, 
+                 fill = Emotion_New, 
+                 #fill = valence,
+                 group = Emotion_New)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ VigNro, scales="free_x") +
+  scale_fill_manual(name="GEMIAC",values = colors_15) +
+  xlab("Emotion")+
+  coord_flip()+
+  theme_classic(base_size=14)
+print(g3)
+
+```
+
+### Top GEMIAC Emotions for Convergent Validity Summary
+
+Add top 3 GEMIAC emotions to the convergent validity table.
+
+```{r}
+#| results: asis
+#| id: gemiac_table
+
+gemiac_summary_top3 <- GEMIAC_summary %>%
+  group_by(VigNro) %>%
+  slice_max(order_by = N, n = 3) %>%
+  ungroup()
+
+print(knitr::kable(gemiac_summary_top3, digits = 2, caption = "GEMIAC Emotion Ratings Summary (Top 3 for each Vignette)."))
+
+```

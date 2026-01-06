@@ -1,0 +1,194 @@
+---
+title: "Exp. 1 - Preprocessing"
+toc: false
+knitr:
+  opts_chunk:
+    fig.path: "figures/"
+---
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| messages: false
+#| id: setup
+library(tidyr)
+library(dplyr)
+library(stringr)
+library(here)
+library(psych)
+library(ggplot2)
+
+source('scr/convert_items_long.R') # custom function
+source('scr/participant_reliability.R') # custom function
+source('scr/CFA_averaged.R') # custom function
+```
+
+## Load and preprocess data
+
+```{r}
+#| echo: true
+#| id: loadata
+source('scr/read_EFA_qualtrics.R') # custom function
+fn <- "data/EDR - Pilot_August 18, 2025_10.15.csv"
+d1 <- read_EFA_qualtrics(filename = fn, subconstructs = c("E","D","R"))
+df1<- convert_items_long(d1)
+df1b<- participant_reliability(df1,THRESHOLD = 0.001)
+df1b$study <- 1
+
+fn <- "data/FM_August 27, 2025_04.04.csv"
+d2 <- read_EFA_qualtrics(filename=fn,subconstructs = c("F","M"), controlQ = "M_15")
+df2<- convert_items_long(d2)
+df2b<- participant_reliability(df2,THRESHOLD = 0.001)
+df2b$study <- 2
+
+fn <- "data/CB - redo_September 1, 2025_03.36.csv"
+d3 <- read_EFA_qualtrics(filename=fn,subconstructs = c("C","S"), controlQ = "C_16")
+df3<- convert_items_long(d3)
+df3b<- participant_reliability(df3,THRESHOLD = 0.001)
+df3b$study <- 3
+
+fn <- "data/PEP_September 2, 2025_07.17.csv"
+d4 <- read_EFA_qualtrics(filename=fn,subconstructs = c("U","P"), controlQ = "U_21")
+df4<- convert_items_long(d4)
+df4b<- participant_reliability(df4,THRESHOLD = 0.001)
+df4b$study <- 4
+
+fn <- "data/AIA_September 3, 2025_05.02.csv"
+d5 <- read_EFA_qualtrics(filename=fn,subconstructs = c("I","X","B"), controlQ = "I_17")
+df5<- convert_items_long(d5)
+df5b<- participant_reliability(df5,THRESHOLD = 0.001)
+df5b$study <- 5
+
+```
+
+## Demographics
+
+Setting up demographic analysis.
+
+```{r}
+demographics <- rbind(df1b, df2b, df3b, df4b, df5b)
+demo_clean <- demographics[!duplicated(demographics$ID),]
+
+#aov.age <- aov(demo_clean$study ~ demo_clean$Age, data = demo_clean) # this is wrong
+aov.age <- aov(Age ~ factor(study), data = demo_clean) # this is correct
+summary(aov.age)
+
+demo_clean<-dplyr::filter(demo_clean,Gender!="Non-binary")
+ch.gender <- chisq.test(demo_clean$Gender, factor(demo_clean$study),simulate.p.value = FALSE)
+print(knitr::kable(table(demo_clean$Gender, demo_clean$study))) 
+ch.gender
+
+M <- as.table(rbind(c(69, 31), c(50, 50))) # extreme group
+print(chisq.test(M))
+M <- as.table(rbind(c(41, 58), c(50, 50)))
+chisq.test(M)
+
+
+table(demo_clean$OMSI)
+
+ch.OMSI <- chisq.test(demo_clean$OMSI, factor(demo_clean$study),simulate.p.value = FALSE) # Correct
+ch.OMSI
+table(demo_clean$OMSI,demo_clean$study)
+
+#aov.OMSI <- aov(demo_clean$study ~ demo_clean$OMSI, data = demo_clean)
+
+#OMSI <- c("Nonmusician" = 1, "Music-loving Nonmusician" = 2, "Amateur musician" = 3, "Serious amateur musician" = 4, "Semiprofessional musician" = 5, "Professional musician" = 5)
+
+#table(demo_clean$Gender)
+#Gender <- c("Female" = 1, "Male" = 2, "Non-binary" = 3, "Other" = 4, "Prefer not to say" = 5)
+
+```
+
+## Looking at Relevance
+
+```{r}
+
+EDRrel <- c(d1$D_Rep, d1$R_Rel, d1$E_Rel)
+FMrel <- c(d2$M_Rel, d2$F_Rel)
+CBrel <- c(d3$S_Rel, d3$C_Rel)
+PEPrel <- c(d4$P_Rel, d4$U_Rel)
+AIArel <- c(d5$B_Rel, d5$X_Rel, d5$I_Rel)
+
+```
+
+## Save preprocessed data
+
+Before running any structural analysis, let's revise the item names.
+
+```{r}
+#| echo: true
+#| output: asis
+#| id: save-data
+save_requested <- FALSE
+if(save_requested==TRUE){
+  saveRDS(df1b,file="data/EDR_N100.rds")
+  saveRDS(df2b,file="data/FM_N100.rds")
+  saveRDS(df3b,file="data/CB_N100.rds")
+  saveRDS(df4b,file="data/PEP_N100.rds")
+  saveRDS(df5b,file="data/AIA_N101.rds")
+}
+```
+
+# Looking at various reliability estimates
+
+From Revelle & Condon, 2019; Shrout & Lane, 2012. See Vispoel, Morris, & Kilinc, 2018; ten Hove, Jorgensen, & van der Ark, 2022
+
+```{r}
+#| echo: true
+#| eval: false
+#| id: relability
+source('scr/ml_r.R') #just multilevel.reliability but works, what is the good value?
+#ml_r(df1b) #RkF = 0.97, R1R = 0.37, RkR = 0.64, Rc = 0.92, RkRn = 0.58, Rcn = 0.93
+#ml_r(df2b) #RkF = 0.95, R1R = 0.40, RkR = 0.57, Rc = 0.91, RkRn = 0.52, Rcn = 0.84
+#ml_r(df3b) #RkF = 0.96, R1R = 0.59, RkR = 0.75, Rc = 0.85, RkRn = 0.72, Rcn = 0.85
+#ml_r(df4b) #RkF = 0.98, R1R = 0.63, RkR = 0.78, Rc = 0.88, RkRn = 0.76, Rcn = 0.89
+#ml_r(df5b) #RkF = 0.99, R1R = 0.70, RkR = 0.87, Rc = 0.86, RkRn = 0.87, Rcn = 0.76
+
+#These are intraclass correlations, I assume they can be interpreted as such;
+# 0 - .5 = poor; .5 - .75 moderate; .75 - .9 = good; above .9 = excellent
+
+#trying to specify in our language what this means ------------------------------------------------
+#RkF is the reliability of average ratings across all items and times, similar to Alpha
+#R1R is generalisability of single time point across all items, specific vignette reliability, reliability of a single time
+#RKR is generalisability of average time points across all items, person mean across vignettes
+#Rc is generalisability of change scores, within person variability?
+#RkRn is generalisability of between person differences averaged over time (nested within people)
+#Rcn is generalisability of within person differences, averaged over items: reliability between people over time
+```
+
+# Factor analyses
+
+```{r}
+#| echo: true
+#| eval: false
+#| id: CFA
+source('scr/CFA_averaged.R') # custom function
+FA1 <- CFA_averaged(data=df1b,vignettes = c("E","D","R"))
+
+# fix reverse scored items in the FM first
+df2b$value[df2b$item_label=="F8"] <- 6 - df2b$value[df2b$item_label=="F8"]
+
+FA2 <- CFA_averaged(data=df2b,vignettes=c("F","M"))
+FA3 <- CFA_averaged(data=df3b,vignettes=c("C","S"))
+FA4 <- CFA_averaged(data=df4b,vignettes=c("U","P"))
+FA5 <- CFA_averaged(data=df5b,vignettes=c("I","X","B"))
+
+```
+
+### Visualise the mean ratings
+
+```{r}
+#| echo: true
+#| id: visualise
+#| fig.height: 10
+#| fig.widht: 12
+
+source('scr/visualise_means.R')
+fig1 <- visualise_means(df1b)
+fig2 <- visualise_means(df2b)
+fig3 <- visualise_means(df3b)
+fig4 <- visualise_means(df4b)
+fig5 <- visualise_means(df5b)
+
+```

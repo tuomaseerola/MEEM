@@ -1,0 +1,382 @@
+---
+title: "Exp. 2 - Confirmatory Factor Analyses"
+toc: false
+knitr:
+  opts_chunk:
+    fig.path: "figures/"
+---
+
+```{r}
+#| echo: false
+#| warning: false
+#| messages: false
+#| eval: true
+#| id: exp2-setup
+library(tidyr)
+library(dplyr)
+library(stringr)
+library(here)
+library(psych)
+library(ggplot2)
+```
+
+## Load data
+
+```{r}
+#| echo: true
+#| id: exp2-load-data-rds
+df_f <- readRDS("data/items35_N1200.rds")
+source('scr/rename_specific_items.R') # We decided to relabel some constructs for clarity
+df_f <- rename_specific_items(df_f)
+
+```
+
+```{r}
+#| echo: false
+#| output: asis
+#| id: exp2-vignette-labels
+
+df_f$itemCategory<-NA
+df_f$itemCategory[str_detect(df_f$item_label,"E|D|R")]<-"EDR"
+df_f$itemCategory[str_detect(df_f$item_label,"M|F")]<-"FM"
+df_f$itemCategory[str_detect(df_f$item_label,"G|L")]<-"CB"     # Labels updated
+df_f$itemCategory[str_detect(df_f$item_label,"C|X")]<-"PEP"    # Labels updated
+df_f$itemCategory[str_detect(df_f$item_label,"B|I|A")]<-"AIA"  # Labels updated
+
+```
+
+## Report CFA Model Fit for each Construct
+
+For each construct, report (1) CFA fit, (2) measurement invariance fit indices (metric, scalar), and (3) discriminant validity indices.
+
+### CFA - EDR
+
+```{r}
+#| echo: true
+#| id: exp2-cfa-edr
+#| warning: false
+#| messages: false
+
+library(lavaan)
+library(semTools)
+set.seed(3110)
+source('scr/CFA_items.R')
+
+EDR <- "
+E =~ E1 + E6 + E7
+D =~ D1 + D6 + D7
+R =~ R1 + R3 + R7
+"
+
+items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7")
+tmp <- CFA_items(df_f,vignette = c(1,2,3), items=items,vignette_name="EDR",bonusquestion="HAAS")
+fit <- lavaan::cfa(model = EDR, data = tmp, estimator = "MLR",group = "VigNro") # includes vignettes explicitly
+fit.meas1 <- lavaan::fitMeasures(fit,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+print(fit.meas1)
+fit_metric <- lavaan::cfa(model = EDR, data = tmp, estimator = "MLR",group = "VigNro",
+                          group.equal = "loadings") # includes 
+lavaan::lavTestLRT(fit, fit_metric)
+fit_scalar <- lavaan::cfa(model = EDR, data = tmp, estimator = "MLR",group = "VigNro",
+                          group.equal = c("loadings","intercepts")) # includes 
+lavaan::lavTestLRT(fit, fit_scalar)
+
+
+fit <- lavaan::cfa(model = EDR, data = tmp, meanstructure = TRUE, estimator = "MLR")               # ignores vignettes
+ds1 <- semTools::discriminantValidity(object = fit,cutoff = 0.85)
+print(ds1)
+```
+
+### CFA - FM
+
+```{r}
+#| echo: true
+#| id: exp2-cfa-fm
+set.seed(3110)
+
+FM <- "
+M =~ M1 + M3 + F1 # Note one Focus item(F1) is renamed to motivation earlier
+F =~ F3 + F6 + F10
+"
+
+items <- c("M1","M3","F1","F3","F6","F10")
+
+tmp <- CFA_items(df_f,vignette = c(4,5), items=items,vignette_name="FM",bonusquestion="HAAS")
+fit <- lavaan::cfa(model = FM, data = tmp, estimator = "MLR",group = "VigNro") # includes vignettes explicitly
+fit.meas2 <- lavaan::fitMeasures(fit,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+print(fit.meas2)
+
+fit_metric <- lavaan::cfa(model = FM, data = tmp, estimator = "MLR",group = "VigNro",
+                          group.equal = "loadings") # includes 
+lavaan::lavTestLRT(fit, fit_metric)
+fit_scalar <- lavaan::cfa(model = FM, data = tmp, estimator = "MLR",group = "VigNro",
+                          group.equal = c("loadings","intercepts")) # includes 
+lavaan::lavTestLRT(fit, fit_scalar)
+
+
+fit <- lavaan::cfa(model = FM, data = tmp, meanstructure = TRUE, estimator = "MLR")
+ds2 <- semTools::discriminantValidity(object = fit,cutoff = 0.85)
+print(ds2)
+
+```
+
+### CFA - CB
+
+```{r}
+#| echo: true
+#| id: exp2-cfa-cb
+set.seed(3110)
+
+CB <- "
+G =~ G5 + G2 + G9
+L =~ L5 + L6 + L7 
+"
+
+items <- c("G5","G2","G9","L5","L6","L7")
+
+tmp <- CFA_items(df_f,vignette = c(6,7), items=items,vignette_name="CB",bonusquestion="HAAS")
+fit <- lavaan::cfa(model = CB, data = tmp, estimator = "MLR",group = "VigNro") # includes vignettes explicitly
+fit.meas3 <- lavaan::fitMeasures(fit,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+print(fit.meas3)
+
+fit_metric <- lavaan::cfa(model = CB, data = tmp, estimator = "MLR",group = "VigNro",
+                          group.equal = "loadings") # includes 
+lavaan::lavTestLRT(fit, fit_metric)
+fit_scalar <- lavaan::cfa(model = CB, data = tmp, estimator = "MLR",group = "VigNro",
+                          group.equal = c("loadings","intercepts")) # includes 
+lavaan::lavTestLRT(fit, fit_scalar)
+
+fit <- lavaan::cfa(model = CB, data = tmp, meanstructure = TRUE,estimator = "MLR")
+ds3 <- semTools::discriminantValidity(object = fit,cutoff = 0.85)
+print(ds3)
+
+```
+
+### CFA - PEP
+
+```{r}
+#| echo: true
+#| id: exp2-cfa-pep
+set.seed(3110)
+
+PEP <- "
+C =~ C2 + C3 + C6
+X =~ X4 + X8 + X9
+"
+
+items <- c("C2","C3","C6","X4","X8","X9")
+
+tmp <- CFA_items(df_f,vignette = c(8,9), items=items,vignette_name="PEP",bonusquestion="HAAS")
+fit <- lavaan::cfa(model = PEP, data = tmp, estimator = "MLR",group = "VigNro") # includes vignettes explicitly
+fit.meas4 <- lavaan::fitMeasures(fit,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+print(fit.meas4)
+
+fit_metric <- lavaan::cfa(model = PEP, data = tmp, estimator = "MLR",group = "VigNro",
+                          group.equal = "loadings") # includes 
+lavaan::lavTestLRT(fit, fit_metric)
+fit_scalar <- lavaan::cfa(model = PEP, data = tmp, estimator = "MLR",group = "VigNro",
+                          group.equal = c("loadings","intercepts")) # includes 
+lavaan::lavTestLRT(fit, fit_scalar)
+
+
+fit <- lavaan::cfa(model = PEP, data = tmp, meanstructure = TRUE,estimator = "MLR")
+ds4 <- semTools::discriminantValidity(object = fit,cutoff = 0.85)
+print(ds4)
+
+```
+
+### CFA - AIA
+
+```{r}
+#| echo: true
+#| id: exp2-cfa-aia
+set.seed(3110)
+
+AIA <- "
+B =~ B3 + B4 + B5
+I =~ I1 + I2
+A =~ A1 + A3 + A5
+"
+
+items <- c("B3","B4","B5","I1","I2","A1","A3","A5")
+tmp <- CFA_items(df_f,vignette = c(10,11,12), items=items,vignette_name="AIA",bonusquestion="HAAS")
+fit <- lavaan::cfa(model = AIA, data = tmp, estimator = "MLR",group = "VigNro") # includes vignettes explicitly
+fit.meas5 <- lavaan::fitMeasures(fit,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+print(fit.meas5)
+
+fit_metric <- lavaan::cfa(model = AIA, data = tmp, estimator = "MLR",group = "VigNro",
+                          group.equal = "loadings") # includes 
+
+# Compare configural and metric models
+lavaan::lavTestLRT(fit, fit_metric)
+fit_scalar <- lavaan::cfa(model = AIA, data = tmp, estimator = "MLR",group = "VigNro",
+                          group.equal = c("loadings","intercepts")) # includes 
+lavaan::lavTestLRT(fit, fit_scalar)
+
+
+fit <- lavaan::cfa(model = AIA, data = tmp, meanstructure = TRUE,estimator = "MLR")
+ds5 <- semTools::discriminantValidity(object = fit,cutoff = 0.85)
+print(ds5)
+
+```
+## Tables for manuscript
+
+```{r}
+#| echo: true
+#| id: exp2-tables
+#| output: asis
+
+cfa_table<-rbind(fit.meas1,fit.meas2,fit.meas3,fit.meas4,fit.meas5)
+rownames(cfa_table)<-c("EDR","FM","CB","PEP","AIA")
+print(knitr::kable(cfa_table,digits=3, caption="CFA measures of fit for constructs."))
+
+DS1<-as.data.frame(ds1)
+DS2<-as.data.frame(ds2)
+DS3<-as.data.frame(ds3)
+DS4<-as.data.frame(ds4)
+DS5<-as.data.frame(ds5)
+DS1$Episode<-"EDR"
+DS2$Episode<-"FM"
+DS3$Episode<-"CB"
+DS4$Episode<-"PEP"
+DS5$Episode<-"AIA"
+
+ds_table<-rbind(DS1,DS2,DS3,DS4,DS5)
+ds_table <- ds_table %>% relocate(Episode)
+
+print(knitr::kable(ds_table,digits=3, caption="Discriminant validity indices for sub-constructs."))
+
+```
+
+## Descriptives: means and SDs and loadings
+
+Show summary of values (means, SDs, and scores) across the sub-constructs when run jointly (CFA model with  12 sub-constructs).
+
+```{r}
+#| echo: false
+#| eval: true
+#| id: exp2-cfa-1st-order
+set.seed(3110)
+
+first_order <- "
+# sub-factors: EDR
+E =~ E1 + E6 + E7
+D =~ D1 + D6 + D7
+R =~ R1 + R3 + R7
+
+# sub-factors: FM
+M =~ M1 + M3 + F1
+F =~ F3 + F6 + F10
+
+# sub-factors: CB
+G =~ G5 + G2 + G9
+L =~ L5 + L6 + L7
+
+# sub-factors: PEP
+C =~ C2 + C3 + C6
+X =~ X4 + X8 + X9
+
+# sub-factors: AIA
+B =~ B3 + B4 + B5
+I =~ I1 + I2
+A =~ A1 + A3 + A5
+"
+
+items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","F1","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
+tmp <- CFA_items(df_f,vignette = 1:12, items=items,vignette_name="ALL",bonusquestion="HAAS")
+fit1 <- lavaan::cfa(model = first_order, data = tmp, meanstructure = TRUE,estimator = "MLR")
+fit1.meas <- lavaan::fitMeasures(fit1,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+#print(fit1.meas)
+#AVE(fit1) 
+#compRelSEM(fit1,tau.eq=F)
+
+```
+
+```{r}
+#| echo: false
+#| id: exp2-summarize-loadings
+#| output: asis
+
+params <- parameterEstimates(fit1, standardized = TRUE)
+loadings <- params[params$op == "=~", ]
+
+subconstructs <- params[params$op == "~~", ]
+library(stringr)
+key_subconstructs<-subconstructs[str_detect(subconstructs$lhs,"^[A-Z]$"),]
+#key_subconstructs
+
+edr_subs<-c("E","D","R")
+edr_res <- dplyr::filter(key_subconstructs, lhs %in% edr_subs & rhs %in% edr_subs & lhs != rhs)
+print(knitr::kable(edr_res,digits = 2))
+
+fm_subs<-c("F","M")
+fm_res <- dplyr::filter(key_subconstructs, lhs %in% fm_subs & rhs %in% fm_subs & lhs != rhs)
+print(knitr::kable(fm_res,digits = 2))
+
+cb_subs<-c("G","L")
+cb_res <- dplyr::filter(key_subconstructs, lhs %in% cb_subs & rhs %in% cb_subs & lhs != rhs)
+print(knitr::kable(cb_res,digits = 2))
+
+pep_subs<-c("C","X")
+pep_res <- dplyr::filter(key_subconstructs, lhs %in% pep_subs & rhs %in% pep_subs & lhs != rhs)
+print(knitr::kable(pep_res,digits = 2))
+
+aia_subs<-c("B","I","A")
+aia_res <- dplyr::filter(key_subconstructs, lhs %in% aia_subs & rhs %in% aia_subs & lhs != rhs)
+print(knitr::kable(aia_res,digits = 2))
+
+#loadings[, c("lhs", "rhs", "est", "se", "pvalue", "std.all")]
+
+# Create a formatted table
+loading_table <- data.frame(
+  Factor = loadings$lhs,
+  Item = loadings$rhs,
+  Estimate = round(loadings$est, 3),
+  SE = round(loadings$se, 3),
+  Standardized = round(loadings$std.all, 3),
+  p = round(loadings$pvalue, 3)
+)
+
+#print(loading_table)
+
+vars <- unique(loadings$rhs)
+
+descriptives <- data.frame(
+  Variable = vars,
+  Mean = round(sapply(tmp[, vars], mean, na.rm = TRUE), 2),
+  SD = round(sapply(tmp[, vars], sd, na.rm = TRUE), 2)
+)
+#print(descriptives)
+
+final_table <- merge(
+  loading_table[, c("Factor", "Item", "Standardized")],
+  descriptives,
+  by.x = "Item",
+  by.y = "Variable",
+  all.x = TRUE
+)
+
+final_table$Factor <- factor(final_table$Factor,levels = c("E","D","R","M","F","G","L","C","X","B","I","A"))
+
+final_table <- final_table[order(final_table$Factor), ]
+rownames(final_table) <- NULL
+knitr::kable(final_table, digits = 2, caption = "CFA Standardized Loadings with Descriptives.")
+
+```
+
+## Save factor scores for emotion comparison
+
+```{r}
+#| echo: true
+#| eval: true
+#| id: exp2-factor-scores
+
+# Extract factor scores from your CFA
+factor_scores <- lavPredict(fit1, method = "regression")
+fs <- as.data.frame(factor_scores)
+fs$VigNro <- tmp$VigNro
+fs$ProlificID <- tmp$ProlificID
+dim(tmp)
+# Save to CSV
+#write.csv(fs, file = here("data","factor_scores_exp2.csv"), row.names = TRUE)
+
+```

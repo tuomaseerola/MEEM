@@ -1,0 +1,118 @@
+StartDate,EndDate,Status,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,DistributionChannel,UserLanguage,"Prolific ID ","Consent ","Age ","Gender ",OMSI,Gen_1,Gen_2,Gen_3,Gen_4,Gen_5,Gen_6,Gen_7,Gen_8,Gen_9,Gen_10,Gen_11,Gen_12,Gen_13,Gen_14,Gen_15,Gen_16,Gen_17,Gen_18,Gen_19,Gen_20,Gen_21,Gen_22,Gen_23,Gen_24,Gen_25,Gen_26,Gen_27,Gen_28,Gen_29,Gen_30,Gen_31,Gen_32,Gen_33,Gen_34,Gen_35,Gen_36,Emotion,PROLIFIC_PID,Vignette,VigNro
+Start Date,End Date,Response Type,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Distribution Channel,User Language,"What is your prolific ID?
+Please note that this response should auto-fill with the correct ID",Do you consent to participating?,"What is your age? (e.g., 99)",What is your gender?,"In terms of your musical interest and expertise, which title best describes you?","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - Listening to music was a good way of entertaining myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - I was having a good time listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - I used the music to have a good time","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - The music helped me break away from the situation","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - Music acted as a mental shield against my distressing thoughts","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - I wanted the music to help me forget what I was doing","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - The music made me feel calm or relaxed","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - I was using the music to relax","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - Music provided a relaxing mood","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - The music was motivating me to do something","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - The music pumped me up","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - I used the music to motivate myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - The music helped me concentrate","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - Music helped me focus on what I was doing","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - I was more focused while listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - I felt connected to the people I was sharing this musical experience with","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - I felt a bond with the other people listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - The music made me feel more connected to a group","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - Listening to music made me feel less lonely","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - The music helped me feel less lonely","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - I used the music to keep me company","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - I found solace in the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - Listening to music comforted me","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - The music was comforting to me","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - The music helped me express myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - Listening to music helped me express how I was feeling","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - I vented my emotions by listening to music that expressed my feelings","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - The music provided me with a spiritual experience","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - The music related to my spirituality","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - I wanted the music to take me somewhere spiritually","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - Listening to the music stimulated my curiosity","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - The music sparked my curiosity","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - I appreciated the beauty of the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - The experience was enhanced by the beauty of the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - I had an unforgettable experience alongside the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+[Field-Vignette] - If you see this statement then select strongly disagree","What are the most likely emotion labels you would use to describe your experience in this situation?
+
+[Field-Vignette]",PROLIFIC_PID,Vignette,VigNro
+"{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""status""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""_recordId""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID1218656811_TEXT""}","{""ImportId"":""QID1218656807""}","{""ImportId"":""QID1218656808_TEXT""}","{""ImportId"":""QID1218656809""}","{""ImportId"":""QID1218656810""}","{""ImportId"":""QID58_1""}","{""ImportId"":""QID58_2""}","{""ImportId"":""QID58_3""}","{""ImportId"":""QID58_4""}","{""ImportId"":""QID58_5""}","{""ImportId"":""QID58_6""}","{""ImportId"":""QID58_7""}","{""ImportId"":""QID58_8""}","{""ImportId"":""QID58_9""}","{""ImportId"":""QID58_10""}","{""ImportId"":""QID58_11""}","{""ImportId"":""QID58_12""}","{""ImportId"":""QID58_13""}","{""ImportId"":""QID58_14""}","{""ImportId"":""QID58_15""}","{""ImportId"":""QID58_16""}","{""ImportId"":""QID58_17""}","{""ImportId"":""QID58_18""}","{""ImportId"":""QID58_19""}","{""ImportId"":""QID58_20""}","{""ImportId"":""QID58_21""}","{""ImportId"":""QID58_22""}","{""ImportId"":""QID58_23""}","{""ImportId"":""QID58_24""}","{""ImportId"":""QID58_25""}","{""ImportId"":""QID58_26""}","{""ImportId"":""QID58_27""}","{""ImportId"":""QID58_28""}","{""ImportId"":""QID58_29""}","{""ImportId"":""QID58_30""}","{""ImportId"":""QID58_31""}","{""ImportId"":""QID58_32""}","{""ImportId"":""QID58_33""}","{""ImportId"":""QID58_34""}","{""ImportId"":""QID58_35""}","{""ImportId"":""QID58_36""}","{""ImportId"":""QID59""}","{""ImportId"":""PROLIFIC_PID""}","{""ImportId"":""Vignette""}","{""ImportId"":""VigNro""}"
+2025-09-09 10:09:36,2025-09-09 10:11:49,0,100,133,1,2025-09-09 10:11:50,R_2JlXO64QKhqf9y5,anonymous,EN,5c7cf2bff2fe9400019295d7,2,30,2,2,5,5,5,3,4,4,4,3,4,4,5,3,3,4,3,4,4,4,4,5,5,4,4,4,5,4,4,3,5,5,4,4,5,5,5,1,"1,2,3,5,6,7,8,9,11,13",5c7cf2bff2fe9400019295d7,"Halfway through a concert, you realise you have been fully absorbed in the power and meaning of the music. It feels as if the music has taken you into a transcendent experience, which is exactly what you hoped for before the concert.",10
+2025-09-09 10:09:41,2025-09-09 10:13:29,0,100,227,1,2025-09-09 10:13:29,R_8uB2MtVgHmhcVVL,anonymous,EN,677c1d9dfa8c2311e7c89659,2,32,2,2,4,4,4,5,4,5,4,2,3,2,5,3,2,2,1,4,4,4,4,3,4,5,5,5,3,4,4,1,3,1,5,5,5,5,4,1,"1,2,3,5,6,8,9,13",677c1d9dfa8c2311e7c89659,"While out for a walk, you hear a busker playing incredible sounding music you have never discovered before. You are not sure what is attracting your interest to the music but you allow yourself to be taken in by the music and its new emotional direction.",11
+2025-09-09 10:09:27,2025-09-09 10:15:06,0,100,338,1,2025-09-09 10:15:06,R_2k02uepse3EHY1s,anonymous,EN,5b9d57e5737d030001ad2cbf,2,58,1,2,5,4,2,5,4,5,5,4,4,2,2,1,2,5,4,1,4,1,5,5,4,5,4,4,5,4,4,1,1,1,4,2,5,4,2,1,"9,11,12",5b9d57e5737d030001ad2cbf,"As you travel alone for an extended period, you put on your partner’s favourite music. The music makes you feel as if they are there with you.",7
+2025-09-09 10:13:10,2025-09-09 10:16:00,0,100,170,1,2025-09-09 10:16:01,R_2TNaApImded3dAR,anonymous,EN,5ee5defbfe74a3000d106f51,2,33,1,1,3,3,4,4,4,4,4,3,3,3,3,4,3,4,3,4,3,3,3,3,3,3,4,4,3,3,4,4,3,3,3,4,3,4,3,1,"1,6,8,13",5ee5defbfe74a3000d106f51,"While listening to a playlist, you come across a song that deeply resonates with what you are experiencing. It communicated something about yourself that you’ve struggled to explain to others.",9

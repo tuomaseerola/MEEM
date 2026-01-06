@@ -1,0 +1,240 @@
+---
+title: "Exp. 1 - Confirmatory Factor Analysis"
+toc: false
+knitr:
+  opts_chunk:
+    fig.path: "figures/"
+---
+
+A multilevel confirmatory factor analysis was performed in R (lavaan 0.6–19) to test a two or three-factor measurement model across two or three repeated vignette ratings nested within 100 participants. Each latent factor was indicated by three observed items. The model was estimated using robust maximum likelihood (MLR), with participant ID specified as a cluster variable to adjust for non-independence. Model fit was acceptable for the SEM models with best 3 items, but not for all items, see output tables for indicators.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| id: libraries
+library(tidyr)
+library(dplyr)
+library(stringr)
+#library(here)
+library(psych)
+library(lavaan)
+set.seed(3110)
+```
+
+## EDR
+
+```{r}
+#| echo: true
+#| id: load_data
+#| output: asis
+ 
+df <- readRDS(file="data/EDR_N100.rds")
+
+tmp <- dplyr::filter(df,vignette=="E" | vignette=="D" | vignette=="R")
+tmp_w <- pivot_wider(tmp, names_from = item_label, values_from = value,id_expand = FALSE,id_cols = c('ID','vignette'))
+tmp_w<-data.frame(tmp_w)
+rownames(tmp_w) <- 1:nrow(tmp_w)
+tmp_w$ID<-as.numeric(as.factor(tmp_w$ID))
+tmp_w$vignette<-as.factor(tmp_w$vignette)
+#tmp_w <- select(tmp_w, -ID)
+print(knitr::kable(table(tmp_w$vignette),col.names = c("Vignette", "N"),caption = "Table 1. Distribution of participants across EDR vignettes"))
+
+```
+
+```{r}
+#| echo: true
+#| id: sem-edr
+#| output: asis
+
+model_full <- "
+E =~ E1 + E2 + E3 + E4 + E5 + E6 + E7
+D =~ D1 + D2 + D3 + D4 + D5 + D6 + D7 + D8
+R =~ R1 + R2 + R3 + R4 + R5 + R6 + R7
+"
+
+model_best3item <- "
+E =~ E1 + E6 + E7
+D =~ D1 + D6 + D7
+R =~ R1 + R3 + R7
+"
+
+fit.full <- lavaan::cfa(model_full, data = tmp_w,meanstructure = TRUE, estimator = "MLR",cluster = "ID")
+fit.best3item <- lavaan::cfa(model_best3item, data = tmp_w,meanstructure = TRUE, estimator = "MLR",cluster = "ID")
+
+fit.meas.full <- fitMeasures(fit.full,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+fit.meas.best3item <- fitMeasures(fit.best3item,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+res <- rbind(fit.meas.full,fit.meas.best3item)
+print(knitr::kable(res,digits=3))
+#print(knitr::kable(effectsize::interpret(fit.best3item)))
+rm(tmp,tmp_w,df)
+rm(fit.full,fit.best3item)
+```
+
+## FM
+
+```{r}
+#| echo: true
+#| id: sem-fm
+#| output: asis
+
+df <- readRDS(file="data/FM_N100.rds")
+
+tmp <- dplyr::filter(df,vignette=="F" | vignette=="M")
+tmp_w <- pivot_wider(tmp, names_from = item_label, values_from = value,id_expand = FALSE,id_cols = c('ID','vignette'))
+tmp_w<-data.frame(tmp_w)
+rownames(tmp_w) <- 1:nrow(tmp_w)
+tmp_w$ID<-as.numeric(as.factor(tmp_w$ID))
+tmp_w$vignette<-as.factor(tmp_w$vignette)
+#tmp_w <- select(tmp_w, -ID)
+print(knitr::kable(table(tmp_w$vignette),col.names = c("Vignette", "N"), caption = "Table 1. Distribution of participants across FM vignettes"))
+
+model_full <- "
+M =~ M1 + M3 + F1 + F5 + F7
+F =~ M2 + F2 + F3 + F4 + F6 + F9 + F10 + F11
+"
+
+model_best3item <- "
+M =~ M1 + M3 + F1
+F =~ F3 + F6 + F10
+"
+
+fit.full <- lavaan::cfa(model_full, data = tmp_w,meanstructure = TRUE, estimator = "MLR",cluster = "ID")
+fit.best3item <- lavaan::cfa(model_best3item, data = tmp_w,meanstructure = TRUE, estimator = "MLR",cluster = "ID")
+fit.meas.full <- fitMeasures(fit.full,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+fit.meas.best3item <- fitMeasures(fit.best3item,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+res <- rbind(fit.meas.full,fit.meas.best3item)
+print(knitr::kable(res,digits=3))
+#print(knitr::kable(effectsize::interpret(fit.best3item)))
+rm(tmp,tmp_w,df)
+rm(fit.full,fit.best3item)
+
+```
+
+
+## CB
+
+```{r}
+#| echo: true
+#| id: sem-cb
+#| output: asis
+
+df <- readRDS(file="data/CB_N100.rds")
+
+tmp <- dplyr::filter(df,vignette=="C" | vignette=="S")
+tmp_w <- pivot_wider(tmp, names_from = item_label, values_from = value,id_expand = FALSE,id_cols = c('ID','vignette'))
+tmp_w<-data.frame(tmp_w)
+rownames(tmp_w) <- 1:nrow(tmp_w)
+tmp_w$ID<-as.numeric(as.factor(tmp_w$ID))
+tmp_w$vignette<-as.factor(tmp_w$vignette)
+#tmp_w <- select(tmp_w, -ID)
+print(knitr::kable(table(tmp_w$vignette),col.names = c("Vignette", "N"),caption = "Table 1. Distribution of participants across CB vignettes"))
+
+model_full <- "
+C =~ C1 + C2 + C3 + C4 + C5 + C6 + C7 + C8 + C9
+S =~ S1 + S2 + S3 + S4 + S5 + S6 + S7 
+"
+
+model_best3item <- "
+C =~ C5 + C2 + C9
+S =~ S5 + S6 + S7 
+"
+
+fit.full <- lavaan::cfa(model_full, data = tmp_w,meanstructure = TRUE, estimator = "MLR",cluster = "ID")
+fit.best3item <- lavaan::cfa(model_best3item, data = tmp_w,meanstructure = TRUE, estimator = "MLR",cluster = "ID")
+
+fit.meas.full <- fitMeasures(fit.full,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+fit.meas.best3item <- fitMeasures(fit.best3item,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+res <- rbind(fit.meas.full,fit.meas.best3item)
+print(knitr::kable(res,digits=3))
+#print(knitr::kable(effectsize::interpret(fit.best3item)))
+rm(tmp,tmp_w,df)
+rm(fit.full,fit.best3item)
+```
+
+
+## PEP
+
+```{r}
+#| echo: true
+#| id: sem-pep
+#| output: asis
+
+df <- readRDS(file="data/PEP_N100.rds")
+
+tmp <- dplyr::filter(df,vignette=="U" | vignette=="P")
+tmp_w <- pivot_wider(tmp, names_from = item_label, values_from = value,id_expand = FALSE,id_cols = c('ID','vignette'))
+tmp_w<-data.frame(tmp_w)
+rownames(tmp_w) <- 1:nrow(tmp_w)
+tmp_w$ID<-as.numeric(as.factor(tmp_w$ID))
+tmp_w$vignette<-as.factor(tmp_w$vignette)
+#tmp_w <- select(tmp_w, -ID)
+
+print(knitr::kable(table(tmp_w$vignette),col.names = c("Vignette", "N"),caption = "Table 1. Distribution of participants across PEP vignettes"))
+
+model_full <- "
+U =~ U1 + U2 + U3 + U4 + U5 + U6 + U7 
+P =~ P1 + P2 + P3 + P4 + P5 + P6 + P7 + P8 + P9 + P10 + P11 + P12 + P13
+"
+
+model_best3item <- "
+U =~ U2 + U3 + U6
+P =~ P4 + P8 + P9
+"
+
+fit.full <- lavaan::cfa(model_full, data = tmp_w,meanstructure = TRUE, estimator = "MLR",cluster = "ID")
+fit.best3item <- lavaan::cfa(model_best3item, data = tmp_w,meanstructure = TRUE, estimator = "MLR",cluster = "ID")
+
+fit.meas.full <- fitMeasures(fit.full,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+fit.meas.best3item <- fitMeasures(fit.best3item,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+res <- rbind(fit.meas.full,fit.meas.best3item)
+print(knitr::kable(res,digits=3))
+#print(knitr::kable(effectsize::interpret(fit.best3item)))
+rm(tmp,tmp_w,df)
+rm(fit.full,fit.best3item)
+
+```
+
+## AIA
+
+```{r}
+#| echo: true
+#| id: sem-aia
+#| output: asis
+
+df <- readRDS(file="data/AIA_N101.rds")
+
+tmp <- dplyr::filter(df,vignette=="I" | vignette=="X" | vignette=="B")
+tmp_w <- pivot_wider(tmp, names_from = item_label, values_from = value,id_expand = FALSE,id_cols = c('ID','vignette'))
+tmp_w<-data.frame(tmp_w)
+rownames(tmp_w) <- 1:nrow(tmp_w)
+tmp_w$ID<-as.numeric(as.factor(tmp_w$ID))
+tmp_w$vignette<-as.factor(tmp_w$vignette)
+#tmp_w <- select(tmp_w, -ID)
+
+print(knitr::kable(table(tmp_w$vignette),col.names = c("Vignette", "N"),caption = "Table 1. Distribution of participants across AIA vignettes"))
+
+model_full <- "
+I =~ I1 + I2 + I3 + I4 + I5 + I6 
+X =~ X1 + X2 + X3 + X4 + X5
+B =~ B1 + B2 + B3 + B4 + B5
+"
+
+model_best3item <- "
+I =~ I3 + I4 + I5
+X =~ X1 + X2
+B =~ B1 + B3 + B5
+"
+
+fit.full <- lavaan::cfa(model_full, data = tmp_w,meanstructure = TRUE, estimator = "MLR",cluster = "ID")
+fit.best3item <- lavaan::cfa(model_best3item, data = tmp_w,meanstructure = TRUE, estimator = "MLR",cluster = "ID")
+
+fit.meas.full <- fitMeasures(fit.full,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+fit.meas.best3item <- fitMeasures(fit.best3item,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
+res <- rbind(fit.meas.full,fit.meas.best3item)
+print(knitr::kable(res,digits=3))
+#print(knitr::kable(effectsize::interpret(fit.best3item)))
+rm(tmp,tmp_w,df)
+rm(fit.full,fit.best3item)
+```
+

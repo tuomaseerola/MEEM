@@ -1,0 +1,314 @@
+StartDate,EndDate,Status,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,DistributionChannel,UserLanguage,"Consent ",ID,"Age ",Gender,OMSI10 ,D _1,D _2,D _3,D _4,D _5,D _6,D _7,D _8,D _9,D _10,D _11,D _12,D _13,D _14,D _15,D _16,D _17,D _18,D _19,D _20,D _21,D _22,"D_Rep ",R _1,R _2,R _3,R _4,R _5,R _6,R _7,R _8,R _9,R _10,R _11,R _12,R _13,R _14,R _15,R _16,R _17,R _18,R _19,R _20,R _21,R _22,R_Rel ,E_1,E_2,E_3,E_4,E_5,E_6,E_7,E_8,E_9,E_10,E_11,E_12,E_13,E_14,E_15,E_16,E_17,E_18,E_19,E_20,E_21,E_22,E_Rel,"Music check ",PROLIFIC_PID
+Start Date,End Date,Response Type,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Distribution Channel,User Language,Do you consent to participating?,"What is your prolific ID?
+Please note that this response should auto-fill with the correct ID","What is your age? (e.g., 99)",What is your gender?,"In terms of your musical interest and expertise, which title best describes you?","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - Listening to music was a good way of entertaining myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - The music gave me pleasure","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I enjoyed how the music made me feel","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I was delighted by the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I felt like I was enjoying myself because of the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I was having a good time listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I used the music to have a good time","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - The music made me feel calm or relaxed","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I used the music to soothe my mind","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I was using the music to relax","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I used the music to calm myself down and relax","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - Listening to the music helped me recharge","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - Relaxing with the music made me feel better","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - Music provided a relaxing mood","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - The music helped me break away from the situation","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - The music pushed my worries aside","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - The music allowed me to escape from my daily routines","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - Music distracted my mind from the outside world","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I wanted to have background music on to distract myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - Music acted as a mental shield against my distressing thoughts","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - I wanted the music to help me forget what I was doing","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+It was pointed out that you missed an important detail in your work which you now have to redo. You put on a music playlist to drown out self-criticism as you fix the mistake. - The music made me forget what I was thinking about",How relevant was the scenario based on your own life experience?,"Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - Listening to music was a good way of entertaining myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - The music gave me pleasure","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I enjoyed how the music made me feel","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I was delighted by the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I felt like I was enjoying myself because of the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I was having a good time listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I used the music to have a good time","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - The music made me feel calm or relaxed","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I used the music to soothe my mind","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I was using the music to relax","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I used the music to calm myself down and relax","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - Listening to the music helped me recharge","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - Relaxing with the music made me feel better","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - Music provided a relaxing mood","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - The music helped me break away from the situation","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - The music pushed my worries aside","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - The music allowed me to escape from my daily routines","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - Music distracted my mind from the outside world","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I wanted to have background music on to distract myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - Music acted as a mental shield against my distressing thoughts","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - I wanted the music to help me forget what I was doing","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+
+
+
+After a long and demanding week, you take time to rest by listening to music. The stress melts away and you start to recover as you listen along. - The music made me forget what I was thinking about",How relevant was the scenario based on your own life experience?,"Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - Listening to music was a good way of entertaining myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - The music gave me pleasure","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I enjoyed how the music made me feel","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I was delighted by the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I felt like I was enjoying myself because of the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I was having a good time listening to the music","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I used the music to have a good time","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - The music made me feel calm or relaxed","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I used the music to soothe my mind","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I was using the music to relax","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I used the music to calm myself down and relax","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - Listening to the music helped me recharge","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - Relaxing with the music made me feel better","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - Music provided a relaxing mood","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - The music helped me break away from the situation","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - The music pushed my worries aside","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - The music allowed me to escape from my daily routines","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - Music distracted my mind from the outside world","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I wanted to have background music on to distract myself","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - Music acted as a mental shield against my distressing thoughts","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - I wanted the music to help me forget what I was doing","Imagine yourself in the following scenario and then rate how you would respond to the following statements in that experience:
+
+ 
+You are attending a celebration where music is the heart of the party. You are able to join in the fun which is aided by the music throughout the event. - The music made me forget what I was thinking about",How relevant was the scenario based on your own life experience?,Did you listen to music while completing this survey?,PROLIFIC_PID
+"{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""status""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""_recordId""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID34""}","{""ImportId"":""QID37_TEXT""}","{""ImportId"":""QID1_TEXT""}","{""ImportId"":""QID3""}","{""ImportId"":""QID4""}","{""ImportId"":""QID36_1""}","{""ImportId"":""QID36_2""}","{""ImportId"":""QID36_3""}","{""ImportId"":""QID36_4""}","{""ImportId"":""QID36_5""}","{""ImportId"":""QID36_6""}","{""ImportId"":""QID36_7""}","{""ImportId"":""QID36_8""}","{""ImportId"":""QID36_9""}","{""ImportId"":""QID36_10""}","{""ImportId"":""QID36_11""}","{""ImportId"":""QID36_12""}","{""ImportId"":""QID36_13""}","{""ImportId"":""QID36_14""}","{""ImportId"":""QID36_15""}","{""ImportId"":""QID36_16""}","{""ImportId"":""QID36_17""}","{""ImportId"":""QID36_18""}","{""ImportId"":""QID36_19""}","{""ImportId"":""QID36_20""}","{""ImportId"":""QID36_21""}","{""ImportId"":""QID36_22""}","{""ImportId"":""QID41""}","{""ImportId"":""QID35_1""}","{""ImportId"":""QID35_2""}","{""ImportId"":""QID35_3""}","{""ImportId"":""QID35_4""}","{""ImportId"":""QID35_5""}","{""ImportId"":""QID35_6""}","{""ImportId"":""QID35_7""}","{""ImportId"":""QID35_8""}","{""ImportId"":""QID35_9""}","{""ImportId"":""QID35_10""}","{""ImportId"":""QID35_11""}","{""ImportId"":""QID35_12""}","{""ImportId"":""QID35_13""}","{""ImportId"":""QID35_14""}","{""ImportId"":""QID35_15""}","{""ImportId"":""QID35_16""}","{""ImportId"":""QID35_17""}","{""ImportId"":""QID35_18""}","{""ImportId"":""QID35_19""}","{""ImportId"":""QID35_20""}","{""ImportId"":""QID35_21""}","{""ImportId"":""QID35_22""}","{""ImportId"":""QID40""}","{""ImportId"":""QID5_1""}","{""ImportId"":""QID5_2""}","{""ImportId"":""QID5_3""}","{""ImportId"":""QID5_4""}","{""ImportId"":""QID5_5""}","{""ImportId"":""QID5_6""}","{""ImportId"":""QID5_7""}","{""ImportId"":""QID5_8""}","{""ImportId"":""QID5_9""}","{""ImportId"":""QID5_10""}","{""ImportId"":""QID5_11""}","{""ImportId"":""QID5_12""}","{""ImportId"":""QID5_13""}","{""ImportId"":""QID5_14""}","{""ImportId"":""QID5_15""}","{""ImportId"":""QID5_16""}","{""ImportId"":""QID5_17""}","{""ImportId"":""QID5_18""}","{""ImportId"":""QID5_19""}","{""ImportId"":""QID5_20""}","{""ImportId"":""QID5_21""}","{""ImportId"":""QID5_22""}","{""ImportId"":""QID38""}","{""ImportId"":""QID42""}","{""ImportId"":""PROLIFIC_PID""}"
+2025-05-21 03:07:30,2025-05-21 03:14:50,Survey Preview,100,439,True,2025-05-21 03:14:51,R_8tZQWbJuELBKL7z,preview,EN,Yes,,,Male,Semiprofessional musician,2,3,3,2,4,2,3,4,Strongly agree (5),3,4,3,4,4,Strongly agree (5),Strongly agree (5),2,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),4,,4,4,4,3,4,4,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),3,4,3,4,2,2,3,4,,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),3,3,4,2,3,4,4,2,4,4,4,3,Strongly disagree       (1),3,3,,,
+2025-05-21 03:21:07,2025-05-21 03:31:31,Survey Preview,100,624,True,2025-05-21 03:31:31,R_8b0siV2R4hGK3VD,preview,EN,Yes,,,Female,Amateur musician,4,2,4,Strongly disagree (1),2,4,2,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),2,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),4,Strongly agree (5),Strongly agree (5),Strongly agree (5),4,Strongly agree (5),,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),3,4,4,4,4,Strongly agree (5),Strongly disagree       (1),3,2,4,Strongly disagree       (1),3,Strongly disagree       (1),Strongly disagree       (1),,,
+2025-05-21 04:31:06,2025-05-21 04:36:46,IP Address,100,340,True,2025-05-21 04:36:47,R_8w9UKRNjAvIIHkd,anonymous,EN,Yes,,,Male,Amateur musician,Strongly agree (5),3,3,3,4,3,4,Strongly agree (5),4,4,3,3,3,3,4,4,Strongly agree (5),Strongly agree (5),Strongly agree (5),4,Strongly agree (5),Strongly agree (5),,4,4,4,Strongly agree (5),4,4,4,Strongly agree (5),4,Strongly agree (5),4,4,Strongly agree (5),4,4,Strongly agree (5),3,Strongly agree (5),2,3,Strongly agree (5),4,,Strongly agree (5),4,4,Strongly agree (5),Strongly agree (5),4,4,3,2,3,2,3,3,4,2,2,4,4,Strongly agree (5),2,4,Strongly agree (5),,,
+2025-05-21 04:38:36,2025-05-21 04:40:22,IP Address,63,105,False,2025-05-28 04:40:24,R_20pi1R2ny8t5XrC,anonymous,EN,Yes,,,Male,Nonmusician,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2025-06-06 08:46:59,2025-06-06 08:54:01,IP Address,100,421,True,2025-06-06 08:54:01,R_2THRDAnvboBPYUp,anonymous,EN,,,,Prefer not to say,Nonmusician,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),,,
+2025-06-10 02:18:11,2025-06-10 02:38:40,IP Address,63,1228,False,2025-06-17 02:38:41,R_8xJkIekwTRvUbNE,anonymous,EN,,,,Prefer not to say,Nonmusician,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2025-08-11 15:05:32,2025-08-11 15:07:23,IP Address,100,111,True,2025-08-11 15:07:24,R_2cvkkhGClnEsuQj,anonymous,EN,Yes,6847fbd96237884b522218cf,99,Male,Semiprofessional musician,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),,,6847fbd96237884b522218cf
+2025-08-12 03:47:52,2025-08-12 03:49:12,Survey Preview,100,80,True,2025-08-12 03:49:13,R_8F4iF4qDxSMAs4l,preview,EN,Yes,,99,Other,Professional musician,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,,
+2025-08-12 03:49:27,2025-08-12 03:49:47,Survey Preview,100,19,True,2025-08-12 03:49:47,R_8roJt22KHnVVuYw,preview,EN,No,,99,Other,Professional musician,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2025-08-12 03:50:48,2025-08-12 03:50:59,Survey Preview,100,11,True,2025-08-12 03:51:00,R_8ZIxETh67nFaHPC,preview,EN,No,,99,Other,Professional musician,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2025-08-12 03:51:40,2025-08-12 03:51:43,Survey Preview,100,3,True,2025-08-12 03:51:44,R_8uhet1KA9nzKIw1,preview,EN,No,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2025-08-12 03:51:50,2025-08-12 03:53:07,Survey Preview,100,77,True,2025-08-12 03:53:08,R_8JPbzKs1mM2ZwVg,preview,EN,Yes,,99,Other,Professional musician,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,,
+2025-08-12 03:57:24,2025-08-12 04:01:49,IP Address,100,264,True,2025-08-12 04:01:49,R_2jc8mLrCz2oQfx5,anonymous,EN,Yes,6847fbd96237884b522218cf,99,Other,Professional musician,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,,6847fbd96237884b522218cf
+2025-08-12 04:00:36,2025-08-12 04:19:52,IP Address,100,1155,True,2025-08-12 04:19:52,R_8kFFa5bU6eccQ5T,anonymous,EN,Yes,,99,Male,Nonmusician,2,2,3,2,3,2,2,2,2,3,3,2,2,3,Strongly agree (5),4,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),4,4,Extremely Relevant,4,4,Strongly agree (5),4,3,4,3,3,3,Strongly agree (5),4,Strongly agree (5),3,4,3,4,3,2,2,3,3,3,Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),2,2,3,2,3,3,3,3,3,2,3,3,Strongly disagree       (1),2,2,Extremely Relevant,,
+2025-08-12 04:56:38,2025-08-12 04:58:20,Survey Preview,100,101,True,2025-08-12 04:58:20,R_2FeWUVBtwIQLp0w,preview,EN,Yes,,99,Other,Professional musician,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,,
+2025-08-12 05:30:30,2025-08-12 05:36:50,Survey Preview,100,380,True,2025-08-12 05:36:51,R_8f0HnwMNjU3LL0B,preview,EN,Yes,,99,Other,Professional musician,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,,
+2025-08-12 05:41:59,2025-08-12 05:43:22,Survey Preview,100,82,True,2025-08-12 05:43:22,R_84kTBj2U70YxffX,preview,EN,Yes,,99,Other,Professional musician,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Yes,
+2025-08-12 05:46:56,2025-08-12 05:49:27,IP Address,100,150,True,2025-08-12 05:49:27,R_2Qoo8UywPyNmKee,anonymous,EN,Yes,6847fbd96237884b522218cf,99,Other,Professional musician,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,No,6847fbd96237884b522218cf
+2025-08-12 06:01:09,2025-08-12 06:02:24,IP Address,100,75,True,2025-08-12 06:02:24,R_27p9v3y9zu8DH2a,anonymous,EN,Yes,6847fbd96237884b522218cf,99,Other,Professional musician,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Extremely Relevant,No,6847fbd96237884b522218cf
+2025-08-12 06:06:18,2025-08-12 06:10:22,IP Address,100,244,True,2025-08-12 06:10:22,R_8QSDu2UpxNMWuVS,anonymous,EN,Yes,5aff33bae55f90000139f664,38,Male,Music-loving nonmusician,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),3,Strongly agree (5),Slightly Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),3,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),3,Moderately Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),3,Strongly agree (5),Strongly agree (5),3,Strongly disagree       (1),Strongly agree (5),Moderately Relevant,No,5aff33bae55f90000139f664
+2025-08-12 06:07:12,2025-08-12 06:10:47,IP Address,100,215,True,2025-08-12 06:10:48,R_8FQX1eMlXVERvy8,anonymous,EN,Yes,62babccea6f10f16ce6a5a75,30,Female,Music-loving nonmusician,4,4,3,3,4,3,3,Strongly agree (5),4,Strongly agree (5),4,4,Strongly agree (5),Strongly agree (5),4,4,3,4,4,4,3,3,Moderately Relevant,3,4,4,3,3,3,3,Strongly agree (5),4,Strongly agree (5),Strongly agree (5),4,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),3,4,4,4,4,4,Moderately Relevant,Strongly agree (5),Strongly agree (5),4,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),3,3,3,3,4,Strongly agree (5),3,3,4,4,3,3,3,2,3,Moderately Relevant,No,62babccea6f10f16ce6a5a75
+2025-08-12 06:09:30,2025-08-12 06:13:48,IP Address,100,258,True,2025-08-12 06:13:48,R_87o5N0sTDtr1CI9,anonymous,EN,Yes,6658b2f320f33b713aa253b1,32,Female,Music-loving nonmusician,4,4,4,4,4,4,3,4,4,4,4,4,4,4,4,4,4,4,4,4,2,4,Moderately Relevant,4,4,Strongly agree (5),4,4,4,3,4,4,4,4,4,4,4,4,4,4,4,4,Strongly agree (5),4,Strongly agree (5),Moderately Relevant,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),4,4,4,4,4,4,Strongly agree (5),4,4,4,4,4,4,4,4,Extremely Relevant,No,6658b2f320f33b713aa253b1
+2025-08-12 06:10:10,2025-08-12 06:14:46,IP Address,100,276,True,2025-08-12 06:14:47,R_27tvRPSoMJjsXNn,anonymous,EN,Yes,66c4a32221f616ebf48ab21d,52,Male,Amateur musician,4,4,4,3,3,4,3,4,4,Strongly agree (5),4,2,Strongly agree (5),4,Strongly agree (5),3,4,Strongly agree (5),Strongly agree (5),3,4,4,Slightly Relevant,Strongly agree (5),4,4,4,3,Strongly agree (5),4,Strongly agree (5),Strongly agree (5),Strongly agree (5),Strongly agree (5),3,4,Strongly agree (5),4,Strongly agree (5),Strongly agree (5),4,Strongly agree (5),3,Strongly agree (5),Strongly agree (5),Slightly Relevant,3,3,4,3,2,3,4,3,3,3,2,2,3,Strongly agree (5),3,3,4,4,2,2,2,2,Moderately Relevant,No,66c4a32221f616ebf48ab21d
+2025-08-12 06:07:38,2025-08-12 06:16:57,IP Address,100,558,True,2025-08-12 06:16:57,R_8NCghxdRYVpTtYF,anonymous,EN,Yes,677a8e5affbe5673b3a79e6b,60,Male,Nonmusician,4,4,4,3,4,4,4,3,2,4,3,Strongly agree (5),4,4,4,3,4,4,3,2,3,3,Not Relevant,Strongly agree (5),4,4,3,4,4,3,3,3,3,3,3,3,4,3,2,3,2,4,Strongly disagree (1),2,3,Not Relevant,Strongly agree (5),4,Strongly agree (5),4,4,Strongly agree (5),Strongly agree (5),4,3,4,3,4,4,4,3,3,3,3,3,3,3,3,Moderately Relevant,No,677a8e5affbe5673b3a79e6b
