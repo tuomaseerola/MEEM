@@ -1,5 +1,5 @@
 ---
-title: "Measure of Emotional Episodes with Music (MEEM): Development and psychometric evaluation of a modular instrument"
+title: "Measure of Emotional Episodes with Music (MEEM)"
 author:
   - name: Connor Kirts
     orcid: 0009-0009-7207-6884
