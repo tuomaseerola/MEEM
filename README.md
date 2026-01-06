@@ -1,6 +1,6 @@
 # MEEM
 
-This repository offers data and analyses related to the study titled "Measure of Emotional Episodes with Music (MEEM): development and psychometric evaluation of a modular instrument, (submitted). This is scale development for an instrument to measure a emotional episodes related to music ([Eerola, Kirts & Saarikallio, 2025](https://doi.org/10.1177/03057356241279763)) that has been already developed through the content validity steps [Kirts et al., in press](https://tuomaseerola.github.io/MIMEE/).
+This repository offers data and analyses related to the study titled "Measure of Emotional Episodes with Music (MEEM): development and psychometric evaluation of a modular instrument, (submitted). This is scale development for an instrument to measure a emotional episodes related to music ([Eerola, Kirts & Saarikallio, 2025](https://doi.org/10.1177/03057356241279763)) that has been already developed through the content validity steps [Kirts et al., in press](https://tuomaseerola.github.io/MIMEE/). 
 
 The public-facing version of this repository is available at
 [https://tuomaseerola.github.io/MEEM/](https://tuomaseerola.github.io/MEEM/). 
@@ -14,7 +14,6 @@ These are the main analytical operations carried out in the study in Experiments
 2. [CFA_direct](exp1/CFA_direct.qmd) contains full items analysis and 4 and 3 best item analyses. &check;
 
 3. [measurement_invariance](exp1/measurement_invariance.qmd) reports configural, metric, and scalar invariance for the CFA participant-clustered robust SE models. &check;
-
 
 ## Experiment 2
 

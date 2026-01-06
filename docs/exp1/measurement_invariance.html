@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Exp. 1 - Measurement invariance – MEEM</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ca8314855ba39a054b5f7b80a8316993.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">MEEM</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Measure of Emotional Episodes with Music (MEEM): Development and psychometric evaluation of a modular instrument</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tuomaseerola/MEEM/"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Exp. 1 - Measurement invariance</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Measurement invariance across the vignettes was examined using multigroup CFA in lavaan with robust maximum likelihood estimation (MLR) and participant ID as a clustering variable. Configural, metric, and scalar invariance models were compared sequentially. Table 1 below summarises the invariance results, but generally model fit did not degrade substantially when factor loadings were constrained (ΔCFI = .001, ΔRMSEA = .008), suggesting metric invariance for FM, CB and AIA. However, when intercepts were constrained (ΔCFI &lt; .005, ΔRMSEA &lt; .004), all constructs failed to support the scalar invariance across vignettes.</p>
+<section id="edr" class="level2">
+<h2 class="anchored" data-anchor-id="edr">EDR</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file=</span><span class="st">"data/EDR_N100.rds"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(df,vignette<span class="sc">==</span><span class="st">"E"</span> <span class="sc">|</span> vignette<span class="sc">==</span><span class="st">"D"</span> <span class="sc">|</span> vignette<span class="sc">==</span><span class="st">"R"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tmp_w <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(tmp, <span class="at">names_from =</span> item_label, <span class="at">values_from =</span> value,<span class="at">id_expand =</span> <span class="cn">FALSE</span>,<span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">'ID'</span>,<span class="st">'vignette'</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="ot">&lt;-</span><span class="fu">data.frame</span>(tmp_w)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(tmp_w) <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tmp_w)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">E =~ E1 + E6 + E7</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="st">D =~ D1 + D6 + D7</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="st">R =~ R1 + R3 + R7</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># baseline</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>model.baseline <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w,<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># configural invariance</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>model.configural <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>,<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.baseline,model.configural)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s,fit.measures="all")</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>config1 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.baseline,model.configural)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># metric invariance</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>model.metric <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>,<span class="at">group.equal=</span><span class="fu">c</span>(<span class="st">"loadings"</span>),<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.configural, model.metric)</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s,fit.measures="all")</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>metric1 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.configural,model.metric)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># scalar invariance</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>model.scalar <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>, <span class="at">group.equal=</span><span class="fu">c</span>(<span class="st">"loadings"</span>,<span class="st">"intercepts"</span>),<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(model.scalar, standardized = TRUE, fit.measures = TRUE)</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.metric, model.scalar)</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s)</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>scalar1 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.metric,model.scalar)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span>semTools<span class="sc">::</span><span class="fu">compareFit</span>(model.baseline,model.configural, model.metric,model.scalar,<span class="at">nested =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>################### Nested Model Comparison #########################
+
+Scaled Chi-Squared Difference Test (method = "satorra.bentler.2001")
+
+lavaan-&gt;unknown():  
+   lavaan NOTE: The "Chisq" column contains standard test statistics, not the 
+   robust test that should be reported per model. A robust difference test is 
+   a function of two standard (not robust) statistics.
+                 Df    AIC    BIC   Chisq Chisq diff Df diff Pr(&gt;Chisq)    
+model.baseline   24 6264.0 6375.1  51.853                                  
+model.configural 72 5943.7 6277.0  86.815     33.670      48     0.9418    
+model.metric     84 5943.3 6232.2 110.381     22.222      12     0.0351 *  
+model.scalar     96 5966.5 6211.0 157.653     52.143      12  5.849e-07 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+####################### Model Fit Indices ###########################
+                 chisq.scaled df.scaled pvalue.scaled rmsea.robust cfi.robust
+model.baseline        42.628†        24          .011        .056       .987 
+model.configural      79.087         72          .265        .033†      .995†
+model.metric         101.045         84          .099        .047       .987 
+model.scalar         147.454         96          .001        .076       .961 
+                 tli.robust  srmr       aic       bic
+model.baseline        .980  .038† 6263.973  6375.087 
+model.configural      .992† .046  5943.698  6277.038 
+model.metric          .983  .068  5943.263† 6232.159 
+model.scalar          .957  .080  5966.536  6210.986†
+
+################## Differences in Fit Indices #######################
+                                  df.scaled rmsea.robust cfi.robust tli.robust
+model.configural - model.baseline        48       -0.023      0.008      0.012
+model.metric - model.configural          12        0.014     -0.008     -0.009
+model.scalar - model.metric              12        0.029     -0.026     -0.027
+                                   srmr      aic     bic
+model.configural - model.baseline 0.007 -320.275 -98.049
+model.metric - model.configural   0.022   -0.434 -44.880
+model.scalar - model.metric       0.012   23.272 -21.173</code></pre>
+</div>
+</div>
+</section>
+<section id="fm" class="level2">
+<h2 class="anchored" data-anchor-id="fm">FM</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file=</span><span class="st">"data/FM_N100.rds"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(df,vignette<span class="sc">==</span><span class="st">"F"</span> <span class="sc">|</span> vignette<span class="sc">==</span><span class="st">"M"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>tmp_w <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(tmp, <span class="at">names_from =</span> item_label, <span class="at">values_from =</span> value,<span class="at">id_expand =</span> <span class="cn">FALSE</span>,<span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">'ID'</span>,<span class="st">'vignette'</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="ot">&lt;-</span><span class="fu">data.frame</span>(tmp_w)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(tmp_w) <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tmp_w)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#tmp_w &lt;- select(tmp_w, -ID)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>ID<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>ID))</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>vignette<span class="ot">&lt;-</span><span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>vignette)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="st">'</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">    M =~ M1 + M3 + F1</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st">    F =~ F3 + F6 + F10</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="st">'</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># baseline</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>model.baseline <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w,<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># configural invariance</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>model.configural <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>,<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.baseline,model.configural)</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s,fit.measures="all")</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>config2 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.baseline,model.configural)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co"># metric invariance</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>model.metric <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>,<span class="at">group.equal=</span><span class="fu">c</span>(<span class="st">"loadings"</span>),<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.configural, model.metric)</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s,fit.measures="all")</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>metric2 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.configural,model.metric)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co"># scalar invariance</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>model.scalar <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>, <span class="at">group.equal=</span><span class="fu">c</span>(<span class="st">"loadings"</span>,<span class="st">"intercepts"</span>),<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(model.scalar, standardized = TRUE, fit.measures = TRUE)</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.metric, model.scalar)</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s)</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>scalar2 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.metric,model.scalar)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span>semTools<span class="sc">::</span><span class="fu">compareFit</span>(model.baseline,model.configural, model.metric,model.scalar,<span class="at">nested =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>################### Nested Model Comparison #########################
+
+Scaled Chi-Squared Difference Test (method = "satorra.bentler.2001")
+
+lavaan-&gt;unknown():  
+   lavaan NOTE: The "Chisq" column contains standard test statistics, not the 
+   robust test that should be reported per model. A robust difference test is 
+   a function of two standard (not robust) statistics.
+                 Df    AIC    BIC  Chisq Chisq diff Df diff Pr(&gt;Chisq)    
+model.baseline    8 2624.0 2686.6 16.583                                  
+model.configural 16 2529.5 2654.8 22.718     6.3137       8     0.6121    
+model.metric     20 2523.4 2635.5 24.632     1.0851       4     0.8966    
+model.scalar     24 2542.3 2641.3 51.610    27.0694       4  1.925e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+####################### Model Fit Indices ###########################
+                 chisq.scaled df.scaled pvalue.scaled rmsea.robust cfi.robust
+model.baseline        16.272†         8          .039        .073       .992 
+model.configural      22.823         16          .119        .065       .993 
+model.metric          21.438         20          .372        .029†     0.998†
+model.scalar          45.933         24          .005        .101       .973 
+                 tli.robust  srmr       aic       bic
+model.baseline        .985  .018† 2623.969  2686.637 
+model.configural      .986  .025  2529.455  2654.791 
+model.metric         0.997† .029  2523.368† 2635.511†
+model.scalar          .967  .057  2542.347  2641.296 
+
+################## Differences in Fit Indices #######################
+                                  df.scaled rmsea.robust cfi.robust tli.robust
+model.configural - model.baseline         8       -0.007      0.001      0.001
+model.metric - model.configural           4       -0.036      0.006      0.011
+model.scalar - model.metric               4        0.073     -0.025     -0.031
+                                   srmr     aic     bic
+model.configural - model.baseline 0.007 -94.514 -31.846
+model.metric - model.configural   0.004  -6.087 -19.280
+model.scalar - model.metric       0.028  18.978   5.785</code></pre>
+</div>
+</div>
+</section>
+<section id="cb" class="level2">
+<h2 class="anchored" data-anchor-id="cb">CB</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file=</span><span class="st">"data/CB_N100.rds"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(df,vignette<span class="sc">==</span><span class="st">"C"</span> <span class="sc">|</span> vignette<span class="sc">==</span><span class="st">"S"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>tmp_w <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(tmp, <span class="at">names_from =</span> item_label, <span class="at">values_from =</span> value,<span class="at">id_expand =</span> <span class="cn">FALSE</span>,<span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">'ID'</span>,<span class="st">'vignette'</span>))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="ot">&lt;-</span><span class="fu">data.frame</span>(tmp_w)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(tmp_w) <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tmp_w)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>ID<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>ID))</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>vignette<span class="ot">&lt;-</span><span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>vignette)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="st">    C =~ C5 + C2 + C9</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="st">    S =~ S5 + S6 + S7 </span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># baseline</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>model.baseline <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w,<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># configural invariance</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>model.configural <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>,<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.baseline,model.configural)</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s,fit.measures="all")</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>config3 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.baseline,model.configural)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># metric invariance</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>model.metric <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>,<span class="at">group.equal=</span><span class="fu">c</span>(<span class="st">"loadings"</span>),<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.configural, model.metric)</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s,fit.measures="all")</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>metric3 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.configural,model.metric)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co"># scalar invariance</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>model.scalar <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>, <span class="at">group.equal=</span><span class="fu">c</span>(<span class="st">"loadings"</span>,<span class="st">"intercepts"</span>),<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(model.scalar, standardized = TRUE, fit.measures = TRUE)</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.metric, model.scalar)</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s)</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>scalar3 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.metric,model.scalar)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span>semTools<span class="sc">::</span><span class="fu">compareFit</span>(model.baseline,model.configural, model.metric,model.scalar,<span class="at">nested =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>################### Nested Model Comparison #########################
+
+Scaled Chi-Squared Difference Test (method = "satorra.bentler.2001")
+
+lavaan-&gt;unknown():  
+   lavaan NOTE: The "Chisq" column contains standard test statistics, not the 
+   robust test that should be reported per model. A robust difference test is 
+   a function of two standard (not robust) statistics.
+                 Df    AIC    BIC  Chisq Chisq diff Df diff Pr(&gt;Chisq)    
+model.baseline    8 3010.2 3072.9 13.853                                  
+model.configural 16 2852.4 2977.7 15.319      1.340       8     0.9951    
+model.metric     20 2851.0 2963.2 21.962      6.649       4     0.1557    
+model.scalar     24 2884.9 2983.9 63.879     54.236       4  4.697e-11 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+####################### Model Fit Indices ###########################
+                 chisq.scaled df.scaled pvalue.scaled rmsea.robust cfi.robust
+model.baseline        14.346†         8          .073        .062       .992 
+model.configural      14.875         16          .534        .000†     1.000†
+model.metric          21.453         20          .371        .027      0.998 
+model.scalar          65.054         24          .000        .130       .944 
+                 tli.robust  srmr       aic       bic
+model.baseline        .985  .041  3010.237  3072.905 
+model.configural     1.003† .023† 2852.365  2977.701 
+model.metric         0.997  .040  2851.008† 2963.151†
+model.scalar          .930  .083  2884.925  2983.874 
+
+################## Differences in Fit Indices #######################
+                                  df.scaled rmsea.robust cfi.robust tli.robust
+model.configural - model.baseline         8       -0.062      0.008      0.018
+model.metric - model.configural           4        0.027     -0.002     -0.006
+model.scalar - model.metric               4        0.102     -0.054     -0.067
+                                    srmr      aic     bic
+model.configural - model.baseline -0.018 -157.872 -95.204
+model.metric - model.configural    0.018   -1.357 -14.550
+model.scalar - model.metric        0.042   33.917  20.724</code></pre>
+</div>
+</div>
+</section>
+<section id="pep" class="level2">
+<h2 class="anchored" data-anchor-id="pep">PEP</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file=</span><span class="st">"data/PEP_N100.rds"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(df,vignette<span class="sc">==</span><span class="st">"U"</span> <span class="sc">|</span> vignette<span class="sc">==</span><span class="st">"P"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>tmp_w <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(tmp, <span class="at">names_from =</span> item_label, <span class="at">values_from =</span> value,<span class="at">id_expand =</span> <span class="cn">FALSE</span>,<span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">'ID'</span>,<span class="st">'vignette'</span>))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="ot">&lt;-</span><span class="fu">data.frame</span>(tmp_w)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(tmp_w) <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tmp_w)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#tmp_w &lt;- select(tmp_w, -ID)</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>ID<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>ID))</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>vignette<span class="ot">&lt;-</span><span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>vignette)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="st">    U =~ U2 + U3 + U6</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="st">    P =~ P4 + P8 + P9</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># baseline</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>model.baseline <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w,<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co"># configural invariance</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>model.configural <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>,<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.baseline,model.configural)</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s,fit.measures="all")</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>config4 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.baseline,model.configural)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co"># metric invariance</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>model.metric <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>,<span class="at">group.equal=</span><span class="fu">c</span>(<span class="st">"loadings"</span>),<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.configural, model.metric)</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s,fit.measures="all")</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>metric4 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.configural,model.metric)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co"># scalar invariance</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>model.scalar <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>, <span class="at">group.equal=</span><span class="fu">c</span>(<span class="st">"loadings"</span>,<span class="st">"intercepts"</span>),<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(model.scalar, standardized = TRUE, fit.measures = TRUE)</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.metric, model.scalar)</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s)</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>scalar4 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.metric,model.scalar)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span>semTools<span class="sc">::</span><span class="fu">compareFit</span>(model.baseline,model.configural, model.metric,model.scalar,<span class="at">nested =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>################### Nested Model Comparison #########################
+
+Scaled Chi-Squared Difference Test (method = "satorra.bentler.2001")
+
+lavaan-&gt;unknown():  
+   lavaan NOTE: The "Chisq" column contains standard test statistics, not the 
+   robust test that should be reported per model. A robust difference test is 
+   a function of two standard (not robust) statistics.
+                 Df    AIC    BIC  Chisq Chisq diff Df diff Pr(&gt;Chisq)  
+model.baseline    8 2578.4 2641.0 15.921                                
+model.configural 16 2572.0 2697.3 18.223     2.1143       8    0.97731  
+model.metric     20 2576.6 2688.7 30.799    12.9850       4    0.01135 *
+model.scalar     24 2573.7 2672.7 35.941     5.4128       4    0.24750  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+####################### Model Fit Indices ###########################
+                 chisq.scaled df.scaled pvalue.scaled rmsea.robust cfi.robust
+model.baseline        15.623†         8          .048        .070       .989 
+model.configural      17.291         16          .367        .029†     0.998†
+model.metric          29.706         20          .075        .071       .985 
+model.scalar          35.156         24          .066        .069       .983 
+                 tli.robust  srmr       aic       bic
+model.baseline        .979  .027† 2578.363  2641.031†
+model.configural     0.996† .030  2571.980† 2697.316 
+model.metric          .978  .064  2576.556  2688.699 
+model.scalar          .979  .067  2573.699  2672.648 
+
+################## Differences in Fit Indices #######################
+                                  df.scaled rmsea.robust cfi.robust tli.robust
+model.configural - model.baseline         8       -0.041      0.009      0.017
+model.metric - model.configural           4        0.042     -0.013     -0.019
+model.scalar - model.metric               4       -0.002     -0.002      0.001
+                                   srmr    aic     bic
+model.configural - model.baseline 0.003 -6.383  56.285
+model.metric - model.configural   0.034  4.576  -8.617
+model.scalar - model.metric       0.003 -2.858 -16.051</code></pre>
+</div>
+</div>
+</section>
+<section id="aia" class="level2">
+<h2 class="anchored" data-anchor-id="aia">AIA</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file=</span><span class="st">"data/AIA_N101.rds"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(df,vignette<span class="sc">==</span><span class="st">"I"</span> <span class="sc">|</span> vignette<span class="sc">==</span><span class="st">"X"</span> <span class="sc">|</span> vignette<span class="sc">==</span><span class="st">"B"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>tmp_w <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(tmp, <span class="at">names_from =</span> item_label, <span class="at">values_from =</span> value,<span class="at">id_expand =</span> <span class="cn">FALSE</span>,<span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">'ID'</span>,<span class="st">'vignette'</span>))</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="ot">&lt;-</span><span class="fu">data.frame</span>(tmp_w)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(tmp_w) <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tmp_w)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>ID<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>ID))</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>vignette<span class="ot">&lt;-</span><span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>vignette)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="st">    I =~ I3 + I4 + I5</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="st">    X =~ X1 + X2</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="st">    B =~ B1 + B3 + B5</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># baseline</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>model.baseline <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w,<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co"># configural invariance</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>model.configural <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>,<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.baseline,model.configural)</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s,fit.measures="all")</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>config5 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.baseline,model.configural)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co"># metric invariance</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>model.metric <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>,<span class="at">group.equal=</span><span class="fu">c</span>(<span class="st">"loadings"</span>),<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.configural, model.metric)</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s,fit.measures="all")</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>metric5 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.configural,model.metric)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="co"># scalar invariance</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>model.scalar <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>, <span class="at">group.equal=</span><span class="fu">c</span>(<span class="st">"loadings"</span>,<span class="st">"intercepts"</span>),<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(model.scalar, standardized = TRUE, fit.measures = TRUE)</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.metric, model.scalar)</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s)</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>scalar5 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.metric,model.scalar)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span>semTools<span class="sc">::</span><span class="fu">compareFit</span>(model.baseline,model.configural, model.metric,model.scalar,<span class="at">nested =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>################### Nested Model Comparison #########################
+
+Scaled Chi-Squared Difference Test (method = "satorra.bentler.2001")
+
+lavaan-&gt;unknown():  
+   lavaan NOTE: The "Chisq" column contains standard test statistics, not the 
+   robust test that should be reported per model. A robust difference test is 
+   a function of two standard (not robust) statistics.
+                 Df    AIC    BIC   Chisq Chisq diff Df diff Pr(&gt;Chisq)    
+model.baseline   17 5294.4 5394.7  54.764                                  
+model.configural 51 5227.1 5527.9  97.533     43.811      34     0.1209    
+model.metric     61 5214.9 5478.5 105.338      8.148      10     0.6144    
+model.scalar     71 5258.1 5484.6 168.575     67.439      10  1.381e-10 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+####################### Model Fit Indices ###########################
+                 chisq.scaled df.scaled pvalue.scaled rmsea.robust cfi.robust
+model.baseline        43.154†        17          .000        .080†      .982†
+model.configural      90.827         51          .001        .091       .976 
+model.metric          99.864         61          .001        .082       .977 
+model.scalar         162.353         71          .000        .115       .947 
+                 tli.robust  srmr       aic       bic
+model.baseline        .970† .051† 5294.415  5394.686†
+model.configural      .961  .058  5227.055  5527.867 
+model.metric          .969  .062  5214.860† 5478.535 
+model.scalar          .938  .078  5258.096  5484.634 
+
+################## Differences in Fit Indices #######################
+                                  df.scaled rmsea.robust cfi.robust tli.robust
+model.configural - model.baseline        34        0.011     -0.005     -0.009
+model.metric - model.configural          10       -0.010      0.001      0.008
+model.scalar - model.metric              10        0.033     -0.030     -0.031
+                                   srmr     aic     bic
+model.configural - model.baseline 0.006 -67.360 133.181
+model.metric - model.configural   0.004 -12.195 -49.332
+model.scalar - model.metric       0.017  43.236   6.099</code></pre>
+</div>
+</div>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<table class="caption-top table">
+<caption>Measurement Invariance p-values for robust CFA analysis across constructs.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Configural</th>
+<th style="text-align: right;">Metric</th>
+<th style="text-align: right;">Scalar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">EDR</td>
+<td style="text-align: right;">0.942</td>
+<td style="text-align: right;">0.035</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FM</td>
+<td style="text-align: right;">0.612</td>
+<td style="text-align: right;">0.897</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CB</td>
+<td style="text-align: right;">0.995</td>
+<td style="text-align: right;">0.156</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PEP</td>
+<td style="text-align: right;">0.977</td>
+<td style="text-align: right;">0.011</td>
+<td style="text-align: right;">0.248</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AIA</td>
+<td style="text-align: right;">0.121</td>
+<td style="text-align: right;">0.614</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/tuomaseerola\.github\.io\/MEEM\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tuomaseerola/MEEM/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

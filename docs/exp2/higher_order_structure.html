@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Exp. 2 - Higher Order Structures – MEEM</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ca8314855ba39a054b5f7b80a8316993.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">MEEM</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Measure of Emotional Episodes with Music (MEEM): Development and psychometric evaluation of a modular instrument</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tuomaseerola/MEEM/"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Exp. 2 - Higher Order Structures</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="load-data" class="level2">
+<h2 class="anchored" data-anchor-id="load-data">Load data</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df_f <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/items35_N1200.rds"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">'scr/rename_specific_items.R'</span>) <span class="co"># We decided to relabel some constructs for clarity</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df_f <span class="ot">&lt;-</span> <span class="fu">rename_specific_items</span>(df_f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">'scr/CFA_items.R'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="higher-order-structures" class="level2">
+<h2 class="anchored" data-anchor-id="higher-order-structures">Higher order structures</h2>
+<section id="first-order-model-sub-constructs" class="level3">
+<h3 class="anchored" data-anchor-id="first-order-model-sub-constructs">First-Order Model (sub-constructs)</h3>
+<p>Let’s explore how the episodes operate via 12 sub-constructs.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3110</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>first_order <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: EDR</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="st">E =~ E1 + E6 + E7</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">D =~ D1 + D6 + D7</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="st">R =~ R1 + R3 + R7</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: FM</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="st">M =~ M1 + M3 + F1</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">F =~ F3 + F6 + F10</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: CB</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="st">G =~ G5 + G2 + G9</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="st">L =~ L5 + L6 + L7</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: PEP</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="st">C =~ C2 + C3 + C6</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="st">X =~ X4 + X8 + X9</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: AIA</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="st">B =~ B3 + B4 + B5</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="st">I =~ I1 + I2</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="st">A =~ A1 + A3 + A5</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"E1"</span>,<span class="st">"E6"</span>,<span class="st">"E7"</span>,<span class="st">"D1"</span>,<span class="st">"D6"</span>,<span class="st">"D7"</span>,<span class="st">"R1"</span>,<span class="st">"R3"</span>,<span class="st">"R7"</span>,<span class="st">"M1"</span>,<span class="st">"M3"</span>,<span class="st">"F1"</span>,<span class="st">"F3"</span>,<span class="st">"F6"</span>,<span class="st">"F10"</span>,<span class="st">"G5"</span>,<span class="st">"G2"</span>,<span class="st">"G9"</span>,<span class="st">"L5"</span>,<span class="st">"L6"</span>,<span class="st">"L7"</span>,<span class="st">"C2"</span>,<span class="st">"C3"</span>,<span class="st">"C6"</span>,<span class="st">"X4"</span>,<span class="st">"X8"</span>,<span class="st">"X9"</span>,<span class="st">"B3"</span>,<span class="st">"B4"</span>,<span class="st">"B5"</span>,<span class="st">"I1"</span>,<span class="st">"I2"</span>,<span class="st">"A1"</span>,<span class="st">"A3"</span>,<span class="st">"A5"</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">CFA_items</span>(df_f,<span class="at">vignette =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">items=</span>items,<span class="at">vignette_name=</span><span class="st">"ALL"</span>,<span class="at">bonusquestion=</span><span class="st">"HAAS"</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(<span class="at">model =</span> first_order, <span class="at">data =</span> tmp, <span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>fit1.meas <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">fitMeasures</span>(fit1,<span class="fu">c</span>(<span class="st">"tli"</span>,<span class="st">"chisq"</span>,<span class="st">"df"</span>,<span class="st">"pvalue"</span>, <span class="st">"cfi"</span>, <span class="st">"rmsea"</span>, <span class="st">"srmr"</span>))</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit1.meas)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     tli    chisq       df   pvalue      cfi    rmsea     srmr 
+   0.949 1617.750  494.000    0.000    0.958    0.044    0.039 </code></pre>
+</div>
+</div>
+</section>
+<section id="first-and-second-order-model" class="level3">
+<h3 class="anchored" data-anchor-id="first-and-second-order-model">First and Second-Order Model</h3>
+<p>Let’s explore how the episodes (Constructs) operate when build as second-order model with sub-constructs.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3110</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>second_order <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: EDR</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="st">E =~ E1 + E6 + E7</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="st">D =~ D1 + D6 + D7</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="st">R =~ R1 + R3 + R7</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: FM</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="st">M =~ M1 + M3 + F1</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="st">F =~ F3 + F6 + F10</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: CB</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="st">G =~ G5 + G2 + G9</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="st">L =~ L5 + L6 + L7</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: PEP</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="st">C =~ C2 + C3 + C6</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="st">X =~ X4 + X8 + X9</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: AIA</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="st">B =~ B3 + B4 + B5</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="st">I =~ I1 + I2</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="st">A =~ A1 + A3 + A5</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="st"># 2nd order factors</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="st">EDR =~ E + D + R</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="st">FM =~ M + F</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="st">CB =~ G + L </span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="st">PEP =~ C + X</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="st">AIA =~ B + I + A  </span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"E1"</span>,<span class="st">"E6"</span>,<span class="st">"E7"</span>,<span class="st">"D1"</span>,<span class="st">"D6"</span>,<span class="st">"D7"</span>,<span class="st">"R1"</span>,<span class="st">"R3"</span>,<span class="st">"R7"</span>,<span class="st">"M1"</span>,<span class="st">"M3"</span>,<span class="st">"F1"</span>,<span class="st">"F3"</span>,<span class="st">"F6"</span>,<span class="st">"F10"</span>,<span class="st">"G5"</span>,<span class="st">"G2"</span>,<span class="st">"G9"</span>,<span class="st">"L5"</span>,<span class="st">"L6"</span>,<span class="st">"L7"</span>,<span class="st">"C2"</span>,<span class="st">"C3"</span>,<span class="st">"C6"</span>,<span class="st">"X4"</span>,<span class="st">"X8"</span>,<span class="st">"X9"</span>,<span class="st">"B3"</span>,<span class="st">"B4"</span>,<span class="st">"B5"</span>,<span class="st">"I1"</span>,<span class="st">"I2"</span>,<span class="st">"A1"</span>,<span class="st">"A3"</span>,<span class="st">"A5"</span>)</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">CFA_items</span>(df_f,<span class="at">vignette =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">items=</span>items,<span class="at">vignette_name=</span><span class="st">"ALL"</span>,<span class="at">bonusquestion=</span><span class="st">"HAAS"</span>)</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>fit2 <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(<span class="at">model =</span> second_order, <span class="at">data =</span> tmp, <span class="at">meanstructure =</span> <span class="cn">TRUE</span>, <span class="at">estimator =</span> <span class="st">"MLR"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: lavaan-&gt;lav_object_post_check():  
+   covariance matrix of latent variables is not positive definite ; use 
+   lavInspect(fit, "cov.lv") to investigate.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fit2.meas <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">fitMeasures</span>(fit2,<span class="fu">c</span>(<span class="st">"tli"</span>,<span class="st">"chisq"</span>,<span class="st">"df"</span>,<span class="st">"pvalue"</span>, <span class="st">"cfi"</span>, <span class="st">"rmsea"</span>, <span class="st">"srmr"</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit2.meas)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     tli    chisq       df   pvalue      cfi    rmsea     srmr 
+   0.918 2512.255  538.000    0.000    0.926    0.055    0.060 </code></pre>
+</div>
+</div>
+</section>
+<section id="bi-factor-model" class="level3">
+<h3 class="anchored" data-anchor-id="bi-factor-model">Bi-factor Model</h3>
+<p>Test whether the items load on both a general factor and their specific episode factors (sub-constructs).</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: lavaan-&gt;lav_model_vcov():  
+   The variance-covariance matrix of the estimated parameters (vcov) does not 
+   appear to be positive definite! The smallest eigenvalue (= -9.586897e-06) 
+   is smaller than zero. This may be a symptom that the model is not 
+   identified.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     tli    chisq       df   pvalue      cfi    rmsea     srmr 
+   0.901 2854.587  525.000    0.000    0.913    0.061    0.065 </code></pre>
+</div>
+</div>
+</section>
+<section id="second-order-model-only" class="level3">
+<h3 class="anchored" data-anchor-id="second-order-model-only">Second-order Model only</h3>
+<p>Test whether the items work through 5 constructs only (all sub-constructs are included in each construct).</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>     tli    chisq       df   pvalue      cfi    rmsea     srmr 
+   0.678 8516.714  550.000    0.000    0.702    0.110    0.100 </code></pre>
+</div>
+</div>
+</section>
+<section id="first-order-second-order-and-a-generic-third-order" class="level3">
+<h3 class="anchored" data-anchor-id="first-order-second-order-and-a-generic-third-order">First-order, Second-order and a Generic Third-order</h3>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: lavaan-&gt;lav_object_post_check():  
+   some estimated lv variances are negative</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     tli    chisq       df   pvalue      cfi    rmsea     srmr 
+   0.917 2561.692  543.000    0.000    0.925    0.056    0.062 </code></pre>
+</div>
+</div>
+</section>
+<section id="visualise-models" class="level3">
+<h3 class="anchored" data-anchor-id="visualise-models">Visualise Models</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>First-order</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figures/plot-fi-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>First and second-order</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figures/plot-fi-2.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Bifactor</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figures/plot-fi-3.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Second-order only</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figures/plot-fi-4.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1st, 2nd, and third-order</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="figures/plot-fi-5.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="summarise-model-fits" class="level3">
+<h3 class="anchored" data-anchor-id="summarise-model-fits">Summarise Model Fits</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">tli</th>
+<th style="text-align: right;">chisq</th>
+<th style="text-align: right;">df</th>
+<th style="text-align: right;">pvalue</th>
+<th style="text-align: right;">cfi</th>
+<th style="text-align: right;">rmsea</th>
+<th style="text-align: right;">srmr</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1st-order</td>
+<td style="text-align: right;">0.95</td>
+<td style="text-align: right;">1617.75</td>
+<td style="text-align: right;">494</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.96</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.04</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1st and 2nd-order</td>
+<td style="text-align: right;">0.92</td>
+<td style="text-align: right;">2512.25</td>
+<td style="text-align: right;">538</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.93</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">0.06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bifactor</td>
+<td style="text-align: right;">0.90</td>
+<td style="text-align: right;">2854.59</td>
+<td style="text-align: right;">525</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.91</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">0.07</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Second-order only</td>
+<td style="text-align: right;">0.68</td>
+<td style="text-align: right;">8516.71</td>
+<td style="text-align: right;">550</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.70</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">0.10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1-,2-, 3rd-order</td>
+<td style="text-align: right;">0.92</td>
+<td style="text-align: right;">2561.69</td>
+<td style="text-align: right;">543</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.92</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">0.06</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="compare-structures" class="level3">
+<h3 class="anchored" data-anchor-id="compare-structures">Compare Structures</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>o <span class="ot">&lt;-</span> <span class="fu">compareFit</span>(fit1, fit2, fit3, fit4, fit5)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: lavaan-&gt;unknown():  
+   Some restricted models fit better than less restricted models; either 
+   these models are not nested, or the less restricted model failed to reach 
+   a global optimum.Smallest difference = -342.332698703501.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(o)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>################### Nested Model Comparison #########################
+
+Scaled Chi-Squared Difference Test (method = "satorra.bentler.2001")
+
+lavaan-&gt;unknown():  
+   lavaan NOTE: The "Chisq" column contains standard test statistics, not the 
+   robust test that should be reported per model. A robust difference test is 
+   a function of two standard (not robust) statistics.
+      Df    AIC    BIC  Chisq Chisq diff Df diff Pr(&gt;Chisq)    
+fit1 494  98873  99743 1617.8                                  
+fit3 525 100048 100760 2854.6      867.9      31  &lt; 2.2e-16 ***
+fit2 538  99679 100326 2512.3     -344.0      13          1    
+fit5 543  99719 100340 2561.7       30.3       5  1.274e-05 ***
+fit4 550 105660 106245 8516.7    25784.7       7  &lt; 2.2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+####################### Model Fit Indices ###########################
+     chisq.scaled df.scaled pvalue.scaled rmsea.robust cfi.robust tli.robust
+fit1    1362.501†       494          .000        .042†      .961†      .953†
+fit3    2376.089        525          .000        .059       .916       .905 
+fit2    2099.846        538          .000        .054       .930       .922 
+fit5    2134.040        543          .000        .054       .928       .921 
+fit4    7168.607        550          .000        .109       .705       .681 
+      srmr         aic         bic
+fit1 .039†  98872.698†  99743.101†
+fit3 .065  100047.536  100760.146 
+fit2 .060   99679.203  100325.643 
+fit5 .062   99718.640  100339.630 
+fit4 .100  105659.662  106245.021 
+
+################## Differences in Fit Indices #######################
+            df.scaled rmsea.robust cfi.robust tli.robust   srmr      aic
+fit3 - fit1        31        0.018     -0.045     -0.048  0.026 1174.838
+fit2 - fit3        13       -0.006      0.013      0.017 -0.005 -368.333
+fit5 - fit2         5        0.000     -0.002     -0.001  0.001   39.437
+fit4 - fit5         7        0.055     -0.224     -0.241  0.038 5941.022
+                 bic
+fit3 - fit1 1017.045
+fit2 - fit3 -434.504
+fit5 - fit2   13.987
+fit4 - fit5 5905.391</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="construct-reliability-composite-reliability" class="level2">
+<h2 class="anchored" data-anchor-id="construct-reliability-composite-reliability">Construct Reliability (Composite Reliability)</h2>
+<p>Measure of internal consistency using omega from the second-order model.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate reliability indices:</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 0.60 questionable, 0.70 acceptable, 0.80 good, 0.90 excellent</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This is done using omega, not alpha</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit1,<span class="at">tau.eq=</span>F)                 <span class="co"># all acceptable good excellent</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    E     D     R     M     F     G     L     C     X     B     I     A 
+0.806 0.769 0.882 0.818 0.878 0.903 0.881 0.842 0.829 0.918 0.874 0.783 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit2,<span class="at">higher =</span> <span class="fu">c</span>(<span class="st">"EDR"</span>,<span class="st">"FM"</span>,<span class="st">"CB"</span>,<span class="st">"PEP"</span>,<span class="st">"AIA"</span>),<span class="at">tau.eq=</span>F) <span class="co"># all acceptable good excellent</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    E     D     R     M     F     G     L     C     X     B     I     A   EDR 
+0.804 0.771 0.882 0.811 0.879 0.903 0.880 0.841 0.832 0.918 0.874 0.783 0.679 
+   FM    CB   PEP   AIA 
+0.760 0.613 0.704 0.759 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit3, <span class="at">tau.eq=</span>F)               <span class="co"># g good but constructs are poor </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    g     E     D     R     M     F     G     L     C     X     B     I     A 
+0.894 0.386 0.373 0.470 0.531 0.588 0.551 0.394 0.234 0.285 0.539 0.472 0.250 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit4,<span class="at">tau.eq=</span>F)                <span class="co"># all above 0.80</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  EDR    FM    CB   PEP   AIA 
+0.836 0.864 0.833 0.844 0.886 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit5,<span class="at">tau.eq=</span>F,<span class="at">higher=</span><span class="st">"g"</span>)     <span class="co"># all above 0.80</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    E     D     R     M     F     G     L     C     X     B     I     A     g 
+0.805 0.771 0.882 0.812 0.879 0.903 0.880 0.842 0.832 0.918 0.874 0.782   NaN </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">lavInspect</span>(fit2, <span class="st">"cor.lv"</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(knitr<span class="sc">::</span><span class="fu">kable</span>(cor_matrix,<span class="at">digits=</span><span class="dv">2</span>,<span class="at">caption=</span><span class="st">"Correlations between the latent factors (for sub-constructs and constructs)."</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+
+Table: Correlations between the latent factors (for sub-constructs and constructs).
+
+|    |    E|    D|    R|    M|    F|    G|    L|    C|    X|    B|    I|    A|  EDR|   FM|   CB|  PEP|  AIA|
+|:---|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|
+|E   | 1.00| 0.51| 0.49| 0.39| 0.39| 0.40| 0.44| 0.64| 0.57| 0.40| 0.45| 0.56| 0.69| 0.46| 0.59| 0.74| 0.59|
+|D   | 0.51| 1.00| 0.52| 0.41| 0.42| 0.43| 0.47| 0.68| 0.61| 0.42| 0.48| 0.59| 0.73| 0.49| 0.63| 0.79| 0.62|
+|R   | 0.49| 0.52| 1.00| 0.40| 0.40| 0.41| 0.46| 0.66| 0.59| 0.41| 0.47| 0.57| 0.71| 0.47| 0.61| 0.76| 0.61|
+|M   | 0.39| 0.41| 0.40| 1.00| 0.72| 0.32| 0.35| 0.49| 0.44| 0.28| 0.32| 0.39| 0.56| 0.84| 0.47| 0.57| 0.41|
+|F   | 0.39| 0.42| 0.40| 0.72| 1.00| 0.32| 0.36| 0.49| 0.44| 0.28| 0.32| 0.40| 0.57| 0.85| 0.48| 0.57| 0.42|
+|G   | 0.40| 0.43| 0.41| 0.32| 0.32| 1.00| 0.50| 0.56| 0.51| 0.38| 0.44| 0.54| 0.58| 0.38| 0.67| 0.65| 0.57|
+|L   | 0.44| 0.47| 0.46| 0.35| 0.36| 0.50| 1.00| 0.62| 0.56| 0.43| 0.48| 0.60| 0.64| 0.42| 0.74| 0.72| 0.63|
+|C   | 0.64| 0.68| 0.66| 0.49| 0.49| 0.56| 0.62| 1.00| 0.67| 0.48| 0.55| 0.68| 0.92| 0.58| 0.83| 0.86| 0.72|
+|X   | 0.57| 0.61| 0.59| 0.44| 0.44| 0.51| 0.56| 0.67| 1.00| 0.44| 0.49| 0.61| 0.83| 0.52| 0.75| 0.77| 0.64|
+|B   | 0.40| 0.42| 0.41| 0.28| 0.28| 0.38| 0.43| 0.48| 0.44| 1.00| 0.52| 0.64| 0.58| 0.33| 0.57| 0.56| 0.68|
+|I   | 0.45| 0.48| 0.47| 0.32| 0.32| 0.44| 0.48| 0.55| 0.49| 0.52| 1.00| 0.73| 0.65| 0.38| 0.65| 0.64| 0.77|
+|A   | 0.56| 0.59| 0.57| 0.39| 0.40| 0.54| 0.60| 0.68| 0.61| 0.64| 0.73| 1.00| 0.81| 0.46| 0.80| 0.79| 0.95|
+|EDR | 0.69| 0.73| 0.71| 0.56| 0.57| 0.58| 0.64| 0.92| 0.83| 0.58| 0.65| 0.81| 1.00| 0.66| 0.86| 1.07| 0.85|
+|FM  | 0.46| 0.49| 0.47| 0.84| 0.85| 0.38| 0.42| 0.58| 0.52| 0.33| 0.38| 0.46| 0.66| 1.00| 0.56| 0.67| 0.49|
+|CB  | 0.59| 0.63| 0.61| 0.47| 0.48| 0.67| 0.74| 0.83| 0.75| 0.57| 0.65| 0.80| 0.86| 0.56| 1.00| 0.97| 0.84|
+|PEP | 0.74| 0.79| 0.76| 0.57| 0.57| 0.65| 0.72| 0.86| 0.77| 0.56| 0.64| 0.79| 1.07| 0.67| 0.97| 1.00| 0.83|
+|AIA | 0.59| 0.62| 0.61| 0.41| 0.42| 0.57| 0.63| 0.72| 0.64| 0.68| 0.77| 0.95| 0.85| 0.49| 0.84| 0.83| 1.00|</code></pre>
+</div>
+</div>
+</section>
+<section id="discriminant-validity" class="level2">
+<h2 class="anchored" data-anchor-id="discriminant-validity">Discriminant Validity</h2>
+<section id="average-variance-explained-traditional" class="level3">
+<h3 class="anchored" data-anchor-id="average-variance-explained-traditional">Average Variance Explained (traditional)</h3>
+<p>Measure of discriminant validity from the first-order model.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate average variance explained, 0.50+ is acceptable </span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lavInspect</span>(fit1, <span class="st">"cor.lv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      E     D     R     M     F     G     L     C     X     B     I     A
+E 1.000                                                                  
+D 0.432 1.000                                                            
+R 0.518 0.555 1.000                                                      
+M 0.449 0.467 0.300 1.000                                                
+F 0.381 0.429 0.409 0.724 1.000                                          
+G 0.521 0.271 0.306 0.298 0.270 1.000                                    
+L 0.432 0.623 0.450 0.381 0.390 0.502 1.000                              
+C 0.559 0.747 0.760 0.410 0.462 0.431 0.668 1.000                        
+X 0.535 0.635 0.467 0.565 0.491 0.574 0.595 0.667 1.000                  
+B 0.337 0.459 0.428 0.295 0.313 0.445 0.438 0.524 0.531 1.000            
+I 0.529 0.361 0.389 0.374 0.375 0.553 0.429 0.454 0.533 0.517 1.000      
+A 0.807 0.428 0.579 0.353 0.357 0.620 0.484 0.678 0.608 0.612 0.748 1.000</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First-order model</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit1)  <span class="co"># all above 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    E     D     R     M     F     G     L     C     X     B     I     A 
+0.579 0.528 0.713 0.596 0.708 0.756 0.704 0.636 0.615 0.789 0.776 0.541 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First and second-order</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit2)  <span class="co"># all above 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    E     D     R     M     F     G     L     C     X     B     I     A 
+0.577 0.528 0.713 0.594 0.708 0.756 0.704 0.635 0.617 0.789 0.776 0.541 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bifactor</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit3,<span class="at">omit.factors=</span><span class="st">"g"</span>)  <span class="co"># All below 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    E     D     R     M     F     G     L     C     X     B     I     A 
+0.277 0.259 0.380 0.394 0.475 0.462 0.339 0.184 0.222 0.464 0.420 0.196 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Second-order only</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit4)  <span class="co"># FM, CB and AIA above 0.50, EDR and PEP below 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  EDR    FM    CB   PEP   AIA 
+0.383 0.539 0.520 0.493 0.513 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1st, 2nd, and third-order</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit5)  <span class="co"># all above 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    E     D     R     M     F     G     L     C     X     B     I     A 
+0.577 0.529 0.713 0.594 0.708 0.756 0.704 0.636 0.617 0.789 0.776 0.540 </code></pre>
+</div>
+</div>
+</section>
+<section id="discriminant-validity-with-htmt" class="level3">
+<h3 class="anchored" data-anchor-id="discriminant-validity-with-htmt">Discriminant Validity with HTMT</h3>
+<p>Let’s use the modern Heterotrait–Monotrait Ratio (HTMT) method to assess discriminant validity. It uses ratio of the correlations (Henseler, Ringlet &amp; Sarstedt, 2015).</p>
+<section id="all-sub-constructs-first-order-model" class="level4">
+<h4 class="anchored" data-anchor-id="all-sub-constructs-first-order-model">All Sub-constructs (first-order model)</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>htmt_matrix <span class="ot">&lt;-</span> <span class="fu">htmt</span>(first_order,<span class="at">data =</span> tmp,<span class="at">htmt2 =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(knitr<span class="sc">::</span><span class="fu">kable</span>(htmt_matrix,<span class="at">digits=</span><span class="dv">3</span>,<span class="at">caption=</span><span class="st">'Discriminant Validity at the level of Sub-Constructs.'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<caption>Discriminant Validity at the level of Sub-Constructs.</caption>
+<colgroup>
+<col style="width: 4%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">E</th>
+<th style="text-align: right;">D</th>
+<th style="text-align: right;">R</th>
+<th style="text-align: right;">M</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">G</th>
+<th style="text-align: right;">L</th>
+<th style="text-align: right;">C</th>
+<th style="text-align: right;">X</th>
+<th style="text-align: right;">B</th>
+<th style="text-align: right;">I</th>
+<th style="text-align: right;">A</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">E</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.443</td>
+<td style="text-align: right;">0.521</td>
+<td style="text-align: right;">0.515</td>
+<td style="text-align: right;">0.396</td>
+<td style="text-align: right;">0.525</td>
+<td style="text-align: right;">0.463</td>
+<td style="text-align: right;">0.563</td>
+<td style="text-align: right;">0.542</td>
+<td style="text-align: right;">0.338</td>
+<td style="text-align: right;">0.528</td>
+<td style="text-align: right;">0.809</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">0.443</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.552</td>
+<td style="text-align: right;">0.459</td>
+<td style="text-align: right;">0.426</td>
+<td style="text-align: right;">0.276</td>
+<td style="text-align: right;">0.654</td>
+<td style="text-align: right;">0.745</td>
+<td style="text-align: right;">0.654</td>
+<td style="text-align: right;">0.458</td>
+<td style="text-align: right;">0.358</td>
+<td style="text-align: right;">0.431</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R</td>
+<td style="text-align: right;">0.521</td>
+<td style="text-align: right;">0.552</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.272</td>
+<td style="text-align: right;">0.405</td>
+<td style="text-align: right;">0.309</td>
+<td style="text-align: right;">0.494</td>
+<td style="text-align: right;">0.760</td>
+<td style="text-align: right;">0.474</td>
+<td style="text-align: right;">0.429</td>
+<td style="text-align: right;">0.388</td>
+<td style="text-align: right;">0.577</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">M</td>
+<td style="text-align: right;">0.515</td>
+<td style="text-align: right;">0.459</td>
+<td style="text-align: right;">0.272</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.721</td>
+<td style="text-align: right;">0.346</td>
+<td style="text-align: right;">0.424</td>
+<td style="text-align: right;">0.401</td>
+<td style="text-align: right;">0.597</td>
+<td style="text-align: right;">0.299</td>
+<td style="text-align: right;">0.405</td>
+<td style="text-align: right;">0.394</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">F</td>
+<td style="text-align: right;">0.396</td>
+<td style="text-align: right;">0.426</td>
+<td style="text-align: right;">0.405</td>
+<td style="text-align: right;">0.721</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.280</td>
+<td style="text-align: right;">0.444</td>
+<td style="text-align: right;">0.464</td>
+<td style="text-align: right;">0.497</td>
+<td style="text-align: right;">0.315</td>
+<td style="text-align: right;">0.379</td>
+<td style="text-align: right;">0.367</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G</td>
+<td style="text-align: right;">0.525</td>
+<td style="text-align: right;">0.276</td>
+<td style="text-align: right;">0.309</td>
+<td style="text-align: right;">0.346</td>
+<td style="text-align: right;">0.280</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.514</td>
+<td style="text-align: right;">0.432</td>
+<td style="text-align: right;">0.568</td>
+<td style="text-align: right;">0.451</td>
+<td style="text-align: right;">0.552</td>
+<td style="text-align: right;">0.633</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">L</td>
+<td style="text-align: right;">0.463</td>
+<td style="text-align: right;">0.654</td>
+<td style="text-align: right;">0.494</td>
+<td style="text-align: right;">0.424</td>
+<td style="text-align: right;">0.444</td>
+<td style="text-align: right;">0.514</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.714</td>
+<td style="text-align: right;">0.631</td>
+<td style="text-align: right;">0.472</td>
+<td style="text-align: right;">0.460</td>
+<td style="text-align: right;">0.517</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">0.563</td>
+<td style="text-align: right;">0.745</td>
+<td style="text-align: right;">0.760</td>
+<td style="text-align: right;">0.401</td>
+<td style="text-align: right;">0.464</td>
+<td style="text-align: right;">0.432</td>
+<td style="text-align: right;">0.714</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.682</td>
+<td style="text-align: right;">0.534</td>
+<td style="text-align: right;">0.459</td>
+<td style="text-align: right;">0.688</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">X</td>
+<td style="text-align: right;">0.542</td>
+<td style="text-align: right;">0.654</td>
+<td style="text-align: right;">0.474</td>
+<td style="text-align: right;">0.597</td>
+<td style="text-align: right;">0.497</td>
+<td style="text-align: right;">0.568</td>
+<td style="text-align: right;">0.631</td>
+<td style="text-align: right;">0.682</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.532</td>
+<td style="text-align: right;">0.536</td>
+<td style="text-align: right;">0.619</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">0.338</td>
+<td style="text-align: right;">0.458</td>
+<td style="text-align: right;">0.429</td>
+<td style="text-align: right;">0.299</td>
+<td style="text-align: right;">0.315</td>
+<td style="text-align: right;">0.451</td>
+<td style="text-align: right;">0.472</td>
+<td style="text-align: right;">0.534</td>
+<td style="text-align: right;">0.532</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.517</td>
+<td style="text-align: right;">0.618</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I</td>
+<td style="text-align: right;">0.528</td>
+<td style="text-align: right;">0.358</td>
+<td style="text-align: right;">0.388</td>
+<td style="text-align: right;">0.405</td>
+<td style="text-align: right;">0.379</td>
+<td style="text-align: right;">0.552</td>
+<td style="text-align: right;">0.460</td>
+<td style="text-align: right;">0.459</td>
+<td style="text-align: right;">0.536</td>
+<td style="text-align: right;">0.517</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.758</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">0.809</td>
+<td style="text-align: right;">0.431</td>
+<td style="text-align: right;">0.577</td>
+<td style="text-align: right;">0.394</td>
+<td style="text-align: right;">0.367</td>
+<td style="text-align: right;">0.633</td>
+<td style="text-align: right;">0.517</td>
+<td style="text-align: right;">0.688</td>
+<td style="text-align: right;">0.619</td>
+<td style="text-align: right;">0.618</td>
+<td style="text-align: right;">0.758</td>
+<td style="text-align: right;">1.000</td>
+</tr>
+</tbody>
+</table>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(htmt_matrix)<span class="ot">=</span><span class="cn">NA</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">min</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>[1] 0.272</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">max</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>[1] 0.809</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">median</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>[1] 0.484</p>
+</section>
+<section id="all-constructs-second-order-model" class="level4">
+<h4 class="anchored" data-anchor-id="all-constructs-second-order-model">All Constructs (second-order model)</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>htmt_matrix <span class="ot">&lt;-</span> <span class="fu">htmt</span>(episodes,<span class="at">data =</span> tmp,<span class="at">htmt2 =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(knitr<span class="sc">::</span><span class="fu">kable</span>(htmt_matrix,<span class="at">digits=</span><span class="dv">3</span>,<span class="at">caption=</span><span class="st">'Discriminant Validity at the level of Constructs.'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<caption>Discriminant Validity at the level of Constructs.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">EDR</th>
+<th style="text-align: right;">FM</th>
+<th style="text-align: right;">CB</th>
+<th style="text-align: right;">PEP</th>
+<th style="text-align: right;">AIA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">EDR</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.565</td>
+<td style="text-align: right;">0.672</td>
+<td style="text-align: right;">0.871</td>
+<td style="text-align: right;">0.712</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FM</td>
+<td style="text-align: right;">0.565</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.484</td>
+<td style="text-align: right;">0.596</td>
+<td style="text-align: right;">0.459</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CB</td>
+<td style="text-align: right;">0.672</td>
+<td style="text-align: right;">0.484</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.771</td>
+<td style="text-align: right;">0.719</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PEP</td>
+<td style="text-align: right;">0.871</td>
+<td style="text-align: right;">0.596</td>
+<td style="text-align: right;">0.771</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.740</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AIA</td>
+<td style="text-align: right;">0.712</td>
+<td style="text-align: right;">0.459</td>
+<td style="text-align: right;">0.719</td>
+<td style="text-align: right;">0.740</td>
+<td style="text-align: right;">1.000</td>
+</tr>
+</tbody>
+</table>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(htmt_matrix)<span class="ot">=</span><span class="cn">NA</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">min</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>[1] 0.459</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">max</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>[1] 0.871</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">median</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>[1] 0.692</p>
+
+
+</section>
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/tuomaseerola\.github\.io\/MEEM\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tuomaseerola/MEEM/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
