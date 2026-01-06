@@ -65,6 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../exp2/higher_order_structure.html" rel="next">
+<link href="../exp2/describe_data.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -104,11 +106,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -126,8 +157,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
-<span class="menu-text">Measure of Emotional Episodes with Music (MEEM): Development and psychometric evaluation of a modular instrument</span></a>
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
+<span class="menu-text">Measure of Emotional Episodes with Music (MEEM)</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/tuomaseerola/MEEM/"> <i class="bi bi-github" role="img" aria-label="GitHub">
@@ -140,23 +171,99 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../exp1/preprocessing.html">Experiment</a></li><li class="breadcrumb-item"><a href="../exp2/CFA.html">Exp. 2 - Confirmatory Factor Analyses</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Experiment</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exp1/preprocessing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exp. 1 - Preprocessing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exp1/CFA_direct.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exp. 1 - Confirmatory Factor Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exp1/measurement_invariance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exp. 1 - Measurement invariance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exp2/describe_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exp. 2 - Describe Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exp2/CFA.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Exp. 2 - Confirmatory Factor Analyses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exp2/higher_order_structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exp. 2 - Higher Order Structures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exp2/vignette_to_emotions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exp. 2 - Vignettes and Emotions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../exp1/preprocessing.html">Experiment</a></li><li class="breadcrumb-item"><a href="../exp2/CFA.html">Exp. 2 - Confirmatory Factor Analyses</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Exp. 2 - Confirmatory Factor Analyses</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-right">
 
     
   
@@ -178,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="report-cfa-model-fit-for-each-construct" class="level2">
 <h2 class="anchored" data-anchor-id="report-cfa-model-fit-for-each-construct">Report CFA Model Fit for each Construct</h2>
-<p>For each construct, report (1) CFA fit, (2) measurement invariance fit indices (metric, scalar), and (3) discriminant validity indices.</p>
+<p>For each construct, report (1) CFA fit, (2) measurement invariance fit indices (metric, scalar), and (3) discriminant validity indices using the nested model comparison, <span class="math inline">\(\chi^2\)</span> (merge), see Rönkkö &amp; Cho (2022).</p>
 <section id="cfa---edr" class="level3">
 <h3 class="anchored" data-anchor-id="cfa---edr">CFA - EDR</h3>
 <div class="cell" data-messages="false">
@@ -234,18 +341,18 @@ fit_scalar 96 6166.3 6410.8 131.114     43.026      24    0.00988 **
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(<span class="at">model =</span> EDR, <span class="at">data =</span> tmp, <span class="at">meanstructure =</span> <span class="cn">TRUE</span>, <span class="at">estimator =</span> <span class="st">"MLR"</span>)               <span class="co"># ignores vignettes</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ds1 <span class="ot">&lt;-</span> semTools<span class="sc">::</span><span class="fu">discriminantValidity</span>(<span class="at">object =</span> fit,<span class="at">cutoff =</span> <span class="fl">0.85</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(<span class="at">model =</span> EDR, <span class="at">data =</span> tmp, <span class="at">meanstructure =</span> <span class="cn">TRUE</span>, <span class="at">estimator =</span> <span class="st">"MLR"</span>)  <span class="co"># ignores vignettes</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ds1 <span class="ot">&lt;-</span> semTools<span class="sc">::</span><span class="fu">discriminantValidity</span>(<span class="at">object =</span> fit,<span class="at">merge =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ds1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  lhs op rhs       est  ci.lower  ci.upper Df      AIC      BIC     Chisq
-1   E ~~   D 0.3298993 0.1659311 0.4938675 25 6435.779 6543.189 155.38516
-2   E ~~   R 0.4930086 0.3434819 0.6425353 25 6412.292 6519.702 131.89864
-3   D ~~   R 0.5927842 0.4666596 0.7189089 25 6362.108 6469.517  81.71389
+<pre><code>  lhs op rhs       est  ci.lower  ci.upper Df      AIC      BIC    Chisq
+1   E ~~   D 0.3298993 0.1659311 0.4938675 26 6530.387 6634.093 251.9935
+2   E ~~   R 0.4930086 0.3434819 0.6425353 26 6567.196 6670.902 288.8023
+3   D ~~   R 0.5927842 0.4666596 0.7189089 26 6432.905 6536.611 154.5115
   Chisq diff Df diff   Pr(&gt;Chisq)
-1   26.90284       1 2.139443e-07
-2   22.32625       1 2.300405e-06
-3   14.42949       1 1.455062e-04</code></pre>
+1  110.55156       2 9.863552e-25
+2  189.93508       2 5.703224e-42
+3   70.95355       2 3.914113e-16</code></pre>
 </div>
 </div>
 </section>
@@ -304,16 +411,16 @@ fit_scalar 24 2749.3 2848.2 49.348     32.373       8  7.986e-05 ***
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(<span class="at">model =</span> FM, <span class="at">data =</span> tmp, <span class="at">meanstructure =</span> <span class="cn">TRUE</span>, <span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>ds2 <span class="ot">&lt;-</span> semTools<span class="sc">::</span><span class="fu">discriminantValidity</span>(<span class="at">object =</span> fit,<span class="at">cutoff =</span> <span class="fl">0.85</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>ds2 <span class="ot">&lt;-</span> semTools<span class="sc">::</span><span class="fu">discriminantValidity</span>(<span class="at">object =</span> fit,<span class="at">merge =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Some of the latent variable variances are estimated instead of fixed to 1. The model is re-estimated by scaling the latent variables by fixing their variances and freeing all factor loadings.</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ds2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  lhs op rhs       est  ci.lower  ci.upper Df      AIC      BIC    Chisq
-1   M ~~   F 0.6965692 0.5431581 0.8499804  9 2782.762 2842.132 30.28131
-  Chisq diff Df diff Pr(&gt;Chisq)
-1   4.064318       1 0.04379836</code></pre>
+1   M ~~   F 0.6965692 0.5431581 0.8499804  9 2860.671 2920.041 108.1906
+  Chisq diff Df diff  Pr(&gt;Chisq)
+1   26.36594       1 2.82478e-07</code></pre>
 </div>
 </div>
 </section>
@@ -368,16 +475,16 @@ fit        16 3010.1 3135.5 22.136
 fit_scalar 24 3007.8 3106.8 35.803     9.6653       8     0.2893</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(<span class="at">model =</span> CB, <span class="at">data =</span> tmp, <span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>ds3 <span class="ot">&lt;-</span> semTools<span class="sc">::</span><span class="fu">discriminantValidity</span>(<span class="at">object =</span> fit,<span class="at">cutoff =</span> <span class="fl">0.85</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>ds3 <span class="ot">&lt;-</span> semTools<span class="sc">::</span><span class="fu">discriminantValidity</span>(<span class="at">object =</span> fit,<span class="at">merge =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Some of the latent variable variances are estimated instead of fixed to 1. The model is re-estimated by scaling the latent variables by fixing their variances and freeing all factor loadings.</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ds3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  lhs op rhs       est    ci.lower  ci.upper Df      AIC      BIC  Chisq
-1   G ~~   L 0.1375599 -0.04939183 0.3245117  9 3313.755 3373.125 176.21
+<pre><code>  lhs op rhs       est    ci.lower  ci.upper Df      AIC     BIC    Chisq
+1   G ~~   L 0.1375599 -0.04939183 0.3245117  9 3422.591 3481.96 285.0453
   Chisq diff Df diff   Pr(&gt;Chisq)
-1   30.26546       1 3.767755e-08</code></pre>
+1   95.37567       1 1.574775e-22</code></pre>
 </div>
 </div>
 </section>
@@ -434,16 +541,16 @@ fit_scalar 24 2606.4 2705.4 50.063     23.642       8   0.002631 **
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(<span class="at">model =</span> PEP, <span class="at">data =</span> tmp, <span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>ds4 <span class="ot">&lt;-</span> semTools<span class="sc">::</span><span class="fu">discriminantValidity</span>(<span class="at">object =</span> fit,<span class="at">cutoff =</span> <span class="fl">0.85</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>ds4 <span class="ot">&lt;-</span> semTools<span class="sc">::</span><span class="fu">discriminantValidity</span>(<span class="at">object =</span> fit,<span class="at">merge =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Some of the latent variable variances are estimated instead of fixed to 1. The model is re-estimated by scaling the latent variables by fixing their variances and freeing all factor loadings.</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ds4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  lhs op rhs       est  ci.lower  ci.upper Df      AIC      BIC    Chisq
-1   C ~~   X 0.7450395 0.6089644 0.8811147  9 2619.743 2679.112 19.57604
-  Chisq diff Df diff Pr(&gt;Chisq)
-1   2.225441       1  0.1357539</code></pre>
+1   C ~~   X 0.7450395 0.6089644 0.8811147  9 2661.872 2721.241 61.70509
+  Chisq diff Df diff   Pr(&gt;Chisq)
+1    21.0942       1 4.372504e-06</code></pre>
 </div>
 </div>
 </section>
@@ -504,20 +611,20 @@ fit_scalar 71 5508.9 5734.8 154.014     70.572      20  1.468e-07 ***
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(<span class="at">model =</span> AIA, <span class="at">data =</span> tmp, <span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>ds5 <span class="ot">&lt;-</span> semTools<span class="sc">::</span><span class="fu">discriminantValidity</span>(<span class="at">object =</span> fit,<span class="at">cutoff =</span> <span class="fl">0.85</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>ds5 <span class="ot">&lt;-</span> semTools<span class="sc">::</span><span class="fu">discriminantValidity</span>(<span class="at">object =</span> fit,<span class="at">merge =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Some of the latent variable variances are estimated instead of fixed to 1. The model is re-estimated by scaling the latent variables by fixing their variances and freeing all factor loadings.</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ds5)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  lhs op rhs       est  ci.lower  ci.upper Df      AIC      BIC     Chisq
-1   B ~~   I 0.3237894 0.1860453 0.4615334 18 5707.852 5804.150 207.15713
-2   B ~~   A 0.5959015 0.4929085 0.6988944 18 5595.126 5691.424  94.43106
-3   I ~~   A 0.5215025 0.3852497 0.6577553 18 5607.028 5703.327 106.33381
+<pre><code>  lhs op rhs       est  ci.lower  ci.upper Df      AIC      BIC    Chisq
+1   B ~~   I 0.3237894 0.1860453 0.4615334 19 5758.875 5851.469 260.1804
+2   B ~~   A 0.5959015 0.4929085 0.6988944 19 5690.502 5783.097 191.8079
+3   I ~~   A 0.5215025 0.3852497 0.6577553 19 5685.831 5778.425 187.1364
   Chisq diff Df diff   Pr(&gt;Chisq)
-1   34.62364       1 4.000179e-09
-2   14.80991       1 1.189088e-04
-3   16.09025       1 6.039424e-05</code></pre>
+1   92.37423       2 8.733540e-21
+2   70.24699       2 5.572616e-16
+3   62.68685       2 2.441870e-14</code></pre>
 </div>
 </div>
 </section>
@@ -654,13 +761,13 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.330</td>
 <td style="text-align: right;">0.166</td>
 <td style="text-align: right;">0.494</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">6435.779</td>
-<td style="text-align: right;">6543.189</td>
-<td style="text-align: right;">155.385</td>
-<td style="text-align: right;">26.903</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">6530.387</td>
+<td style="text-align: right;">6634.093</td>
+<td style="text-align: right;">251.993</td>
+<td style="text-align: right;">110.552</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">EDR</td>
@@ -670,13 +777,13 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.493</td>
 <td style="text-align: right;">0.343</td>
 <td style="text-align: right;">0.643</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">6412.292</td>
-<td style="text-align: right;">6519.702</td>
-<td style="text-align: right;">131.899</td>
-<td style="text-align: right;">22.326</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">6567.196</td>
+<td style="text-align: right;">6670.902</td>
+<td style="text-align: right;">288.802</td>
+<td style="text-align: right;">189.935</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">EDR</td>
@@ -686,13 +793,13 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.593</td>
 <td style="text-align: right;">0.467</td>
 <td style="text-align: right;">0.719</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">6362.108</td>
-<td style="text-align: right;">6469.517</td>
-<td style="text-align: right;">81.714</td>
-<td style="text-align: right;">14.429</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">6432.905</td>
+<td style="text-align: right;">6536.611</td>
+<td style="text-align: right;">154.511</td>
+<td style="text-align: right;">70.954</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">FM</td>
@@ -703,12 +810,12 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.543</td>
 <td style="text-align: right;">0.850</td>
 <td style="text-align: right;">9</td>
-<td style="text-align: right;">2782.762</td>
-<td style="text-align: right;">2842.132</td>
-<td style="text-align: right;">30.281</td>
-<td style="text-align: right;">4.064</td>
+<td style="text-align: right;">2860.671</td>
+<td style="text-align: right;">2920.041</td>
+<td style="text-align: right;">108.191</td>
+<td style="text-align: right;">26.366</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.044</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">CB</td>
@@ -719,12 +826,12 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">-0.049</td>
 <td style="text-align: right;">0.325</td>
 <td style="text-align: right;">9</td>
-<td style="text-align: right;">3313.755</td>
-<td style="text-align: right;">3373.125</td>
-<td style="text-align: right;">176.210</td>
-<td style="text-align: right;">30.265</td>
+<td style="text-align: right;">3422.591</td>
+<td style="text-align: right;">3481.960</td>
+<td style="text-align: right;">285.045</td>
+<td style="text-align: right;">95.376</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">PEP</td>
@@ -735,12 +842,12 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.609</td>
 <td style="text-align: right;">0.881</td>
 <td style="text-align: right;">9</td>
-<td style="text-align: right;">2619.743</td>
-<td style="text-align: right;">2679.112</td>
-<td style="text-align: right;">19.576</td>
-<td style="text-align: right;">2.225</td>
+<td style="text-align: right;">2661.872</td>
+<td style="text-align: right;">2721.241</td>
+<td style="text-align: right;">61.705</td>
+<td style="text-align: right;">21.094</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0.136</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">AIA</td>
@@ -750,13 +857,13 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.324</td>
 <td style="text-align: right;">0.186</td>
 <td style="text-align: right;">0.462</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">5707.852</td>
-<td style="text-align: right;">5804.150</td>
-<td style="text-align: right;">207.157</td>
-<td style="text-align: right;">34.624</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">5758.875</td>
+<td style="text-align: right;">5851.469</td>
+<td style="text-align: right;">260.180</td>
+<td style="text-align: right;">92.374</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">AIA</td>
@@ -766,13 +873,13 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.596</td>
 <td style="text-align: right;">0.493</td>
 <td style="text-align: right;">0.699</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">5595.126</td>
-<td style="text-align: right;">5691.424</td>
-<td style="text-align: right;">94.431</td>
-<td style="text-align: right;">14.810</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">5690.502</td>
+<td style="text-align: right;">5783.097</td>
+<td style="text-align: right;">191.808</td>
+<td style="text-align: right;">70.247</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">AIA</td>
@@ -782,13 +889,13 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.522</td>
 <td style="text-align: right;">0.385</td>
 <td style="text-align: right;">0.658</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">5607.028</td>
-<td style="text-align: right;">5703.327</td>
-<td style="text-align: right;">106.334</td>
-<td style="text-align: right;">16.090</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">5685.831</td>
+<td style="text-align: right;">5778.425</td>
+<td style="text-align: right;">187.136</td>
+<td style="text-align: right;">62.687</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
@@ -796,6 +903,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <section id="descriptives-means-and-sds-and-loadings" class="level2">
 <h2 class="anchored" data-anchor-id="descriptives-means-and-sds-and-loadings">Descriptives: means and SDs and loadings</h2>
 <p>Show summary of values (means, SDs, and scores) across the sub-constructs when run jointly (CFA model with 12 sub-constructs).</p>
+<p>For figures in the manuscript.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 5%">
@@ -1753,6 +1861,18 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
     }
   });
   </script>
+<nav class="page-navigation column-page-right">
+  <div class="nav-page nav-page-previous">
+      <a href="../exp2/describe_data.html" class="pagination-link" aria-label="Exp. 2 - Describe Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Exp. 2 - Describe Data</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../exp2/higher_order_structure.html" class="pagination-link" aria-label="Exp. 2 - Higher Order Structures">
+        <span class="nav-page-text">Exp. 2 - Higher Order Structures</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

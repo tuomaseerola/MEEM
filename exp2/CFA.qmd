@@ -47,7 +47,7 @@ df_f$itemCategory[str_detect(df_f$item_label,"B|I|A")]<-"AIA"  # Labels updated
 
 ## Report CFA Model Fit for each Construct
 
-For each construct, report (1) CFA fit, (2) measurement invariance fit indices (metric, scalar), and (3) discriminant validity indices.
+For each construct, report (1) CFA fit, (2) measurement invariance fit indices (metric, scalar), and (3) discriminant validity indices using the nested model comparison, $\chi^2$ (merge), see Rönkkö & Cho (2022).
 
 ### CFA - EDR
 
@@ -81,9 +81,10 @@ fit_scalar <- lavaan::cfa(model = EDR, data = tmp, estimator = "MLR",group = "Vi
 lavaan::lavTestLRT(fit, fit_scalar)
 
 
-fit <- lavaan::cfa(model = EDR, data = tmp, meanstructure = TRUE, estimator = "MLR")               # ignores vignettes
-ds1 <- semTools::discriminantValidity(object = fit,cutoff = 0.85)
+fit <- lavaan::cfa(model = EDR, data = tmp, meanstructure = TRUE, estimator = "MLR")  # ignores vignettes
+ds1 <- semTools::discriminantValidity(object = fit,merge = TRUE)
 print(ds1)
+
 ```
 
 ### CFA - FM
@@ -114,7 +115,7 @@ lavaan::lavTestLRT(fit, fit_scalar)
 
 
 fit <- lavaan::cfa(model = FM, data = tmp, meanstructure = TRUE, estimator = "MLR")
-ds2 <- semTools::discriminantValidity(object = fit,cutoff = 0.85)
+ds2 <- semTools::discriminantValidity(object = fit,merge = TRUE)
 print(ds2)
 
 ```
@@ -146,7 +147,7 @@ fit_scalar <- lavaan::cfa(model = CB, data = tmp, estimator = "MLR",group = "Vig
 lavaan::lavTestLRT(fit, fit_scalar)
 
 fit <- lavaan::cfa(model = CB, data = tmp, meanstructure = TRUE,estimator = "MLR")
-ds3 <- semTools::discriminantValidity(object = fit,cutoff = 0.85)
+ds3 <- semTools::discriminantValidity(object = fit,merge = TRUE)
 print(ds3)
 
 ```
@@ -179,7 +180,7 @@ lavaan::lavTestLRT(fit, fit_scalar)
 
 
 fit <- lavaan::cfa(model = PEP, data = tmp, meanstructure = TRUE,estimator = "MLR")
-ds4 <- semTools::discriminantValidity(object = fit,cutoff = 0.85)
+ds4 <- semTools::discriminantValidity(object = fit,merge = TRUE)
 print(ds4)
 
 ```
@@ -214,7 +215,7 @@ lavaan::lavTestLRT(fit, fit_scalar)
 
 
 fit <- lavaan::cfa(model = AIA, data = tmp, meanstructure = TRUE,estimator = "MLR")
-ds5 <- semTools::discriminantValidity(object = fit,cutoff = 0.85)
+ds5 <- semTools::discriminantValidity(object = fit,merge = TRUE)
 print(ds5)
 
 ```
@@ -290,6 +291,8 @@ fit1.meas <- lavaan::fitMeasures(fit1,c("tli","chisq","df","pvalue", "cfi", "rms
 #compRelSEM(fit1,tau.eq=F)
 
 ```
+
+For figures in the manuscript.
 
 ```{r}
 #| echo: false

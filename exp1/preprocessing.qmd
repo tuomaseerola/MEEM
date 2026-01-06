@@ -159,9 +159,11 @@ source('scr/ml_r.R') #just multilevel.reliability but works, what is the good va
 
 # Factor analyses
 
+As Appendix 2 in the manuscript.
+
 ```{r}
 #| echo: true
-#| eval: false
+#| eval: true
 #| id: CFA
 source('scr/CFA_averaged.R') # custom function
 FA1 <- CFA_averaged(data=df1b,vignettes = c("E","D","R"))

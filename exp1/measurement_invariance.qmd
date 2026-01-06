@@ -8,6 +8,8 @@ knitr:
 
 Measurement invariance across the vignettes was examined using multigroup CFA in lavaan with robust maximum likelihood estimation (MLR) and participant ID as a clustering variable. Configural, metric, and scalar invariance models were compared sequentially. Table 1 below summarises the invariance results, but generally model fit did not degrade substantially when factor loadings were constrained (ΔCFI = .001, ΔRMSEA = .008), suggesting metric invariance for FM, CB and AIA. However, when intercepts were constrained (ΔCFI < .005, ΔRMSEA < .004), all constructs failed to support the scalar invariance across vignettes.
 
+These analysyses correspond to section `CFA model fits and measurement invariance` in the manuscript.
+
 
 ```{r}
 #| echo: false

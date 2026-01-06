@@ -54,6 +54,8 @@ source('scr/CFA_items.R')
 
 ## Higher order structures
 
+These analysyses correspond to section `Reliability, discriminant validity and convergent validity of the scales` in the manuscript.
+
 ### First-Order Model (sub-constructs)
 
 Let's explore how the episodes operate via 12 sub-constructs.
@@ -385,15 +387,16 @@ rownames(fit_measures) <- c("1st-order",
 print(knitr::kable(fit_measures,digits=2))
 ```
 
-
 ### Compare Structures
+
+In the manuscript, we only report first-order and second-order models, as the other candidates are significantly worse (conceptually and statistically).
 
 ```{r}
 #| echo: true
 #| eval: true
 #| id: compare-structures 
 
-o <- compareFit(fit1, fit2, fit3, fit4, fit5)
+o <- compareFit(fit1, fit2)
 summary(o)
 ```
 

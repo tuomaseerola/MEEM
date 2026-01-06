@@ -8,6 +8,8 @@ knitr:
 
 A multilevel confirmatory factor analysis was performed in R (lavaan 0.6–19) to test a two or three-factor measurement model across two or three repeated vignette ratings nested within 100 participants. Each latent factor was indicated by three observed items. The model was estimated using robust maximum likelihood (MLR), with participant ID specified as a cluster variable to adjust for non-independence. Model fit was acceptable for the SEM models with best 3 items, but not for all items, see output tables for indicators.
 
+These analysyses correspond to section `CFA model fits and measurement invariance` in the manuscript.
+
 ```{r}
 #| echo: false
 #| warning: false
