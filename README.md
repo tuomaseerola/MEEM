@@ -9,11 +9,11 @@ These are the main analytical operations carried out in the study in Experiments
 
 ## Experiment 1
 
-1. [preprocessing](exp1/preprocessing.qmd) gets all the data, reports reliability, and visualises the item ratings.
+1. [preprocessing](exp1/preprocessing.qmd) gets all the data, reports reliability, and visualises the item ratings. &check;
 
-2. [CFA_direct](exp1/CFA_direct.qmd) contains full items analysis and 4 and 3 best item analyses.
+2. [CFA_direct](exp1/CFA_direct.qmd) contains full items analysis and 4 and 3 best item analyses. &check;
 
-3. [measurement_invariance](exp1/measurement_invariance.qmd) reports configural, metric, and scalar invariance for the CFA participant-clustered robust SE models.
+3. [measurement_invariance](exp1/measurement_invariance.qmd) reports configural, metric, and scalar invariance for the CFA participant-clustered robust SE models. &check;
 
 
 ## Experiment 2
@@ -25,4 +25,3 @@ These are the main analytical operations carried out in the study in Experiments
 3. [higher_order_structure](exp2/higher_order_structure.qmd) tests higher order structures. Also reports construct reliability measures and discriminant validity tests for the models. &check;
 
 4. [vignette_to_emotions](exp2/vignette_to_emotions.qmd) contains summary and construct validity with GEMIAC and HAAS scales. &check;
-
