@@ -1,9 +1,6 @@
 # MEEM
 
-This repository offers data and analyses related to the study titled "Measure of Emotional Episodes with Music (MEEM): development and psychometric evaluation of a modular instrument, (submitted). This is scale development for an instrument to measure a emotional episodes related to music ([Eerola, Kirts & Saarikallio, 2025](https://doi.org/10.1177/03057356241279763)) that has been already developed through the content validity steps [Kirts et al., in press](https://tuomaseerola.github.io/MIMEE/). 
-
-The public-facing version of this repository is available at
-[https://tuomaseerola.github.io/MEEM/](https://tuomaseerola.github.io/MEEM/). 
+This repository offers data and analyses related to the study titled "Measure of Emotional Episodes with Music (MEEM): development and psychometric evaluation of a modular instrument, (submitted). 
 
 These are the main analytical operations carried out in the study in Experiments 1 and 2.
 
