@@ -563,12 +563,12 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3110</span>)</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>AIA <span class="ot">&lt;-</span> <span class="st">"</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="st">B =~ B3 + B4 + B5</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="st">S =~ S3 + S4 + S5</span></span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="st">I =~ I1 + I2</span></span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="st">A =~ A1 + A3 + A5</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="st">B =~ B1 + B3 + B5</span></span>
 <span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
 <span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"B3"</span>,<span class="st">"B4"</span>,<span class="st">"B5"</span>,<span class="st">"I1"</span>,<span class="st">"I2"</span>,<span class="st">"A1"</span>,<span class="st">"A3"</span>,<span class="st">"A5"</span>)</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"S3"</span>,<span class="st">"S4"</span>,<span class="st">"S5"</span>,<span class="st">"I1"</span>,<span class="st">"I2"</span>,<span class="st">"B1"</span>,<span class="st">"B3"</span>,<span class="st">"B5"</span>)</span>
 <span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">CFA_items</span>(df_f,<span class="at">vignette =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>), <span class="at">items=</span>items,<span class="at">vignette_name=</span><span class="st">"AIA"</span>,<span class="at">bonusquestion=</span><span class="st">"HAAS"</span>)</span>
 <span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(<span class="at">model =</span> AIA, <span class="at">data =</span> tmp, <span class="at">estimator =</span> <span class="st">"MLR"</span>,<span class="at">group =</span> <span class="st">"VigNro"</span>) <span class="co"># includes vignettes explicitly</span></span>
 <span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>fit.meas5 <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">fitMeasures</span>(fit,<span class="fu">c</span>(<span class="st">"tli"</span>,<span class="st">"chisq"</span>,<span class="st">"df"</span>,<span class="st">"pvalue"</span>, <span class="st">"cfi"</span>, <span class="st">"rmsea"</span>, <span class="st">"srmr"</span>))</span>
@@ -621,9 +621,9 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ds5)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  lhs op rhs       est  ci.lower  ci.upper Df      AIC      BIC    Chisq
-1   B ~~   I 0.3237894 0.1860453 0.4615334 19 5758.875 5851.469 260.1804
-2   B ~~   A 0.5959015 0.4929085 0.6988944 19 5690.502 5783.097 191.8079
-3   I ~~   A 0.5215025 0.3852497 0.6577553 19 5685.831 5778.425 187.1364
+1   S ~~   I 0.3237894 0.1860453 0.4615334 19 5758.875 5851.469 260.1804
+2   S ~~   B 0.5959015 0.4929085 0.6988944 19 5690.502 5783.097 191.8079
+3   I ~~   B 0.5215025 0.3852497 0.6577553 19 5685.831 5778.425 187.1364
   Chisq diff Df diff   Pr(&gt;Chisq)
 1   92.37423       2 8.733540e-21
 2   70.24699       2 5.572616e-16
@@ -854,7 +854,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">AIA</td>
-<td style="text-align: left;">B</td>
+<td style="text-align: left;">S</td>
 <td style="text-align: left;">~~</td>
 <td style="text-align: left;">I</td>
 <td style="text-align: right;">0.324</td>
@@ -870,9 +870,9 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </tr>
 <tr class="even">
 <td style="text-align: left;">AIA</td>
-<td style="text-align: left;">B</td>
+<td style="text-align: left;">S</td>
 <td style="text-align: left;">~~</td>
-<td style="text-align: left;">A</td>
+<td style="text-align: left;">B</td>
 <td style="text-align: right;">0.596</td>
 <td style="text-align: right;">0.493</td>
 <td style="text-align: right;">0.699</td>
@@ -888,7 +888,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: left;">AIA</td>
 <td style="text-align: left;">I</td>
 <td style="text-align: left;">~~</td>
-<td style="text-align: left;">A</td>
+<td style="text-align: left;">B</td>
 <td style="text-align: right;">0.522</td>
 <td style="text-align: right;">0.385</td>
 <td style="text-align: right;">0.658</td>
@@ -1145,7 +1145,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">B</td>
+<td style="text-align: left;">S</td>
 <td style="text-align: left;">~~</td>
 <td style="text-align: left;">I</td>
 <td style="text-align: right;">0.58</td>
@@ -1158,9 +1158,9 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.52</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">B</td>
+<td style="text-align: left;">S</td>
 <td style="text-align: left;">~~</td>
-<td style="text-align: left;">A</td>
+<td style="text-align: left;">B</td>
 <td style="text-align: right;">0.43</td>
 <td style="text-align: right;">0.03</td>
 <td style="text-align: right;">15.12</td>
@@ -1173,7 +1173,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <tr class="odd">
 <td style="text-align: left;">I</td>
 <td style="text-align: left;">~~</td>
-<td style="text-align: left;">A</td>
+<td style="text-align: left;">B</td>
 <td style="text-align: right;">0.46</td>
 <td style="text-align: right;">0.03</td>
 <td style="text-align: right;">16.06</td>
@@ -1386,22 +1386,22 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">1.13</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">B3</td>
-<td style="text-align: left;">B</td>
+<td style="text-align: left;">S3</td>
+<td style="text-align: left;">S</td>
 <td style="text-align: right;">0.90</td>
 <td style="text-align: right;">2.74</td>
 <td style="text-align: right;">1.25</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">B4</td>
-<td style="text-align: left;">B</td>
+<td style="text-align: left;">S4</td>
+<td style="text-align: left;">S</td>
 <td style="text-align: right;">0.89</td>
 <td style="text-align: right;">2.66</td>
 <td style="text-align: right;">1.23</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">B5</td>
-<td style="text-align: left;">B</td>
+<td style="text-align: left;">S5</td>
+<td style="text-align: left;">S</td>
 <td style="text-align: right;">0.88</td>
 <td style="text-align: right;">2.81</td>
 <td style="text-align: right;">1.28</td>
@@ -1421,22 +1421,22 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">1.13</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">A1</td>
-<td style="text-align: left;">A</td>
+<td style="text-align: left;">B1</td>
+<td style="text-align: left;">B</td>
 <td style="text-align: right;">0.74</td>
 <td style="text-align: right;">4.15</td>
 <td style="text-align: right;">0.85</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">A3</td>
-<td style="text-align: left;">A</td>
+<td style="text-align: left;">B3</td>
+<td style="text-align: left;">B</td>
 <td style="text-align: right;">0.77</td>
 <td style="text-align: right;">3.83</td>
 <td style="text-align: right;">1.03</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">A5</td>
-<td style="text-align: left;">A</td>
+<td style="text-align: left;">B5</td>
+<td style="text-align: left;">B</td>
 <td style="text-align: right;">0.71</td>
 <td style="text-align: right;">3.11</td>
 <td style="text-align: right;">1.18</td>

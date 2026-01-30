@@ -107,7 +107,7 @@ df_haas$Construct[df_haas$VigNro == 8 | df_haas$VigNro == 9]<-"PEP"
 df_haas$Construct[df_haas$VigNro > 9]<-"AIA"
 
 # Labels for vignettes 1 to 12.
-V <- c('Enjoyment', 'Distraction', 'Relaxation', 'EnergyControl', 'Focus', 'GroupCohesion', 'ReduceLoneliness', 'Coping', 'Express', 'Spirituality', 'Curiosity', 'Aesthetics')
+V <- c('Enjoyment', 'Distraction', 'Relaxation', 'Motivation', 'Focus', 'Group Bonding', 'Reduce Loneliness', 'Comforting', 'Expression', 'Spirituality', 'Curiosity', 'Beauty')
 
 # Make into factors and ensure the correct order
 df_haas$VigNro<-factor(df_haas$VigNro,labels=V)
@@ -236,14 +236,14 @@ print(paste("N =",length(unique(S$ProlificID))))
 
 combined_HAAS <- merge(fs0, S, by="ProlificID")
 #dim(combined_HAAS) #639
-vars<-c("E","D","R","M","F","G","L","C","X","B","I","A","pos_high_M","pos_low_M","neg_high_M","neg_low_M")
+vars<-c("E","D","R","M","F","G","L","C","X","S","I","B","pos_high_M","pos_low_M","neg_high_M","neg_low_M")
 matrix <- dplyr::select(combined_HAAS, all_of(vars))
 cm <- cor(matrix, use="pairwise.complete.obs")
 print(knitr::kable(cm, digits = 2, caption = "Correlation Matrix between Factor Scores and HAAS Emotion Ratings."))
 
 # Just arousal and valence
 combined_HAAS2 <- merge(fs0, haas_summary3, by="ProlificID")
-vars<-c("E","D","R","M","F","G","L","C","X","B","I","A","Arousal","Valence")
+vars<-c("E","D","R","M","F","G","L","C","X","S","I","B","Arousal","Valence")
 matrix <- dplyr::select(combined_HAAS2, all_of(vars))
 cm <- cor(matrix, use="pairwise.complete.obs")
 print(knitr::kable(cm, digits = 2, caption = "Correlation Matrix between Factor Scores and HAAS Valence and Arousal Ratings."))

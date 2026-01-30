@@ -32,6 +32,7 @@ df_f <- rename_specific_items(df_f)
 # F1 should be in Motivation, relabelled as M9
 df_f$item_label[df_f$item_label=="F1"] <- "M9"
 
+
 ```
 
 ```{r}
@@ -44,7 +45,10 @@ df_f$itemCategory[str_detect(df_f$item_label,"E|D|R")]<-"EDR"
 df_f$itemCategory[str_detect(df_f$item_label,"M|F")]<-"FM"
 df_f$itemCategory[str_detect(df_f$item_label,"G|L")]<-"CB"     # Labels updated
 df_f$itemCategory[str_detect(df_f$item_label,"C|X")]<-"PEP"    # Labels updated
-df_f$itemCategory[str_detect(df_f$item_label,"B|I|A")]<-"AIA"  # Labels updated
+df_f$itemCategory[str_detect(df_f$item_label,"S|I|B")]<-"AIA"  # Labels updated
+
+# Check the assignments
+#table(df_f$item_label,df_f$itemCategory)
 
 ```
 
@@ -196,12 +200,12 @@ print(ds4)
 set.seed(3110)
 
 AIA <- "
-B =~ B3 + B4 + B5
+S =~ S3 + S4 + S5
 I =~ I1 + I2
-A =~ A1 + A3 + A5
+B =~ B1 + B3 + B5
 "
 
-items <- c("B3","B4","B5","I1","I2","A1","A3","A5")
+items <- c("S3","S4","S5","I1","I2","B1","B3","B5")
 tmp <- CFA_items(df_f,vignette = c(10,11,12), items=items,vignette_name="AIA",bonusquestion="HAAS")
 fit <- lavaan::cfa(model = AIA, data = tmp, estimator = "MLR",group = "VigNro") # includes vignettes explicitly
 fit.meas5 <- lavaan::fitMeasures(fit,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
@@ -280,12 +284,12 @@ C =~ C2 + C3 + C6
 X =~ X4 + X8 + X9
 
 # sub-factors: AIA
-B =~ B3 + B4 + B5
+S =~ S3 + S4 + S5
 I =~ I1 + I2
-A =~ A1 + A3 + A5
+B =~ B1 + B3 + B5
 "
 
-items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","M9","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
+items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","M9","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","S3","S4","S5","I1","I2","B1","B3","B5")
 tmp <- CFA_items(df_f,vignette = 1:12, items=items,vignette_name="ALL",bonusquestion="HAAS")
 fit1 <- lavaan::cfa(model = first_order, data = tmp, meanstructure = TRUE,estimator = "MLR")
 fit1.meas <- lavaan::fitMeasures(fit1,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
@@ -326,7 +330,7 @@ pep_subs<-c("C","X")
 pep_res <- dplyr::filter(key_subconstructs, lhs %in% pep_subs & rhs %in% pep_subs & lhs != rhs)
 print(knitr::kable(pep_res,digits = 2))
 
-aia_subs<-c("B","I","A")
+aia_subs<-c("S","I","B")
 aia_res <- dplyr::filter(key_subconstructs, lhs %in% aia_subs & rhs %in% aia_subs & lhs != rhs)
 print(knitr::kable(aia_res,digits = 2))
 
@@ -361,7 +365,7 @@ final_table <- merge(
   all.x = TRUE
 )
 
-final_table$Factor <- factor(final_table$Factor,levels = c("E","D","R","M","F","G","L","C","X","B","I","A"))
+final_table$Factor <- factor(final_table$Factor,levels = c("E","D","R","M","F","G","L","C","X","S","I","B"))
 
 final_table <- final_table[order(final_table$Factor), ]
 rownames(final_table) <- NULL

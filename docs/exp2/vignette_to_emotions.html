@@ -291,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>[1] “N = 639”</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>combined_HAAS <span class="ot">&lt;-</span> <span class="fu">merge</span>(fs0, S, <span class="at">by=</span><span class="st">"ProlificID"</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#dim(combined_HAAS) #639</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>vars<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"E"</span>,<span class="st">"D"</span>,<span class="st">"R"</span>,<span class="st">"M"</span>,<span class="st">"F"</span>,<span class="st">"G"</span>,<span class="st">"L"</span>,<span class="st">"C"</span>,<span class="st">"X"</span>,<span class="st">"B"</span>,<span class="st">"I"</span>,<span class="st">"A"</span>,<span class="st">"pos_high_M"</span>,<span class="st">"pos_low_M"</span>,<span class="st">"neg_high_M"</span>,<span class="st">"neg_low_M"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>vars<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"E"</span>,<span class="st">"D"</span>,<span class="st">"R"</span>,<span class="st">"M"</span>,<span class="st">"F"</span>,<span class="st">"G"</span>,<span class="st">"L"</span>,<span class="st">"C"</span>,<span class="st">"X"</span>,<span class="st">"S"</span>,<span class="st">"I"</span>,<span class="st">"B"</span>,<span class="st">"pos_high_M"</span>,<span class="st">"pos_low_M"</span>,<span class="st">"neg_high_M"</span>,<span class="st">"neg_low_M"</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>matrix <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">select</span>(combined_HAAS, <span class="fu">all_of</span>(vars))</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>cm <span class="ot">&lt;-</span> <span class="fu">cor</span>(matrix, <span class="at">use=</span><span class="st">"pairwise.complete.obs"</span>)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(knitr<span class="sc">::</span><span class="fu">kable</span>(cm, <span class="at">digits =</span> <span class="dv">2</span>, <span class="at">caption =</span> <span class="st">"Correlation Matrix between Factor Scores and HAAS Emotion Ratings."</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -328,9 +328,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th style="text-align: right;">L</th>
 <th style="text-align: right;">C</th>
 <th style="text-align: right;">X</th>
-<th style="text-align: right;">B</th>
+<th style="text-align: right;">S</th>
 <th style="text-align: right;">I</th>
-<th style="text-align: right;">A</th>
+<th style="text-align: right;">B</th>
 <th style="text-align: right;">pos_high_M</th>
 <th style="text-align: right;">pos_low_M</th>
 <th style="text-align: right;">neg_high_M</th>
@@ -510,7 +510,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">-0.03</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">B</td>
+<td style="text-align: left;">S</td>
 <td style="text-align: right;">0.43</td>
 <td style="text-align: right;">0.53</td>
 <td style="text-align: right;">0.49</td>
@@ -548,7 +548,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">-0.24</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">A</td>
+<td style="text-align: left;">B</td>
 <td style="text-align: right;">0.88</td>
 <td style="text-align: right;">0.51</td>
 <td style="text-align: right;">0.65</td>
@@ -646,7 +646,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Just arousal and valence</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>combined_HAAS2 <span class="ot">&lt;-</span> <span class="fu">merge</span>(fs0, haas_summary3, <span class="at">by=</span><span class="st">"ProlificID"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>vars<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"E"</span>,<span class="st">"D"</span>,<span class="st">"R"</span>,<span class="st">"M"</span>,<span class="st">"F"</span>,<span class="st">"G"</span>,<span class="st">"L"</span>,<span class="st">"C"</span>,<span class="st">"X"</span>,<span class="st">"B"</span>,<span class="st">"I"</span>,<span class="st">"A"</span>,<span class="st">"Arousal"</span>,<span class="st">"Valence"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>vars<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"E"</span>,<span class="st">"D"</span>,<span class="st">"R"</span>,<span class="st">"M"</span>,<span class="st">"F"</span>,<span class="st">"G"</span>,<span class="st">"L"</span>,<span class="st">"C"</span>,<span class="st">"X"</span>,<span class="st">"S"</span>,<span class="st">"I"</span>,<span class="st">"B"</span>,<span class="st">"Arousal"</span>,<span class="st">"Valence"</span>)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>matrix <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">select</span>(combined_HAAS2, <span class="fu">all_of</span>(vars))</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>cm <span class="ot">&lt;-</span> <span class="fu">cor</span>(matrix, <span class="at">use=</span><span class="st">"pairwise.complete.obs"</span>)</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(knitr<span class="sc">::</span><span class="fu">kable</span>(cm, <span class="at">digits =</span> <span class="dv">2</span>, <span class="at">caption =</span> <span class="st">"Correlation Matrix between Factor Scores and HAAS Valence and Arousal Ratings."</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -681,9 +681,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th style="text-align: right;">L</th>
 <th style="text-align: right;">C</th>
 <th style="text-align: right;">X</th>
-<th style="text-align: right;">B</th>
+<th style="text-align: right;">S</th>
 <th style="text-align: right;">I</th>
-<th style="text-align: right;">A</th>
+<th style="text-align: right;">B</th>
 <th style="text-align: right;">Arousal</th>
 <th style="text-align: right;">Valence</th>
 </tr>
@@ -843,7 +843,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.21</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">B</td>
+<td style="text-align: left;">S</td>
 <td style="text-align: right;">0.43</td>
 <td style="text-align: right;">0.53</td>
 <td style="text-align: right;">0.49</td>
@@ -877,7 +877,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.41</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">A</td>
+<td style="text-align: left;">B</td>
 <td style="text-align: right;">0.88</td>
 <td style="text-align: right;">0.51</td>
 <td style="text-align: right;">0.65</td>

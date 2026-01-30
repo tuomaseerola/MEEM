@@ -287,12 +287,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="st">X =~ X4 + X8 + X9</span></span>
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: AIA</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="st">B =~ B3 + B4 + B5</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="st">S =~ S3 + S4 + S5</span></span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="st">I =~ I1 + I2</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="st">A =~ A1 + A3 + A5</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="st">B =~ B1 + B3 + B5</span></span>
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"E1"</span>,<span class="st">"E6"</span>,<span class="st">"E7"</span>,<span class="st">"D1"</span>,<span class="st">"D6"</span>,<span class="st">"D7"</span>,<span class="st">"R1"</span>,<span class="st">"R3"</span>,<span class="st">"R7"</span>,<span class="st">"M1"</span>,<span class="st">"M3"</span>,<span class="st">"M9"</span>,<span class="st">"F3"</span>,<span class="st">"F6"</span>,<span class="st">"F10"</span>,<span class="st">"G5"</span>,<span class="st">"G2"</span>,<span class="st">"G9"</span>,<span class="st">"L5"</span>,<span class="st">"L6"</span>,<span class="st">"L7"</span>,<span class="st">"C2"</span>,<span class="st">"C3"</span>,<span class="st">"C6"</span>,<span class="st">"X4"</span>,<span class="st">"X8"</span>,<span class="st">"X9"</span>,<span class="st">"B3"</span>,<span class="st">"B4"</span>,<span class="st">"B5"</span>,<span class="st">"I1"</span>,<span class="st">"I2"</span>,<span class="st">"A1"</span>,<span class="st">"A3"</span>,<span class="st">"A5"</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"E1"</span>,<span class="st">"E6"</span>,<span class="st">"E7"</span>,<span class="st">"D1"</span>,<span class="st">"D6"</span>,<span class="st">"D7"</span>,<span class="st">"R1"</span>,<span class="st">"R3"</span>,<span class="st">"R7"</span>,<span class="st">"M1"</span>,<span class="st">"M3"</span>,<span class="st">"M9"</span>,<span class="st">"F3"</span>,<span class="st">"F6"</span>,<span class="st">"F10"</span>,<span class="st">"G5"</span>,<span class="st">"G2"</span>,<span class="st">"G9"</span>,<span class="st">"L5"</span>,<span class="st">"L6"</span>,<span class="st">"L7"</span>,<span class="st">"C2"</span>,<span class="st">"C3"</span>,<span class="st">"C6"</span>,<span class="st">"X4"</span>,<span class="st">"X8"</span>,<span class="st">"X9"</span>,<span class="st">"S3"</span>,<span class="st">"S4"</span>,<span class="st">"S5"</span>,<span class="st">"I1"</span>,<span class="st">"I2"</span>,<span class="st">"B1"</span>,<span class="st">"B3"</span>,<span class="st">"B5"</span>)</span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">CFA_items</span>(df_f,<span class="at">vignette =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">items=</span>items,<span class="at">vignette_name=</span><span class="st">"ALL"</span>,<span class="at">bonusquestion=</span><span class="st">"HAAS"</span>)</span>
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(<span class="at">model =</span> first_order, <span class="at">data =</span> tmp, <span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>fit1.meas <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">fitMeasures</span>(fit1,<span class="fu">c</span>(<span class="st">"tli"</span>,<span class="st">"chisq"</span>,<span class="st">"df"</span>,<span class="st">"pvalue"</span>, <span class="st">"cfi"</span>, <span class="st">"rmsea"</span>, <span class="st">"srmr"</span>))</span>
@@ -328,9 +328,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="st">X =~ X4 + X8 + X9</span></span>
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: AIA</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="st">B =~ B3 + B4 + B5</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="st">S =~ S3 + S4 + S5</span></span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="st">I =~ I1 + I2</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="st">A =~ A1 + A3 + A5</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="st">B =~ B1 + B3 + B5</span></span>
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="st"># 2nd order factors</span></span>
 <span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
@@ -338,10 +338,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="st">FM =~ M + F</span></span>
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="st">CB =~ G + L </span></span>
 <span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="st">PEP =~ C + X</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="st">AIA =~ B + I + A  </span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="st">AIA =~ S + I + B  </span></span>
 <span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
 <span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"E1"</span>,<span class="st">"E6"</span>,<span class="st">"E7"</span>,<span class="st">"D1"</span>,<span class="st">"D6"</span>,<span class="st">"D7"</span>,<span class="st">"R1"</span>,<span class="st">"R3"</span>,<span class="st">"R7"</span>,<span class="st">"M1"</span>,<span class="st">"M3"</span>,<span class="st">"M9"</span>,<span class="st">"F3"</span>,<span class="st">"F6"</span>,<span class="st">"F10"</span>,<span class="st">"G5"</span>,<span class="st">"G2"</span>,<span class="st">"G9"</span>,<span class="st">"L5"</span>,<span class="st">"L6"</span>,<span class="st">"L7"</span>,<span class="st">"C2"</span>,<span class="st">"C3"</span>,<span class="st">"C6"</span>,<span class="st">"X4"</span>,<span class="st">"X8"</span>,<span class="st">"X9"</span>,<span class="st">"B3"</span>,<span class="st">"B4"</span>,<span class="st">"B5"</span>,<span class="st">"I1"</span>,<span class="st">"I2"</span>,<span class="st">"A1"</span>,<span class="st">"A3"</span>,<span class="st">"A5"</span>)</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"E1"</span>,<span class="st">"E6"</span>,<span class="st">"E7"</span>,<span class="st">"D1"</span>,<span class="st">"D6"</span>,<span class="st">"D7"</span>,<span class="st">"R1"</span>,<span class="st">"R3"</span>,<span class="st">"R7"</span>,<span class="st">"M1"</span>,<span class="st">"M3"</span>,<span class="st">"M9"</span>,<span class="st">"F3"</span>,<span class="st">"F6"</span>,<span class="st">"F10"</span>,<span class="st">"G5"</span>,<span class="st">"G2"</span>,<span class="st">"G9"</span>,<span class="st">"L5"</span>,<span class="st">"L6"</span>,<span class="st">"L7"</span>,<span class="st">"C2"</span>,<span class="st">"C3"</span>,<span class="st">"C6"</span>,<span class="st">"X4"</span>,<span class="st">"X8"</span>,<span class="st">"X9"</span>,<span class="st">"S3"</span>,<span class="st">"S4"</span>,<span class="st">"S5"</span>,<span class="st">"I1"</span>,<span class="st">"I2"</span>,<span class="st">"B1"</span>,<span class="st">"B3"</span>,<span class="st">"B5"</span>)</span>
 <span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">CFA_items</span>(df_f,<span class="at">vignette =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">items=</span>items,<span class="at">vignette_name=</span><span class="st">"ALL"</span>,<span class="at">bonusquestion=</span><span class="st">"HAAS"</span>)</span>
 <span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>fit2 <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(<span class="at">model =</span> second_order, <span class="at">data =</span> tmp, <span class="at">meanstructure =</span> <span class="cn">TRUE</span>, <span class="at">estimator =</span> <span class="st">"MLR"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -567,19 +567,19 @@ fit2 - fit1        44        0.012     -0.031     -0.031 0.021 806.505 582.541</
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This is done using omega, not alpha</span></span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit1,<span class="at">tau.eq=</span>F)                 <span class="co"># all acceptable good excellent</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    E     D     R     M     F     G     L     C     X     B     I     A 
+<pre><code>    E     D     R     M     F     G     L     C     X     S     I     B 
 0.806 0.769 0.882 0.818 0.878 0.903 0.881 0.842 0.829 0.918 0.874 0.783 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit2,<span class="at">higher =</span> <span class="fu">c</span>(<span class="st">"EDR"</span>,<span class="st">"FM"</span>,<span class="st">"CB"</span>,<span class="st">"PEP"</span>,<span class="st">"AIA"</span>),<span class="at">tau.eq=</span>F) <span class="co"># all acceptable good excellent</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    E     D     R     M     F     G     L     C     X     B     I     A   EDR 
+<pre><code>    E     D     R     M     F     G     L     C     X     S     I     B   EDR 
 0.804 0.771 0.882 0.811 0.879 0.903 0.880 0.841 0.832 0.918 0.874 0.783 0.679 
    FM    CB   PEP   AIA 
 0.760 0.613 0.704 0.759 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit3, <span class="at">tau.eq=</span>F)               <span class="co"># g good but constructs are poor </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    g     E     D     R     M     F     G     L     C     X     B     I     A 
+<pre><code>    g     E     D     R     M     F     G     L     C     X     S     I     B 
 0.894 0.386 0.373 0.470 0.531 0.588 0.551 0.394 0.234 0.285 0.539 0.472 0.250 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit4,<span class="at">tau.eq=</span>F)                <span class="co"># all above 0.80</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -589,7 +589,7 @@ fit2 - fit1        44        0.012     -0.031     -0.031 0.021 806.505 582.541</
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit5,<span class="at">tau.eq=</span>F,<span class="at">higher=</span><span class="st">"g"</span>)     <span class="co"># all above 0.80</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    E     D     R     M     F     G     L     C     X     B     I     A     g 
+<pre><code>    E     D     R     M     F     G     L     C     X     S     I     B     g 
 0.805 0.771 0.882 0.812 0.879 0.903 0.880 0.842 0.832 0.918 0.874 0.782   NaN </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">lavInspect</span>(fit2, <span class="st">"cor.lv"</span>)</span>
@@ -599,7 +599,7 @@ fit2 - fit1        44        0.012     -0.031     -0.031 0.021 806.505 582.541</
 
 Table: Correlations between the latent factors (for sub-constructs and constructs).
 
-|    |    E|    D|    R|    M|    F|    G|    L|    C|    X|    B|    I|    A|  EDR|   FM|   CB|  PEP|  AIA|
+|    |    E|    D|    R|    M|    F|    G|    L|    C|    X|    S|    I|    B|  EDR|   FM|   CB|  PEP|  AIA|
 |:---|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|
 |E   | 1.00| 0.51| 0.49| 0.39| 0.39| 0.40| 0.44| 0.64| 0.57| 0.40| 0.45| 0.56| 0.69| 0.46| 0.59| 0.74| 0.59|
 |D   | 0.51| 1.00| 0.52| 0.41| 0.42| 0.43| 0.47| 0.68| 0.61| 0.42| 0.48| 0.59| 0.73| 0.49| 0.63| 0.79| 0.62|
@@ -610,9 +610,9 @@ Table: Correlations between the latent factors (for sub-constructs and construct
 |L   | 0.44| 0.47| 0.46| 0.35| 0.36| 0.50| 1.00| 0.62| 0.56| 0.43| 0.48| 0.60| 0.64| 0.42| 0.74| 0.72| 0.63|
 |C   | 0.64| 0.68| 0.66| 0.49| 0.49| 0.56| 0.62| 1.00| 0.67| 0.48| 0.55| 0.68| 0.92| 0.58| 0.83| 0.86| 0.72|
 |X   | 0.57| 0.61| 0.59| 0.44| 0.44| 0.51| 0.56| 0.67| 1.00| 0.44| 0.49| 0.61| 0.83| 0.52| 0.75| 0.77| 0.64|
-|B   | 0.40| 0.42| 0.41| 0.28| 0.28| 0.38| 0.43| 0.48| 0.44| 1.00| 0.52| 0.64| 0.58| 0.33| 0.57| 0.56| 0.68|
+|S   | 0.40| 0.42| 0.41| 0.28| 0.28| 0.38| 0.43| 0.48| 0.44| 1.00| 0.52| 0.64| 0.58| 0.33| 0.57| 0.56| 0.68|
 |I   | 0.45| 0.48| 0.47| 0.32| 0.32| 0.44| 0.48| 0.55| 0.49| 0.52| 1.00| 0.73| 0.65| 0.38| 0.65| 0.64| 0.77|
-|A   | 0.56| 0.59| 0.57| 0.39| 0.40| 0.54| 0.60| 0.68| 0.61| 0.64| 0.73| 1.00| 0.81| 0.46| 0.80| 0.79| 0.95|
+|B   | 0.56| 0.59| 0.57| 0.39| 0.40| 0.54| 0.60| 0.68| 0.61| 0.64| 0.73| 1.00| 0.81| 0.46| 0.80| 0.79| 0.95|
 |EDR | 0.69| 0.73| 0.71| 0.56| 0.57| 0.58| 0.64| 0.92| 0.83| 0.58| 0.65| 0.81| 1.00| 0.66| 0.86| 1.07| 0.85|
 |FM  | 0.46| 0.49| 0.47| 0.84| 0.85| 0.38| 0.42| 0.58| 0.52| 0.33| 0.38| 0.46| 0.66| 1.00| 0.56| 0.67| 0.49|
 |CB  | 0.59| 0.63| 0.61| 0.47| 0.48| 0.67| 0.74| 0.83| 0.75| 0.57| 0.65| 0.80| 0.86| 0.56| 1.00| 0.97| 0.84|
@@ -630,7 +630,7 @@ Table: Correlations between the latent factors (for sub-constructs and construct
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate average variance explained, 0.50+ is acceptable </span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lavInspect</span>(fit1, <span class="st">"cor.lv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>      E     D     R     M     F     G     L     C     X     B     I     A
+<pre><code>      E     D     R     M     F     G     L     C     X     S     I     B
 E 1.000                                                                  
 D 0.432 1.000                                                            
 R 0.518 0.555 1.000                                                      
@@ -640,26 +640,26 @@ G 0.521 0.271 0.306 0.298 0.270 1.000
 L 0.432 0.623 0.450 0.381 0.390 0.502 1.000                              
 C 0.559 0.747 0.760 0.410 0.462 0.431 0.668 1.000                        
 X 0.535 0.635 0.467 0.565 0.491 0.574 0.595 0.667 1.000                  
-B 0.337 0.459 0.428 0.295 0.313 0.445 0.438 0.524 0.531 1.000            
+S 0.337 0.459 0.428 0.295 0.313 0.445 0.438 0.524 0.531 1.000            
 I 0.529 0.361 0.389 0.374 0.375 0.553 0.429 0.454 0.533 0.517 1.000      
-A 0.807 0.428 0.579 0.353 0.357 0.620 0.484 0.678 0.608 0.612 0.748 1.000</code></pre>
+B 0.807 0.428 0.579 0.353 0.357 0.620 0.484 0.678 0.608 0.612 0.748 1.000</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First-order model</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit1)  <span class="co"># all above 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    E     D     R     M     F     G     L     C     X     B     I     A 
+<pre><code>    E     D     R     M     F     G     L     C     X     S     I     B 
 0.579 0.528 0.713 0.596 0.708 0.756 0.704 0.636 0.615 0.789 0.776 0.541 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First and second-order</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit2)  <span class="co"># all above 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    E     D     R     M     F     G     L     C     X     B     I     A 
+<pre><code>    E     D     R     M     F     G     L     C     X     S     I     B 
 0.577 0.528 0.713 0.594 0.708 0.756 0.704 0.635 0.617 0.789 0.776 0.541 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bifactor</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit3,<span class="at">omit.factors=</span><span class="st">"g"</span>)  <span class="co"># All below 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    E     D     R     M     F     G     L     C     X     B     I     A 
+<pre><code>    E     D     R     M     F     G     L     C     X     S     I     B 
 0.277 0.259 0.380 0.394 0.475 0.462 0.339 0.184 0.222 0.464 0.420 0.196 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Second-order only</span></span>
@@ -671,7 +671,7 @@ A 0.807 0.428 0.579 0.353 0.357 0.620 0.484 0.678 0.608 0.612 0.748 1.000</code>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1st, 2nd, and third-order</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit5)  <span class="co"># all above 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    E     D     R     M     F     G     L     C     X     B     I     A 
+<pre><code>    E     D     R     M     F     G     L     C     X     S     I     B 
 0.577 0.529 0.713 0.594 0.708 0.756 0.704 0.636 0.617 0.789 0.776 0.540 </code></pre>
 </div>
 </div>
@@ -712,9 +712,9 @@ A 0.807 0.428 0.579 0.353 0.357 0.620 0.484 0.678 0.608 0.612 0.748 1.000</code>
 <th style="text-align: right;">L</th>
 <th style="text-align: right;">C</th>
 <th style="text-align: right;">X</th>
-<th style="text-align: right;">B</th>
+<th style="text-align: right;">S</th>
 <th style="text-align: right;">I</th>
-<th style="text-align: right;">A</th>
+<th style="text-align: right;">B</th>
 </tr>
 </thead>
 <tbody>
@@ -854,7 +854,7 @@ A 0.807 0.428 0.579 0.353 0.357 0.620 0.484 0.678 0.608 0.612 0.748 1.000</code>
 <td style="text-align: right;">0.619</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">B</td>
+<td style="text-align: left;">S</td>
 <td style="text-align: right;">0.338</td>
 <td style="text-align: right;">0.458</td>
 <td style="text-align: right;">0.429</td>
@@ -884,7 +884,7 @@ A 0.807 0.428 0.579 0.353 0.357 0.620 0.484 0.678 0.608 0.612 0.748 1.000</code>
 <td style="text-align: right;">0.758</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">A</td>
+<td style="text-align: left;">B</td>
 <td style="text-align: right;">0.809</td>
 <td style="text-align: right;">0.431</td>
 <td style="text-align: right;">0.577</td>
