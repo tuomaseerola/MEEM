@@ -30,6 +30,8 @@ library(semTools)
 df_f <- readRDS("data/items35_N1200.rds")
 source('scr/rename_specific_items.R') # We decided to relabel some constructs for clarity
 df_f <- rename_specific_items(df_f)
+# F1 should be in Motivation, relabelled as M9
+df_f$item_label[df_f$item_label=="F1"] <- "M9"
 ```
 
 ```{r}
@@ -73,7 +75,7 @@ D =~ D1 + D6 + D7
 R =~ R1 + R3 + R7
 
 # sub-factors: FM
-M =~ M1 + M3 + F1
+M =~ M1 + M3 + M9
 F =~ F3 + F6 + F10
 
 # sub-factors: CB
@@ -90,7 +92,7 @@ I =~ I1 + I2
 A =~ A1 + A3 + A5
 "
 
-items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","F1","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
+items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","M9","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
 tmp <- CFA_items(df_f,vignette = 1:12, items=items,vignette_name="ALL",bonusquestion="HAAS")
 fit1 <- lavaan::cfa(model = first_order, data = tmp, meanstructure = TRUE,estimator = "MLR")
 fit1.meas <- lavaan::fitMeasures(fit1,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))
@@ -115,7 +117,7 @@ D =~ D1 + D6 + D7
 R =~ R1 + R3 + R7
 
 # sub-factors: FM
-M =~ M1 + M3 + F1
+M =~ M1 + M3 + M9
 F =~ F3 + F6 + F10
 
 # sub-factors: CB
@@ -140,7 +142,7 @@ PEP =~ C + X
 AIA =~ B + I + A  
 "
 
-items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","F1","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
+items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","M9","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
 
 tmp <- CFA_items(df_f,vignette = 1:12, items=items,vignette_name="ALL",bonusquestion="HAAS")
 fit2 <- lavaan::cfa(model = second_order, data = tmp, meanstructure = TRUE, estimator = "MLR")
@@ -163,7 +165,7 @@ set.seed(3110)
 
 bifactor_model <- "
 # general factor
-g =~ E1 + E6 + E7 + D1 + D6 + D7 + R1 + R3 + R7 + M1 + M3 + F1 + F3 + F6 + F10 + G5 + G2 + G9 + L5 + L6 + L7 + C2 + C3 + C6 + X4 + X8 + X9 + B3 + B4 + B5 + I1 + I2 + A1 + A3 + A5
+g =~ E1 + E6 + E7 + D1 + D6 + D7 + R1 + R3 + R7 + M1 + M3 + M9 + F3 + F6 + F10 + G5 + G2 + G9 + L5 + L6 + L7 + C2 + C3 + C6 + X4 + X8 + X9 + B3 + B4 + B5 + I1 + I2 + A1 + A3 + A5
 
 # sub-factors: EDR
 E =~ E1 + E6 + E7
@@ -171,7 +173,7 @@ D =~ D1 + D6 + D7
 R =~ R1 + R3 + R7
 
 # sub-factors: FM
-M =~ M1 + M3 + F1
+M =~ M1 + M3 + M9
 F =~ F3 + F6 + F10
 
 # sub-factors: CB
@@ -202,7 +204,7 @@ A =~ A1 + A3 + A5
 # g ~~ 0*A
 "
 
-items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","F1","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
+items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","M9","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
 tmp <- CFA_items(df_f,vignette = 1:12, items=items,vignette_name="ALL",bonusquestion="HAAS")
 fit3 <- lavaan::cfa(model = bifactor_model, data = tmp, meanstructure = TRUE,orthogonal=TRUE, estimator = "MLR")
 
@@ -226,13 +228,13 @@ Test whether the items work through 5 constructs only (all sub-constructs are in
 
 episodes <- "
 EDR =~ E1 + E6 + E7 + D1 + D6 + D7 + R1 + R3 + R7
-FM =~ M1 + M3 + F1 + F3 + F6 + F10
+FM =~ M1 + M3 + M9 + F3 + F6 + F10
 CB =~ G5 + G2 + G9 + L5 + L6 + L7 
 PEP =~ C2 + C3 + C6 + X4 + X8 + X9
 AIA =~ B3 + B4 + B5 + I1 + I2 + A1 + A3 + A5
 "
 
-items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","F1","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
+items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","M9","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
 
 tmp <- CFA_items(df_f,vignette = 1:12, items=items,vignette_name="ALL",bonusquestion="HAAS")
 fit4 <- lavaan::cfa(model = episodes, data = tmp, meanstructure = TRUE, estimator = "MLR")
@@ -258,7 +260,7 @@ D =~ D1 + D6 + D7
 R =~ R1 + R3 + R7
 
 # sub-factors: FM
-M =~ M1 + M3 + F1
+M =~ M1 + M3 + M9
 F =~ F3 + F6 + F10
 
 # sub-factors: CB
@@ -288,7 +290,7 @@ g =~ EDR + FM + CB + PEP + AIA
 
 "
 
-items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","F1","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
+items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","M9","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
 
 tmp <- CFA_items(df_f,vignette = 1:12, items=items,vignette_name="ALL",bonusquestion="HAAS")
 fit5 <- lavaan::cfa(model = episodes2, data = tmp, meanstructure = TRUE, estimator = "MLR")

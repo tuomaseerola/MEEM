@@ -1,0 +1,23 @@
+---
+title: "Exp. 1 - Renaming sub-constructs"
+toc: false
+knitr:
+  opts_chunk:
+    fig.path: "figures/"
+---
+
+In Experiment 1, our empirical process has indicated suitable candidate items for each of the constructs (see [preprocessing](preprocessing.qmd) that contains exploratory EFA), the reduction of content has influenced the existing conceptualisation for some of the sub-constructs taken from Kirts et al. (2026).
+
+The retention of the 3 best items emphasised narrower aspects of the sub-constructs than what the original, full item list represents.
+
+* _Energy Control_, as a sub-construct of `Focus–Motivation`, was originally operationally defined as “Music used to control levels of intensity or drive, pumping up, motivation, stimulation” (Kirts et al., 2026) but the resulting best items, here, primarily refer to Motivation. Hence we label the sub-construct hereafter as **Motivation**. 
+
+* _Being Moved / Spirituality_, a sub-constructs of `Aesthetics–Interest–Awe` was also relabelled. Originally _Being Moved / Spirituality_ referred to “Music used to connect to a higher ideal or abstract feeling of non-social connection, religious activity, feeling or seeking strong emotions” (Kirts et al., 2026) but the resulting items only contain spirituality related items, hence we relabel the sub-construct as **Spirituality**. 
+
+* _Aesthetics_, a sub-construct of `Aesthetics–Interest–Awe`, was relabelled. Originally this referred to “Music used to achieve or create a desired ambience, fit to the ‘mood’” but the best items refer primarily to a narrower concept of beauty. We therefore labelled the sub-construct as **Beauty**.
+
+* _Reflection / Coping_ sub-construct of `Personal–Emotional–Processing` which originally refers to when “Music [is] used to remember or to associate to other objects, provide a sense of comfort, processing experiences”. The resulting best items from the empirical evaluations refer to comfort rather than to coping or reflection, so we call the sub-construct **Comforting**. 
+
+* _Group cohesion/socialisation_ was simplified to **Group bonding** to avoid confusing labels.
+
+The purpose of the relabelling of the sub-constructs is to acknowledge that the empirical data and the analysis procedure has influenced, mainly trimmed and focussed the emerging latent constructs. To retain the clarity, we updated the labels of these specific sub-constructs. 

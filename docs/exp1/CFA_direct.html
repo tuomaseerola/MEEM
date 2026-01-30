@@ -345,15 +345,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="fm" class="level2">
 <h2 class="anchored" data-anchor-id="fm">FM</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file=</span><span class="st">"data/FM_N100.rds"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(df,vignette<span class="sc">==</span><span class="st">"F"</span> <span class="sc">|</span> vignette<span class="sc">==</span><span class="st">"M"</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>tmp_w <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(tmp, <span class="at">names_from =</span> item_label, <span class="at">values_from =</span> value,<span class="at">id_expand =</span> <span class="cn">FALSE</span>,<span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">'ID'</span>,<span class="st">'vignette'</span>))</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="ot">&lt;-</span><span class="fu">data.frame</span>(tmp_w)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(tmp_w) <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tmp_w)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>ID<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>ID))</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>vignette<span class="ot">&lt;-</span><span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>vignette)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#tmp_w &lt;- select(tmp_w, -ID)</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">table</span>(tmp_w<span class="sc">$</span>vignette),<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Vignette"</span>, <span class="st">"N"</span>), <span class="at">caption =</span> <span class="st">"Table 1. Distribution of participants across FM vignettes"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>item_label[df<span class="sc">$</span>item_label<span class="sc">==</span><span class="st">"F1"</span>]<span class="ot">&lt;-</span><span class="st">"M9"</span> <span class="co"># relabel</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(df,vignette<span class="sc">==</span><span class="st">"F"</span> <span class="sc">|</span> vignette<span class="sc">==</span><span class="st">"M"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>tmp_w <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(tmp, <span class="at">names_from =</span> item_label, <span class="at">values_from =</span> value,<span class="at">id_expand =</span> <span class="cn">FALSE</span>,<span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">'ID'</span>,<span class="st">'vignette'</span>))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="ot">&lt;-</span><span class="fu">data.frame</span>(tmp_w)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(tmp_w) <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tmp_w)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>ID<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>ID))</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>vignette<span class="ot">&lt;-</span><span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>vignette)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#tmp_w &lt;- select(tmp_w, -ID)</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">table</span>(tmp_w<span class="sc">$</span>vignette),<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Vignette"</span>, <span class="st">"N"</span>), <span class="at">caption =</span> <span class="st">"Table 1. Distribution of participants across FM vignettes"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <table class="caption-top table">
 <caption>Table 1. Distribution of participants across FM vignettes</caption>
 <thead>
@@ -374,12 +375,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>model_full <span class="ot">&lt;-</span> <span class="st">"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="st">M =~ M1 + M3 + F1 + F5 + F7</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="st">M =~ M1 + M3 + M9 + F5 + F7</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">F =~ M2 + F2 + F3 + F4 + F6 + F9 + F10 + F11</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>model_best3item <span class="ot">&lt;-</span> <span class="st">"</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="st">M =~ M1 + M3 + F1</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="st">M =~ M1 + M3 + M9</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="st">F =~ F3 + F6 + F10</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>

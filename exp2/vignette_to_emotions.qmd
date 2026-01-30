@@ -345,7 +345,7 @@ df_f3_unique$Construct<-factor(df_f3_unique$Construct,levels = c("EDR","FM","CB"
 #levels(df_f3_unique$Construct)
 
 # Label vignettes
-V <- c('Enjoyment', 'Distraction', 'Relaxation', 'EnergyControl', 'Focus', 'GroupCohesion', 'ReduceLoneliness', 'Coping', 'Express', 'Spirituality', 'Curiosity', 'Aesthetics')
+V <- c('Enjoyment', 'Distraction', 'Relaxation', 'Motivation', 'Focus', 'Group Bonding', 'Reduce Loneliness', 'Comforting', 'Expression', 'Spirituality', 'Curiosity', 'Beauty')
 # Make into factor 
 df_f3_unique$VigNro<-factor(df_f3_unique$VigNro,labels=V)
 #levels(df_f3_unique$VigNro)

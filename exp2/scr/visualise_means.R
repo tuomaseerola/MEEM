@@ -9,7 +9,7 @@ visualise_means <- function(data = NULL,Construct="EDR"){
   }
 
   if(Construct=="FM"){
-    data$item_label <- factor(data$item_label,levels = c("F3", "F6", "F10", "M_F1","M1","M3"))
+    data$item_label <- factor(data$item_label,levels = c("F3", "F6", "F10", "M9","M1","M3"))
     construct <- 4:5
   }
 

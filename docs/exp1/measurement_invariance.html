@@ -330,43 +330,44 @@ model.scalar - model.metric       0.012   23.272 -21.173</code></pre>
 <h2 class="anchored" data-anchor-id="fm">FM</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file=</span><span class="st">"data/FM_N100.rds"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(df,vignette<span class="sc">==</span><span class="st">"F"</span> <span class="sc">|</span> vignette<span class="sc">==</span><span class="st">"M"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>tmp_w <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(tmp, <span class="at">names_from =</span> item_label, <span class="at">values_from =</span> value,<span class="at">id_expand =</span> <span class="cn">FALSE</span>,<span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">'ID'</span>,<span class="st">'vignette'</span>))</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="ot">&lt;-</span><span class="fu">data.frame</span>(tmp_w)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(tmp_w) <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tmp_w)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#tmp_w &lt;- select(tmp_w, -ID)</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>ID<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>ID))</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>vignette<span class="ot">&lt;-</span><span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>vignette)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="st">'</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">    M =~ M1 + M3 + F1</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st">    F =~ F3 + F6 + F10</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="st">'</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># baseline</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>model.baseline <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w,<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># configural invariance</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>model.configural <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>,<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.baseline,model.configural)</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s,fit.measures="all")</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>config2 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.baseline,model.configural)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co"># metric invariance</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>model.metric <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>,<span class="at">group.equal=</span><span class="fu">c</span>(<span class="st">"loadings"</span>),<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.configural, model.metric)</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s,fit.measures="all")</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>metric2 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.configural,model.metric)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co"># scalar invariance</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>model.scalar <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>, <span class="at">group.equal=</span><span class="fu">c</span>(<span class="st">"loadings"</span>,<span class="st">"intercepts"</span>),<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(model.scalar, standardized = TRUE, fit.measures = TRUE)</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.metric, model.scalar)</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s)</span></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>scalar2 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.metric,model.scalar)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span>semTools<span class="sc">::</span><span class="fu">compareFit</span>(model.baseline,model.configural, model.metric,model.scalar,<span class="at">nested =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>item_label[df<span class="sc">$</span>item_label<span class="sc">==</span><span class="st">"F1"</span>]<span class="ot">&lt;-</span><span class="st">"M9"</span> <span class="co"># relabel</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(df,vignette<span class="sc">==</span><span class="st">"F"</span> <span class="sc">|</span> vignette<span class="sc">==</span><span class="st">"M"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>tmp_w <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(tmp, <span class="at">names_from =</span> item_label, <span class="at">values_from =</span> value,<span class="at">id_expand =</span> <span class="cn">FALSE</span>,<span class="at">id_cols =</span> <span class="fu">c</span>(<span class="st">'ID'</span>,<span class="st">'vignette'</span>))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="ot">&lt;-</span><span class="fu">data.frame</span>(tmp_w)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(tmp_w) <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tmp_w)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#tmp_w &lt;- select(tmp_w, -ID)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>ID<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>ID))</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>tmp_w<span class="sc">$</span>vignette<span class="ot">&lt;-</span><span class="fu">as.factor</span>(tmp_w<span class="sc">$</span>vignette)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="st">'</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st">    M =~ M1 + M3 + M9</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="st">    F =~ F3 + F6 + F10</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="st">'</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># baseline</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>model.baseline <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w,<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># configural invariance</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>model.configural <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>,<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.baseline,model.configural)</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s,fit.measures="all")</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>config2 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.baseline,model.configural)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co"># metric invariance</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>model.metric <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>,<span class="at">group.equal=</span><span class="fu">c</span>(<span class="st">"loadings"</span>),<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.configural, model.metric)</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s,fit.measures="all")</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>metric2 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.configural,model.metric)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co"># scalar invariance</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>model.scalar <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(model, <span class="at">data =</span> tmp_w, <span class="at">group =</span> <span class="st">"vignette"</span>, <span class="at">group.equal=</span><span class="fu">c</span>(<span class="st">"loadings"</span>,<span class="st">"intercepts"</span>),<span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(model.scalar, standardized = TRUE, fit.measures = TRUE)</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co">#s&lt;-semTools::compareFit(model.metric, model.scalar)</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(s)</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>scalar2 <span class="ot">&lt;-</span> <span class="fu">lavTestLRT</span>(model.metric,model.scalar)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;Chisq)</span><span class="st">`</span>[<span class="dv">2</span>]</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>s<span class="ot">&lt;-</span>semTools<span class="sc">::</span><span class="fu">compareFit</span>(model.baseline,model.configural, model.metric,model.scalar,<span class="at">nested =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>################### Nested Model Comparison #########################
 

@@ -29,6 +29,9 @@ df_f <- readRDS("data/items35_N1200.rds")
 source('scr/rename_specific_items.R') # We decided to relabel some constructs for clarity
 df_f <- rename_specific_items(df_f)
 
+# F1 should be in Motivation, relabelled as M9
+df_f$item_label[df_f$item_label=="F1"] <- "M9"
+
 ```
 
 ```{r}
@@ -95,11 +98,11 @@ print(ds1)
 set.seed(3110)
 
 FM <- "
-M =~ M1 + M3 + F1 # Note one Focus item(F1) is renamed to motivation earlier
+M =~ M1 + M3 + M9 # Note one Focus item (F1) has been renamed to motivation item (M9) earlier
 F =~ F3 + F6 + F10
 "
 
-items <- c("M1","M3","F1","F3","F6","F10")
+items <- c("M1","M3","M9","F3","F6","F10")
 
 tmp <- CFA_items(df_f,vignette = c(4,5), items=items,vignette_name="FM",bonusquestion="HAAS")
 fit <- lavaan::cfa(model = FM, data = tmp, estimator = "MLR",group = "VigNro") # includes vignettes explicitly
@@ -265,7 +268,7 @@ D =~ D1 + D6 + D7
 R =~ R1 + R3 + R7
 
 # sub-factors: FM
-M =~ M1 + M3 + F1
+M =~ M1 + M3 + M9
 F =~ F3 + F6 + F10
 
 # sub-factors: CB
@@ -282,7 +285,7 @@ I =~ I1 + I2
 A =~ A1 + A3 + A5
 "
 
-items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","F1","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
+items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","M9","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","B3","B4","B5","I1","I2","A1","A3","A5")
 tmp <- CFA_items(df_f,vignette = 1:12, items=items,vignette_name="ALL",bonusquestion="HAAS")
 fit1 <- lavaan::cfa(model = first_order, data = tmp, meanstructure = TRUE,estimator = "MLR")
 fit1.meas <- lavaan::fitMeasures(fit1,c("tli","chisq","df","pvalue", "cfi", "rmsea", "srmr"))

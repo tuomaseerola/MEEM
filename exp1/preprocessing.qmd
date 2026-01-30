@@ -170,6 +170,8 @@ FA1 <- CFA_averaged(data=df1b,vignettes = c("E","D","R"))
 
 # fix reverse scored items in the FM first
 df2b$value[df2b$item_label=="F8"] <- 6 - df2b$value[df2b$item_label=="F8"]
+# relabel F1 as M9 due to the wording of the item
+df2b$item_label[df2b$item_label=="F1"]<-"M9"
 
 FA2 <- CFA_averaged(data=df2b,vignettes=c("F","M"))
 FA3 <- CFA_averaged(data=df3b,vignettes=c("C","S"))

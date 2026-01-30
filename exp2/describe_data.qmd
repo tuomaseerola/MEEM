@@ -138,16 +138,16 @@ V[2]<-'EDR: Distraction'
 V[3]<-'EDR: Relaxation'
 V[4]<-'FM: Motivation'
 V[5]<-'FM: Focus'
-V[6]<-'CB: Group cohesion'
+V[6]<-'CB: Group Bonding'
 V[7]<-'CB: Loneliness (reduction)'
-V[8]<-'PEP: Coping'
-V[9]<-'PEP: Expressing feelings'
-V[10]<-'AIA: Being Moved'
+V[8]<-'PEP: Comforting'
+V[9]<-'PEP: Expression'
+V[10]<-'AIA: Spirituality'
 V[11]<-'AIA: Curiosity'
-V[12]<-'AIA: Aesthetics'
+V[12]<-'AIA: Beauty'
 
-# F1 should be in Motivation, temporarily rename just for figure
-df_f$item_label[df_f$item_label=="F1"] <- "M_F1"
+# F1 should be in Motivation, relabelled as M9
+df_f$item_label[df_f$item_label=="F1"] <- "M9"
 
 source('scr/rename_specific_items.R') # We decided to relabel some constructs for clarity
 df_fR <- rename_specific_items(df_f)
@@ -157,6 +157,29 @@ df_fR$VigNro <- factor(df_fR$VigNro,labels=V)
 df_fR$Construct <- df_fR$itemCategory
 
 ```
+
+### Distributions
+
+Show rating distributions across the vignettes.
+
+```{r}
+#| echo: false
+#| id: exp2-visualise2
+#| fig.width: 10
+#| fig.height: 10
+#| fig.res: 300
+
+g <- ggplot(df_fR, aes(y=value,fill=VigNro))+
+  geom_histogram(bins=5, color="black",show.legend = FALSE)+
+  facet_wrap(.~VigNro)+
+  coord_flip()+
+  xlab("Count")+
+  ylab("Rating")+
+  theme_classic()
+print(g)
+
+```
+
 
 ### EDR items
 
@@ -227,24 +250,3 @@ fig5 <- visualise_means(df_fR_tmp,Construct="AIA")
 print(fig5)
 ```
 
-### Distributions
-
-Show rating distributions across the vignettes.
-
-```{r}
-#| echo: false
-#| id: exp2-visualise2
-#| fig.width: 10
-#| fig.height: 10
-#| fig.res: 300
-
-g <- ggplot(df_fR, aes(y=value,fill=VigNro))+
-  geom_histogram(bins=5, color="black",show.legend = FALSE)+
-  facet_wrap(.~VigNro)+
-  coord_flip()+
-  xlab("Count")+
-  ylab("Rating")+
-  theme_classic()
-print(g)
-
-```

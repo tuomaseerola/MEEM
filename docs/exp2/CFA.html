@@ -280,7 +280,10 @@ window.Quarto = {
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df_f <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/items35_N1200.rds"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">'scr/rename_specific_items.R'</span>) <span class="co"># We decided to relabel some constructs for clarity</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df_f <span class="ot">&lt;-</span> <span class="fu">rename_specific_items</span>(df_f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df_f <span class="ot">&lt;-</span> <span class="fu">rename_specific_items</span>(df_f)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># F1 should be in Motivation, relabelled as M9</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df_f<span class="sc">$</span>item_label[df_f<span class="sc">$</span>item_label<span class="sc">==</span><span class="st">"F1"</span>] <span class="ot">&lt;-</span> <span class="st">"M9"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="report-cfa-model-fit-for-each-construct" class="level2">
@@ -362,11 +365,11 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3110</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>FM <span class="ot">&lt;-</span> <span class="st">"</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="st">M =~ M1 + M3 + F1 # Note one Focus item(F1) is renamed to motivation earlier</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="st">M =~ M1 + M3 + M9 # Note one Focus item (F1) has been renamed to motivation item (M9) earlier</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="st">F =~ F3 + F6 + F10</span></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"M1"</span>,<span class="st">"M3"</span>,<span class="st">"F1"</span>,<span class="st">"F3"</span>,<span class="st">"F6"</span>,<span class="st">"F10"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"M1"</span>,<span class="st">"M3"</span>,<span class="st">"M9"</span>,<span class="st">"F3"</span>,<span class="st">"F6"</span>,<span class="st">"F10"</span>)</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">CFA_items</span>(df_f,<span class="at">vignette =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>), <span class="at">items=</span>items,<span class="at">vignette_name=</span><span class="st">"FM"</span>,<span class="at">bonusquestion=</span><span class="st">"HAAS"</span>)</span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(<span class="at">model =</span> FM, <span class="at">data =</span> tmp, <span class="at">estimator =</span> <span class="st">"MLR"</span>,<span class="at">group =</span> <span class="st">"VigNro"</span>) <span class="co"># includes vignettes explicitly</span></span>
@@ -1257,25 +1260,25 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <td style="text-align: right;">0.93</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">F1</td>
-<td style="text-align: left;">M</td>
-<td style="text-align: right;">0.86</td>
-<td style="text-align: right;">3.63</td>
-<td style="text-align: right;">1.06</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">M1</td>
 <td style="text-align: left;">M</td>
 <td style="text-align: right;">0.81</td>
 <td style="text-align: right;">3.51</td>
 <td style="text-align: right;">1.05</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">M3</td>
 <td style="text-align: left;">M</td>
 <td style="text-align: right;">0.63</td>
 <td style="text-align: right;">3.62</td>
 <td style="text-align: right;">1.07</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">M9</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: right;">0.86</td>
+<td style="text-align: right;">3.63</td>
+<td style="text-align: right;">1.06</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">F10</td>

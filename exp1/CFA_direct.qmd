@@ -81,6 +81,7 @@ rm(fit.full,fit.best3item)
 #| output: asis
 
 df <- readRDS(file="data/FM_N100.rds")
+df$item_label[df$item_label=="F1"]<-"M9" # relabel
 
 tmp <- dplyr::filter(df,vignette=="F" | vignette=="M")
 tmp_w <- pivot_wider(tmp, names_from = item_label, values_from = value,id_expand = FALSE,id_cols = c('ID','vignette'))
@@ -92,12 +93,12 @@ tmp_w$vignette<-as.factor(tmp_w$vignette)
 print(knitr::kable(table(tmp_w$vignette),col.names = c("Vignette", "N"), caption = "Table 1. Distribution of participants across FM vignettes"))
 
 model_full <- "
-M =~ M1 + M3 + F1 + F5 + F7
+M =~ M1 + M3 + M9 + F5 + F7
 F =~ M2 + F2 + F3 + F4 + F6 + F9 + F10 + F11
 "
 
 model_best3item <- "
-M =~ M1 + M3 + F1
+M =~ M1 + M3 + M9
 F =~ F3 + F6 + F10
 "
 

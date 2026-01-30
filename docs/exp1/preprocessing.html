@@ -554,6 +554,7 @@ X-squared = 24.753, df = 20, p-value = 0.211</code></pre>
 </section>
 <section id="factor-analyses" class="level1">
 <h1>Factor analyses</h1>
+<p>As Appendix 2 in the manuscript.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">'scr/CFA_averaged.R'</span>) <span class="co"># custom function</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>FA1 <span class="ot">&lt;-</span> <span class="fu">CFA_averaged</span>(<span class="at">data=</span>df1b,<span class="at">vignettes =</span> <span class="fu">c</span>(<span class="st">"E"</span>,<span class="st">"D"</span>,<span class="st">"R"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -591,8 +592,10 @@ Cumulative Var 0.239 0.469 0.688</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fix reverse scored items in the FM first</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>df2b<span class="sc">$</span>value[df2b<span class="sc">$</span>item_label<span class="sc">==</span><span class="st">"F8"</span>] <span class="ot">&lt;-</span> <span class="dv">6</span> <span class="sc">-</span> df2b<span class="sc">$</span>value[df2b<span class="sc">$</span>item_label<span class="sc">==</span><span class="st">"F8"</span>]</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>FA2 <span class="ot">&lt;-</span> <span class="fu">CFA_averaged</span>(<span class="at">data=</span>df2b,<span class="at">vignettes=</span><span class="fu">c</span>(<span class="st">"F"</span>,<span class="st">"M"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="co"># relabel F1 as M9 due to the wording of the item</span></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>df2b<span class="sc">$</span>item_label[df2b<span class="sc">$</span>item_label<span class="sc">==</span><span class="st">"F1"</span>]<span class="ot">&lt;-</span><span class="st">"M9"</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>FA2 <span class="ot">&lt;-</span> <span class="fu">CFA_averaged</span>(<span class="at">data=</span>df2b,<span class="at">vignettes=</span><span class="fu">c</span>(<span class="st">"F"</span>,<span class="st">"M"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Loadings:
@@ -600,7 +603,7 @@ Loadings:
 M1  0.307 0.844
 M2  0.523 0.539
 M3  0.196 0.849
-F1  0.305 0.869
+M9  0.305 0.869
 F2  0.812 0.306
 F3  0.862 0.289
 F4  0.821 0.321
