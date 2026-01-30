@@ -4,6 +4,8 @@ This repository offers data and analyses related to the study titled "Measure of
 
 These are the main analytical operations carried out in the study in Experiments 1 and 2.
 
+Note. To view these conveniently, go to the rendered site: [https://tuomaseerola.github.io/MEEM/](https://tuomaseerola.github.io/MEEM/)
+
 ## Experiment 1
 
 1. [preprocessing](exp1/preprocessing.qmd) gets all the data, reports reliability, displays an initial EFA (Appendix 2 of the manuscript), and visualises the item ratings.
