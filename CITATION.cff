@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+
+title: "Measure of Emotional Episodes with Music (MEEM)"
+
+type: software
+
+authors:
+  - family-names: Eerola
+    given-names: Tuomas
+    affiliation: University of Jyväskylä
+    orcid: "https://orcid.org/0000-0002-2896-929X"
+  - family-names: Kirts
+    given-names: Connor
+    affiliation: Durham University
+    orcid: "https://orcid.org/0009-0009-7207-6884"
+  - family-names: Saarikallio
+    given-names: Suvi
+    affiliation: University of Jyväskylä
+    orcid: "https://orcid.org/0000-0002-4647-8048"
+
+abstract: >
+  This repository offers data and analyses related to the study titled “Measure of Emotional Episodes with Music (MEEM): development and psychometric evaluation of a modular instrument”.
+
+keywords:
+  - music psychology
+  - episode model
+  - scale development
+  - factor analysis
+  - R
+
+license: MIT
