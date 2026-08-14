@@ -424,6 +424,92 @@ print(knitr::kable(cor_matrix,digits=2,caption="Correlations between the latent 
 
 ```
 
+
+### Redo with Confidence Intervals using bootstrapping
+
+```{r}
+#| echo: true
+#| output: asis
+#| id: exp2-reliabilty-bootstrapped
+
+first_order <- "
+# sub-factors: EDR
+E =~ E1 + E6 + E7
+D =~ D1 + D6 + D7
+R =~ R1 + R3 + R7
+
+# sub-factors: FM
+M =~ M1 + M3 + M9
+F =~ F3 + F6 + F10
+
+# sub-factors: CB
+G =~ G5 + G2 + G9
+L =~ L5 + L6 + L7
+
+# sub-factors: PEP
+C =~ C2 + C3 + C6
+X =~ X4 + X8 + X9
+
+# sub-factors: AIA
+S =~ S3 + S4 + S5
+I =~ I1 + I2
+B =~ B1 + B3 + B5
+"
+
+items <- c("E1","E6","E7","D1","D6","D7","R1","R3","R7","M1","M3","M9","F3","F6","F10","G5","G2","G9","L5","L6","L7","C2","C3","C6","X4","X8","X9","S3","S4","S5","I1","I2","B1","B3","B5")
+tmp <- CFA_items(df_f,vignette = 1:12, items=items,vignette_name="ALL",bonusquestion="HAAS")
+fit1 <- lavaan::cfa(model = first_order, data = tmp, meanstructure = TRUE,estimator = "MLR")
+
+
+library(lavaan)
+library(semTools)
+library(boot)
+
+omega_fun <- function(fit) {
+  out <- semTools::compRelSEM(
+    fit,
+    tau.eq = FALSE
+  )
+  
+  as.numeric(out)
+}
+
+set.seed(1208)
+
+boot_omega <- lavaan::bootstrapLavaan(
+  fit1,
+  R = 2000,
+  parallel = "snow",
+  verbose = TRUE,
+  FUN = omega_fun
+)
+
+omega <- semTools::compRelSEM(
+  fit1,
+  tau.eq = FALSE
+)
+
+
+ci <- apply(
+  boot_omega,
+  2,
+  quantile,
+  probs = c(.025, .975),
+  na.rm = TRUE
+)
+
+results <- data.frame(
+  factor = names(omega),
+  omega  = as.numeric(omega),
+  lower  = ci[1, ],
+  upper  = ci[2, ]
+)
+
+print(knitr::kable(results,digits = 3,caption="Composite Reliability (Omega) with 95% Confidence Intervals."))
+
+```
+
+
 ## Discriminant Validity
 
 

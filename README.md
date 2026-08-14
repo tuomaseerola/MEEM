@@ -2,7 +2,10 @@
 
 This repository offers data and analyses related to the study titled "Measure of Emotional Episodes with Music (MEEM): development and psychometric evaluation of a modular instrument". 
 
-MEEM is scale developed to measure a emotional episodes related to music, initially outlined in a theory ([Eerola, Kirts & Saarikallio, 2025](https://doi.org/10.1177/03057356241279763)), which has been operationalised and scrutinised through the content validity process ([Kirts et al., in press](https://doi.org/10.1177/20592043251413550)).
+MEEM is scale developed to measure a emotional episodes related to music, initially outlined in a theory ([Eerola, Kirts & Saarikallio, 2025](https://doi.org/10.1177/03057356241279763)), which has been operationalised and scrutinised through the content validity process ([Kirts et al., 2026](https://doi.org/10.1177/20592043251413550)).
+
+The rendered version of this repository is available at
+[https://tuomaseerola.github.io/MEEM/](https://tuomaseerola.github.io/MEEM/). Permanent record of the repo is available at [Zenodo](https://doi.org/10.5281/zenodo.21909313), [![](https://zenodo.org/badge/1116953098.svg)](https://doi.org/10.5281/zenodo.21909313)
 
 These are the all analytical operations carried out in the study in Experiments 1 and 2.
 

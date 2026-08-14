@@ -362,13 +362,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="bi-factor-model">Bi-factor Model</h3>
 <p>Test whether the items load on both a general factor and their specific episode factors (sub-constructs).</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: lavaan-&gt;lav_model_vcov():  
-   The variance-covariance matrix of the estimated parameters (vcov) does not 
-   appear to be positive definite! The smallest eigenvalue (= -9.586897e-06) 
-   is smaller than zero. This may be a symptom that the model is not 
-   identified.</code></pre>
-</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     tli    chisq       df   pvalue      cfi    rmsea     srmr 
    0.901 2854.587  525.000    0.000    0.913    0.061    0.065 </code></pre>
@@ -526,8 +519,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="compare-structures">Compare Structures</h3>
 <p>In the manuscript, we only report first-order and second-order models, as the other candidates are significantly worse (conceptually and statistically).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>o <span class="ot">&lt;-</span> <span class="fu">compareFit</span>(fit1, fit2)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(o)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>o <span class="ot">&lt;-</span> <span class="fu">compareFit</span>(fit1, fit2)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(o)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>################### Nested Model Comparison #########################
 
@@ -537,9 +530,10 @@ lavaan-&gt;unknown():
    lavaan NOTE: The "Chisq" column contains standard test statistics, not the 
    robust test that should be reported per model. A robust difference test is 
    a function of two standard (not robust) statistics.
-      Df   AIC    BIC  Chisq Chisq diff Df diff Pr(&gt;Chisq)    
-fit1 494 98873  99743 1617.8                                  
-fit2 538 99679 100326 2512.3     689.07      44  &lt; 2.2e-16 ***
+
+      Df   AIC    BIC  Chisq Chisq diff   RMSEA Df diff Pr(&gt;Chisq)    
+fit1 494 98873  99743 1617.8                                          
+fit2 538 99679 100326 2512.3     689.07 0.12593      44  &lt; 2.2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -562,38 +556,629 @@ fit2 - fit1        44        0.012     -0.031     -0.031 0.021 806.505 582.541</
 <h2 class="anchored" data-anchor-id="construct-reliability-composite-reliability">Construct Reliability (Composite Reliability)</h2>
 <p>Measure of internal consistency using omega from the second-order model.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate reliability indices:</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 0.60 questionable, 0.70 acceptable, 0.80 good, 0.90 excellent</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This is done using omega, not alpha</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit1,<span class="at">tau.eq=</span>F)                 <span class="co"># all acceptable good excellent</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate reliability indices:</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 0.60 questionable, 0.70 acceptable, 0.80 good, 0.90 excellent</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This is done using omega, not alpha</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit1,<span class="at">tau.eq=</span>F)                 <span class="co"># all acceptable good excellent</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    E     D     R     M     F     G     L     C     X     S     I     B 
-0.806 0.769 0.882 0.818 0.878 0.903 0.881 0.842 0.829 0.918 0.874 0.783 </code></pre>
+<pre><code>$E
+
+Composite `E` is composed of observed variables:
+    E1, E6, E7
+True-score variance is represented by common factor(s):
+    E
+Total variance of composite `E` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.806
+
+$D
+
+Composite `D` is composed of observed variables:
+    D1, D6, D7
+True-score variance is represented by common factor(s):
+    D
+Total variance of composite `D` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.769
+
+$R
+
+Composite `R` is composed of observed variables:
+    R1, R3, R7
+True-score variance is represented by common factor(s):
+    R
+Total variance of composite `R` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.882
+
+$M
+
+Composite `M` is composed of observed variables:
+    M1, M3, M9
+True-score variance is represented by common factor(s):
+    M
+Total variance of composite `M` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.818
+
+$F
+
+Composite `F` is composed of observed variables:
+    F3, F6, F10
+True-score variance is represented by common factor(s):
+    F
+Total variance of composite `F` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.878
+
+$G
+
+Composite `G` is composed of observed variables:
+    G5, G2, G9
+True-score variance is represented by common factor(s):
+    G
+Total variance of composite `G` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.903
+
+$L
+
+Composite `L` is composed of observed variables:
+    L5, L6, L7
+True-score variance is represented by common factor(s):
+    L
+Total variance of composite `L` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.881
+
+$C
+
+Composite `C` is composed of observed variables:
+    C2, C3, C6
+True-score variance is represented by common factor(s):
+    C
+Total variance of composite `C` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.842
+
+$X
+
+Composite `X` is composed of observed variables:
+    X4, X8, X9
+True-score variance is represented by common factor(s):
+    X
+Total variance of composite `X` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.829
+
+$S
+
+Composite `S` is composed of observed variables:
+    S3, S4, S5
+True-score variance is represented by common factor(s):
+    S
+Total variance of composite `S` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.918
+
+$I
+
+Composite `I` is composed of observed variables:
+    I1, I2
+True-score variance is represented by common factor(s):
+    I
+Total variance of composite `I` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.874
+
+$B
+
+Composite `B` is composed of observed variables:
+    B1, B3, B5
+True-score variance is represented by common factor(s):
+    B
+Total variance of composite `B` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.783</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit2,<span class="at">higher =</span> <span class="fu">c</span>(<span class="st">"EDR"</span>,<span class="st">"FM"</span>,<span class="st">"CB"</span>,<span class="st">"PEP"</span>,<span class="st">"AIA"</span>),<span class="at">tau.eq=</span>F) <span class="co"># all acceptable good excellent</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit2,<span class="at">higher =</span> <span class="fu">c</span>(<span class="st">"EDR"</span>,<span class="st">"FM"</span>,<span class="st">"CB"</span>,<span class="st">"PEP"</span>,<span class="st">"AIA"</span>),<span class="at">tau.eq=</span>F) <span class="co"># all acceptable good excellent</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in compRelSEM(fit2, higher = c("EDR", "FM", "CB", "PEP", "AIA"), :
+Argument higher= is deprecated. Higher-order constructs are automatically
+detected by nonzero elements in the Beta matrix, and are always assumed to
+represent true scores, whereas the residuals of its indicators (lower-order
+factors) are considered sources of error.</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    E     D     R     M     F     G     L     C     X     S     I     B   EDR 
-0.804 0.771 0.882 0.811 0.879 0.903 0.880 0.841 0.832 0.918 0.874 0.783 0.679 
-   FM    CB   PEP   AIA 
-0.760 0.613 0.704 0.759 </code></pre>
+<pre><code>$E
+
+Composite `E` is composed of observed variables:
+    E1, E6, E7
+True-score variance is represented by common factor(s):
+    EDR
+Total variance of composite `E` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.383
+
+$D
+
+Composite `D` is composed of observed variables:
+    D1, D6, D7
+True-score variance is represented by common factor(s):
+    EDR
+Total variance of composite `D` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.416
+
+$R
+
+Composite `R` is composed of observed variables:
+    R1, R3, R7
+True-score variance is represented by common factor(s):
+    EDR
+Total variance of composite `R` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.447
+
+$M
+
+Composite `M` is composed of observed variables:
+    M1, M3, M9
+True-score variance is represented by common factor(s):
+    FM
+Total variance of composite `M` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.577
+
+$F
+
+Composite `F` is composed of observed variables:
+    F3, F6, F10
+True-score variance is represented by common factor(s):
+    FM
+Total variance of composite `F` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.641
+
+$G
+
+Composite `G` is composed of observed variables:
+    G5, G2, G9
+True-score variance is represented by common factor(s):
+    CB
+Total variance of composite `G` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.41
+
+$L
+
+Composite `L` is composed of observed variables:
+    L5, L6, L7
+True-score variance is represented by common factor(s):
+    CB
+Total variance of composite `L` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.487
+
+$C
+
+Composite `C` is composed of observed variables:
+    C2, C3, C6
+True-score variance is represented by common factor(s):
+    PEP
+Total variance of composite `C` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.622
+
+$X
+
+Composite `X` is composed of observed variables:
+    X4, X8, X9
+True-score variance is represented by common factor(s):
+    PEP
+Total variance of composite `X` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.498
+
+$S
+
+Composite `S` is composed of observed variables:
+    S3, S4, S5
+True-score variance is represented by common factor(s):
+    AIA
+Total variance of composite `S` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.42
+
+$I
+
+Composite `I` is composed of observed variables:
+    I1, I2
+True-score variance is represented by common factor(s):
+    AIA
+Total variance of composite `I` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.516
+
+$B
+
+Composite `B` is composed of observed variables:
+    B1, B3, B5
+True-score variance is represented by common factor(s):
+    AIA
+Total variance of composite `B` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.702</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit3, <span class="at">tau.eq=</span>F)               <span class="co"># g good but constructs are poor </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    g     E     D     R     M     F     G     L     C     X     S     I     B 
-0.894 0.386 0.373 0.470 0.531 0.588 0.551 0.394 0.234 0.285 0.539 0.472 0.250 </code></pre>
+<pre><code>$g
+
+Composite `g` is composed of observed variables:
+    E1, E6, E7, D1, D6, D7, R1, R3, R7, M1, M3, M9, F3, F6, F10, G5, G2, G9, L5, L6, L7, C2, C3, C6, X4, X8, X9, S3, S4, S5, I1, I2, B1, B3, B5
+True-score variance is represented by common factor(s):
+    g, E, D, R, M, F, G, L, C, X, S, I, B
+Total variance of composite `g` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.974
+
+$E
+
+Composite `E` is composed of observed variables:
+    E1, E6, E7
+True-score variance is represented by common factor(s):
+    g, E
+Total variance of composite `E` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.803
+
+$D
+
+Composite `D` is composed of observed variables:
+    D1, D6, D7
+True-score variance is represented by common factor(s):
+    g, D
+Total variance of composite `D` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.773
+
+$R
+
+Composite `R` is composed of observed variables:
+    R1, R3, R7
+True-score variance is represented by common factor(s):
+    g, R
+Total variance of composite `R` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.882
+
+$M
+
+Composite `M` is composed of observed variables:
+    M1, M3, M9
+True-score variance is represented by common factor(s):
+    g, M
+Total variance of composite `M` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.813
+
+$F
+
+Composite `F` is composed of observed variables:
+    F3, F6, F10
+True-score variance is represented by common factor(s):
+    g, F
+Total variance of composite `F` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.879
+
+$G
+
+Composite `G` is composed of observed variables:
+    G5, G2, G9
+True-score variance is represented by common factor(s):
+    g, G
+Total variance of composite `G` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.903
+
+$L
+
+Composite `L` is composed of observed variables:
+    L5, L6, L7
+True-score variance is represented by common factor(s):
+    g, L
+Total variance of composite `L` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.881
+
+$C
+
+Composite `C` is composed of observed variables:
+    C2, C3, C6
+True-score variance is represented by common factor(s):
+    g, C
+Total variance of composite `C` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.843
+
+$X
+
+Composite `X` is composed of observed variables:
+    X4, X8, X9
+True-score variance is represented by common factor(s):
+    g, X
+Total variance of composite `X` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.832
+
+$S
+
+Composite `S` is composed of observed variables:
+    S3, S4, S5
+True-score variance is represented by common factor(s):
+    g, S
+Total variance of composite `S` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.918
+
+$I
+
+Composite `I` is composed of observed variables:
+    I1, I2
+True-score variance is represented by common factor(s):
+    g, I
+Total variance of composite `I` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.874
+
+$B
+
+Composite `B` is composed of observed variables:
+    B1, B3, B5
+True-score variance is represented by common factor(s):
+    g, B
+Total variance of composite `B` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.79</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit4,<span class="at">tau.eq=</span>F)                <span class="co"># all above 0.80</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  EDR    FM    CB   PEP   AIA 
-0.836 0.864 0.833 0.844 0.886 </code></pre>
+<pre><code>$EDR
+
+Composite `EDR` is composed of observed variables:
+    E1, E6, E7, D1, D6, D7, R1, R3, R7
+True-score variance is represented by common factor(s):
+    EDR
+Total variance of composite `EDR` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.836
+
+$FM
+
+Composite `FM` is composed of observed variables:
+    M1, M3, M9, F3, F6, F10
+True-score variance is represented by common factor(s):
+    FM
+Total variance of composite `FM` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.864
+
+$CB
+
+Composite `CB` is composed of observed variables:
+    G5, G2, G9, L5, L6, L7
+True-score variance is represented by common factor(s):
+    CB
+Total variance of composite `CB` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.833
+
+$PEP
+
+Composite `PEP` is composed of observed variables:
+    C2, C3, C6, X4, X8, X9
+True-score variance is represented by common factor(s):
+    PEP
+Total variance of composite `PEP` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.844
+
+$AIA
+
+Composite `AIA` is composed of observed variables:
+    S3, S4, S5, I1, I2, B1, B3, B5
+True-score variance is represented by common factor(s):
+    AIA
+Total variance of composite `AIA` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.886</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compRelSEM</span>(fit5,<span class="at">tau.eq=</span>F,<span class="at">higher=</span><span class="st">"g"</span>)     <span class="co"># all above 0.80</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    E     D     R     M     F     G     L     C     X     S     I     B     g 
-0.805 0.771 0.882 0.812 0.879 0.903 0.880 0.842 0.832 0.918 0.874 0.782   NaN </code></pre>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in compRelSEM(fit5, tau.eq = F, higher = "g"): Argument higher= is
+deprecated. Higher-order constructs are automatically detected by nonzero
+elements in the Beta matrix, and are always assumed to represent true scores,
+whereas the residuals of its indicators (lower-order factors) are considered
+sources of error.</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">lavInspect</span>(fit2, <span class="st">"cor.lv"</span>)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(knitr<span class="sc">::</span><span class="fu">kable</span>(cor_matrix,<span class="at">digits=</span><span class="dv">2</span>,<span class="at">caption=</span><span class="st">"Correlations between the latent factors (for sub-constructs and constructs)."</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$E
+
+Composite `E` is composed of observed variables:
+    E1, E6, E7
+True-score variance is represented by common factor(s):
+    EDR
+Total variance of composite `E` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.379
+
+$D
+
+Composite `D` is composed of observed variables:
+    D1, D6, D7
+True-score variance is represented by common factor(s):
+    EDR
+Total variance of composite `D` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.428
+
+$R
+
+Composite `R` is composed of observed variables:
+    R1, R3, R7
+True-score variance is represented by common factor(s):
+    EDR
+Total variance of composite `R` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.438
+
+$M
+
+Composite `M` is composed of observed variables:
+    M1, M3, M9
+True-score variance is represented by common factor(s):
+    FM
+Total variance of composite `M` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.578
+
+$F
+
+Composite `F` is composed of observed variables:
+    F3, F6, F10
+True-score variance is represented by common factor(s):
+    FM
+Total variance of composite `F` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.641
+
+$G
+
+Composite `G` is composed of observed variables:
+    G5, G2, G9
+True-score variance is represented by common factor(s):
+    CB
+Total variance of composite `G` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.367
+
+$L
+
+Composite `L` is composed of observed variables:
+    L5, L6, L7
+True-score variance is represented by common factor(s):
+    CB
+Total variance of composite `L` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.545
+
+$C
+
+Composite `C` is composed of observed variables:
+    C2, C3, C6
+True-score variance is represented by common factor(s):
+    PEP
+Total variance of composite `C` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.621
+
+$X
+
+Composite `X` is composed of observed variables:
+    X4, X8, X9
+True-score variance is represented by common factor(s):
+    PEP
+Total variance of composite `X` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.5
+
+$S
+
+Composite `S` is composed of observed variables:
+    S3, S4, S5
+True-score variance is represented by common factor(s):
+    AIA
+Total variance of composite `S` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.424
+
+$I
+
+Composite `I` is composed of observed variables:
+    I1, I2
+True-score variance is represented by common factor(s):
+    AIA
+Total variance of composite `I` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.512
+
+$B
+
+Composite `B` is composed of observed variables:
+    B1, B3, B5
+True-score variance is represented by common factor(s):
+    AIA
+Total variance of composite `B` determined from the unrestricted model.
+The proportion attributable to "true" scores is its model-based estimate of reliability ("omega"):
+
+[1] 0.698</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">lavInspect</span>(fit2, <span class="st">"cor.lv"</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(knitr<span class="sc">::</span><span class="fu">kable</span>(cor_matrix,<span class="at">digits=</span><span class="dv">2</span>,<span class="at">caption=</span><span class="st">"Correlations between the latent factors (for sub-constructs and constructs)."</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 
@@ -620,6 +1205,171 @@ Table: Correlations between the latent factors (for sub-constructs and construct
 |AIA | 0.59| 0.62| 0.61| 0.41| 0.42| 0.57| 0.63| 0.72| 0.64| 0.68| 0.77| 0.95| 0.85| 0.49| 0.84| 0.83| 1.00|</code></pre>
 </div>
 </div>
+<section id="redo-with-confidence-intervals-using-bootstrapping" class="level3">
+<h3 class="anchored" data-anchor-id="redo-with-confidence-intervals-using-bootstrapping">Redo with Confidence Intervals using bootstrapping</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>first_order <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: EDR</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="st">E =~ E1 + E6 + E7</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="st">D =~ D1 + D6 + D7</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="st">R =~ R1 + R3 + R7</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: FM</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="st">M =~ M1 + M3 + M9</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="st">F =~ F3 + F6 + F10</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: CB</span></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a><span class="st">G =~ G5 + G2 + G9</span></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a><span class="st">L =~ L5 + L6 + L7</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: PEP</span></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a><span class="st">C =~ C2 + C3 + C6</span></span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="st">X =~ X4 + X8 + X9</span></span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a><span class="st"># sub-factors: AIA</span></span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a><span class="st">S =~ S3 + S4 + S5</span></span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a><span class="st">I =~ I1 + I2</span></span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a><span class="st">B =~ B1 + B3 + B5</span></span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"E1"</span>,<span class="st">"E6"</span>,<span class="st">"E7"</span>,<span class="st">"D1"</span>,<span class="st">"D6"</span>,<span class="st">"D7"</span>,<span class="st">"R1"</span>,<span class="st">"R3"</span>,<span class="st">"R7"</span>,<span class="st">"M1"</span>,<span class="st">"M3"</span>,<span class="st">"M9"</span>,<span class="st">"F3"</span>,<span class="st">"F6"</span>,<span class="st">"F10"</span>,<span class="st">"G5"</span>,<span class="st">"G2"</span>,<span class="st">"G9"</span>,<span class="st">"L5"</span>,<span class="st">"L6"</span>,<span class="st">"L7"</span>,<span class="st">"C2"</span>,<span class="st">"C3"</span>,<span class="st">"C6"</span>,<span class="st">"X4"</span>,<span class="st">"X8"</span>,<span class="st">"X9"</span>,<span class="st">"S3"</span>,<span class="st">"S4"</span>,<span class="st">"S5"</span>,<span class="st">"I1"</span>,<span class="st">"I2"</span>,<span class="st">"B1"</span>,<span class="st">"B3"</span>,<span class="st">"B5"</span>)</span>
+<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">CFA_items</span>(df_f,<span class="at">vignette =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">items=</span>items,<span class="at">vignette_name=</span><span class="st">"ALL"</span>,<span class="at">bonusquestion=</span><span class="st">"HAAS"</span>)</span>
+<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(<span class="at">model =</span> first_order, <span class="at">data =</span> tmp, <span class="at">meanstructure =</span> <span class="cn">TRUE</span>,<span class="at">estimator =</span> <span class="st">"MLR"</span>)</span>
+<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-29"><a href="#cb34-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-30"><a href="#cb34-30" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
+<span id="cb34-31"><a href="#cb34-31" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(semTools)</span>
+<span id="cb34-32"><a href="#cb34-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(boot)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>
+Attaching package: 'boot'</code></pre>
+<pre><code>The following object is masked from 'package:psych':
+
+    logit</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>omega_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(fit) {</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> semTools<span class="sc">::</span><span class="fu">compRelSEM</span>(</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    fit,</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">tau.eq =</span> <span class="cn">FALSE</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.numeric</span>(out)</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1208</span>)</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>boot_omega <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">bootstrapLavaan</span>(</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>  fit1,</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">R =</span> <span class="dv">2000</span>,</span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">parallel =</span> <span class="st">"snow"</span>,</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">verbose =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">FUN =</span> omega_fun</span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>omega <span class="ot">&lt;-</span> semTools<span class="sc">::</span><span class="fu">compRelSEM</span>(</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  fit1,</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">tau.eq =</span> <span class="cn">FALSE</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="fu">apply</span>(</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  boot_omega,</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span>,</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>  quantile,</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">probs =</span> <span class="fu">c</span>(.<span class="dv">025</span>, .<span class="dv">975</span>),</span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">na.rm =</span> <span class="cn">TRUE</span></span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">factor =</span> <span class="fu">names</span>(omega),</span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">omega  =</span> <span class="fu">as.numeric</span>(omega),</span>
+<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower  =</span> ci[<span class="dv">1</span>, ],</span>
+<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">upper  =</span> ci[<span class="dv">2</span>, ]</span>
+<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(knitr<span class="sc">::</span><span class="fu">kable</span>(results,<span class="at">digits =</span> <span class="dv">3</span>,<span class="at">caption=</span><span class="st">"Composite Reliability (Omega) with 95% Confidence Intervals."</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<caption>Composite Reliability (Omega) with 95% Confidence Intervals.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">factor</th>
+<th style="text-align: right;">omega</th>
+<th style="text-align: right;">lower</th>
+<th style="text-align: right;">upper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">E</td>
+<td style="text-align: right;">0.806</td>
+<td style="text-align: right;">0.778</td>
+<td style="text-align: right;">0.830</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">0.769</td>
+<td style="text-align: right;">0.739</td>
+<td style="text-align: right;">0.794</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R</td>
+<td style="text-align: right;">0.882</td>
+<td style="text-align: right;">0.865</td>
+<td style="text-align: right;">0.896</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">M</td>
+<td style="text-align: right;">0.818</td>
+<td style="text-align: right;">0.797</td>
+<td style="text-align: right;">0.837</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">F</td>
+<td style="text-align: right;">0.878</td>
+<td style="text-align: right;">0.863</td>
+<td style="text-align: right;">0.893</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G</td>
+<td style="text-align: right;">0.903</td>
+<td style="text-align: right;">0.891</td>
+<td style="text-align: right;">0.915</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">L</td>
+<td style="text-align: right;">0.881</td>
+<td style="text-align: right;">0.867</td>
+<td style="text-align: right;">0.894</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">0.842</td>
+<td style="text-align: right;">0.819</td>
+<td style="text-align: right;">0.863</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">X</td>
+<td style="text-align: right;">0.829</td>
+<td style="text-align: right;">0.808</td>
+<td style="text-align: right;">0.848</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">S</td>
+<td style="text-align: right;">0.918</td>
+<td style="text-align: right;">0.908</td>
+<td style="text-align: right;">0.928</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I</td>
+<td style="text-align: right;">0.874</td>
+<td style="text-align: right;">0.854</td>
+<td style="text-align: right;">0.893</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">0.783</td>
+<td style="text-align: right;">0.761</td>
+<td style="text-align: right;">0.804</td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="discriminant-validity" class="level2">
 <h2 class="anchored" data-anchor-id="discriminant-validity">Discriminant Validity</h2>
@@ -627,8 +1377,8 @@ Table: Correlations between the latent factors (for sub-constructs and construct
 <h3 class="anchored" data-anchor-id="average-variance-explained-traditional">Average Variance Explained (traditional)</h3>
 <p>Measure of discriminant validity from the first-order model.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate average variance explained, 0.50+ is acceptable </span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lavInspect</span>(fit1, <span class="st">"cor.lv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate average variance explained, 0.50+ is acceptable </span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lavInspect</span>(fit1, <span class="st">"cor.lv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      E     D     R     M     F     G     L     C     X     S     I     B
 E 1.000                                                                  
@@ -644,32 +1394,32 @@ S 0.337 0.459 0.428 0.295 0.313 0.445 0.438 0.524 0.531 1.000
 I 0.529 0.361 0.389 0.374 0.375 0.553 0.429 0.454 0.533 0.517 1.000      
 B 0.807 0.428 0.579 0.353 0.357 0.620 0.484 0.678 0.608 0.612 0.748 1.000</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First-order model</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit1)  <span class="co"># all above 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First-order model</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit1)  <span class="co"># all above 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    E     D     R     M     F     G     L     C     X     S     I     B 
 0.579 0.528 0.713 0.596 0.708 0.756 0.704 0.636 0.615 0.789 0.776 0.541 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First and second-order</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit2)  <span class="co"># all above 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First and second-order</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit2)  <span class="co"># all above 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    E     D     R     M     F     G     L     C     X     S     I     B 
 0.577 0.528 0.713 0.594 0.708 0.756 0.704 0.635 0.617 0.789 0.776 0.541 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bifactor</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit3,<span class="at">omit.factors=</span><span class="st">"g"</span>)  <span class="co"># All below 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bifactor</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit3,<span class="at">omit.factors=</span><span class="st">"g"</span>)  <span class="co"># All below 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    E     D     R     M     F     G     L     C     X     S     I     B 
 0.277 0.259 0.380 0.394 0.475 0.462 0.339 0.184 0.222 0.464 0.420 0.196 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Second-order only</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit4)  <span class="co"># FM, CB and AIA above 0.50, EDR and PEP below 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Second-order only</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit4)  <span class="co"># FM, CB and AIA above 0.50, EDR and PEP below 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  EDR    FM    CB   PEP   AIA 
 0.383 0.539 0.520 0.493 0.513 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1st, 2nd, and third-order</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit5)  <span class="co"># all above 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1st, 2nd, and third-order</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">AVE</span>(fit5)  <span class="co"># all above 0.50</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    E     D     R     M     F     G     L     C     X     S     I     B 
 0.577 0.529 0.713 0.594 0.708 0.756 0.704 0.636 0.617 0.789 0.776 0.540 </code></pre>
@@ -681,8 +1431,8 @@ B 0.807 0.428 0.579 0.353 0.357 0.620 0.484 0.678 0.608 0.612 0.748 1.000</code>
 <p>Let’s use the modern Heterotrait–Monotrait Ratio (HTMT) method to assess discriminant validity. It uses ratio of the correlations (Henseler, Ringlet &amp; Sarstedt, 2015).</p>
 <section id="all-sub-constructs-first-order-model" class="level4">
 <h4 class="anchored" data-anchor-id="all-sub-constructs-first-order-model">All Sub-constructs (first-order model)</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>htmt_matrix <span class="ot">&lt;-</span> <span class="fu">htmt</span>(first_order,<span class="at">data =</span> tmp,<span class="at">htmt2 =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(knitr<span class="sc">::</span><span class="fu">kable</span>(htmt_matrix,<span class="at">digits=</span><span class="dv">3</span>,<span class="at">caption=</span><span class="st">'Discriminant Validity at the level of Sub-Constructs.'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>htmt_matrix <span class="ot">&lt;-</span> <span class="fu">htmt</span>(first_order,<span class="at">data =</span> tmp,<span class="at">htmt2 =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(knitr<span class="sc">::</span><span class="fu">kable</span>(htmt_matrix,<span class="at">digits=</span><span class="dv">3</span>,<span class="at">caption=</span><span class="st">'Discriminant Validity at the level of Sub-Constructs.'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <table class="caption-top table">
 <caption>Discriminant Validity at the level of Sub-Constructs.</caption>
 <colgroup>
@@ -900,18 +1650,18 @@ B 0.807 0.428 0.579 0.353 0.357 0.620 0.484 0.678 0.608 0.612 0.748 1.000</code>
 </tr>
 </tbody>
 </table>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(htmt_matrix)<span class="ot">=</span><span class="cn">NA</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">min</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(htmt_matrix)<span class="ot">=</span><span class="cn">NA</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">min</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>[1] 0.272</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">max</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">max</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>[1] 0.809</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">median</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">median</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>[1] 0.484</p>
 </section>
 <section id="all-constructs-second-order-model" class="level4">
 <h4 class="anchored" data-anchor-id="all-constructs-second-order-model">All Constructs (second-order model)</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>htmt_matrix <span class="ot">&lt;-</span> <span class="fu">htmt</span>(episodes,<span class="at">data =</span> tmp,<span class="at">htmt2 =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(knitr<span class="sc">::</span><span class="fu">kable</span>(htmt_matrix,<span class="at">digits=</span><span class="dv">3</span>,<span class="at">caption=</span><span class="st">'Discriminant Validity at the level of Constructs.'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>htmt_matrix <span class="ot">&lt;-</span> <span class="fu">htmt</span>(episodes,<span class="at">data =</span> tmp,<span class="at">htmt2 =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(knitr<span class="sc">::</span><span class="fu">kable</span>(htmt_matrix,<span class="at">digits=</span><span class="dv">3</span>,<span class="at">caption=</span><span class="st">'Discriminant Validity at the level of Constructs.'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <table class="caption-top table">
 <caption>Discriminant Validity at the level of Constructs.</caption>
 <thead>
@@ -967,12 +1717,12 @@ B 0.807 0.428 0.579 0.353 0.357 0.620 0.484 0.678 0.608 0.612 0.748 1.000</code>
 </tr>
 </tbody>
 </table>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(htmt_matrix)<span class="ot">=</span><span class="cn">NA</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">min</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(htmt_matrix)<span class="ot">=</span><span class="cn">NA</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">min</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>[1] 0.459</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">max</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">max</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>[1] 0.871</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">median</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">median</span>(htmt_matrix,<span class="at">na.rm=</span><span class="cn">TRUE</span>),<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>[1] 0.692</p>
 
 
