@@ -4,7 +4,7 @@ This repository offers data and analyses related to the study titled "Measure of
 
 MEEM is scale developed to measure a emotional episodes related to music, initially outlined in a theory ([Eerola, Kirts & Saarikallio, 2025](https://doi.org/10.1177/03057356241279763)), which has been operationalised and scrutinised through the content validity process ([Kirts et al., in press](https://doi.org/10.1177/20592043251413550)).
 
-These are the main analytical operations carried out in the study in Experiments 1 and 2.
+These are the all analytical operations carried out in the study in Experiments 1 and 2.
 
 Note. To view these conveniently, go to the rendered site: [https://tuomaseerola.github.io/MEEM/](https://tuomaseerola.github.io/MEEM/)
 
