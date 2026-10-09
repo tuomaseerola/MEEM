@@ -3,8 +3,7 @@
 This repository offers data and analyses related to the study:
 
 > [!NOTE]
-> Measure of Emotional Episodes with Music (MEEM): Development and psychometric evaluation of a modular instrument
-Kirts C, Saarikallio S, Eerola T (2026) Measure of Emotional Episodes with Music (MEEM): Development and psychometric evaluation of a modular instrument. PLOS ONE 21(10): e0359288. [https://doi.org/10.1371/journal.pone.0359288](https://doi.org/10.1371/journal.pone.0359288)
+> Kirts, C., Saarikallio, S. & Eerola, T. (2026) Measure of Emotional Episodes with Music (MEEM): Development and psychometric evaluation of a modular instrument Measure of Emotional Episodes with Music (MEEM). _PLOS ONE 21(10)_: e0359288. [https://doi.org/10.1371/journal.pone.0359288](https://doi.org/10.1371/journal.pone.0359288)
 
 
 MEEM is scale developed to measure a emotional episodes related to music, initially outlined in a theory ([Eerola, Kirts & Saarikallio, 2025](https://doi.org/10.1177/03057356241279763)), which has been operationalised and scrutinised through the content validity process ([Kirts et al., 2026](https://doi.org/10.1177/20592043251413550)).
